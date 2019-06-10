@@ -1,0 +1,8 @@
+prefix=/home/dqn/drone_formation/devel
+
+Name: frenet_optimal_trajectory_pkg
+Description: Description of frenet_optimal_trajectory_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/dqn/drone_formation/devel/lib 
+Requires: 
