@@ -6,6 +6,7 @@
 
 #include <ros/ros.h>
 #include <vector>
+#include <fstream>
 #include <tf/tf.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/TwistStamped.h>
@@ -14,6 +15,8 @@
 #include <mavros_msgs/State.h>
 #include <mavros_msgs/PositionTarget.h>
 #include <sensor_msgs/NavSatFix.h>
+#include <Eigen/Dense>
+// #include <Eigen/LU>
 #include "opencvtest/contours.h"
 // #include <mavros_msgs/AttitudeTarget.h>
 #define M_DEG_TO_RAD 1/57.295
@@ -66,6 +69,16 @@
 //         yaw = atan2((four_base_point_local[2].y + four_base_point_local[3].y)/2, (four_base_point_local[2].x + four_base_point_local[3].x)/2);
 //         target_global.latitude = 0.5 * (race_track[2].latitude + race_track[3].latitude);
 //         target_global.longitude = 0.5 * (race_track[2].longitude + race_track[3].longitude);
+//     }
+// }
+
+// void write_txt(string filePath)
+// {
+//     ofstream fly_log(filePath);
+//     if(fly_log.is_open())
+//     {
+//         fly_log << "position" << std::setw(16) << "attitude" << std::setw(16) << "velocity" << std::endl;
+//         fly_log.close();
 //     }
 // }
 
@@ -135,18 +148,31 @@ int main(int argc, char **argv)
         ROS_INFO("connecting...");
     }
 
-    mavros_msgs::PositionTarget position_target;
-    position_target.position.x = 0;
-    position_target.position.y = 0;
-    position_target.position.z = 6;
-    position_target.yaw = 0;
-    // position_target.velocity.x = 0.5;
-    // position_target.velocity.y = 2;
+    // 目的地的local坐标位置
+    geometry_msgs::Pose destination;
+    destination.position.x = 300;
+    destination.position.y = 300;
+
+    mavros_msgs::PositionTarget position_target_local;
+    position_target_local.position.x = 0;
+    position_target_local.position.y = 0;
+    position_target_local.position.z = 6;
+    position_target_local.yaw = atan2(destination.position.y, destination.position.x);
+    // position_target_local.velocity.x = 0.5;
+    // position_target_local.velocity.y = 2;
+
+    // 新坐标系下的坐标
+    mavros_msgs::PositionTarget position_target_new;
+    geometry_msgs::Pose current_pose_new;
+    Eigen::Matrix3d Matrix_from_local_to_new;
+    Matrix_from_local_to_new << cos(position_target_local.yaw), -sin(position_target_local.yaw), 0,
+                                sin(position_target_local.yaw), cos(position_target_local.yaw), 0,
+                                0, 0, 1;
 
 
     //send a few setpoints before starting
     for(int i = 100; ros::ok() && i > 0; --i){
-        local_target_pub.publish(position_target);
+        local_target_pub.publish(position_target_local);
         ros::spinOnce();
         rate.sleep();
     }
@@ -159,6 +185,7 @@ int main(int argc, char **argv)
 
     ros::Time last_request = ros::Time::now();
 
+    std::ofstream fly_log("/home/dqn/drone_formation/src/fly_log.txt");
     while(ros::ok()){
         if( current_state.mode != "OFFBOARD" &&
             (ros::Time::now() - last_request > ros::Duration(5.0))){
@@ -180,54 +207,85 @@ int main(int argc, char **argv)
 
         if(flag_take_off)
         {
-            position_target.position.x = 0;
-            position_target.position.y = 0;
-            position_target.position.z = 6;
+            position_target_local.position.x = 0;
+            position_target_local.position.y = 0;
+            position_target_local.position.z = 6;
 
             if(6 - current_pose.pose.position.z < 0.2)
             {
                 flag_take_off = 0;
             }
-            local_target_pub.publish(position_target);
+            local_target_pub.publish(position_target_local);
         }
         else 
         {
-            // position_target.position.x = 300;
-            // position_target.position.y = 0;
-            position_target.velocity.x = 10;
+            Eigen::Vector3d temp_pos(current_pose.pose.position.x, current_pose.pose.position.y, current_pose.pose.position.z);
+            Eigen::Vector3d temp_pos_new;
+            temp_pos_new = Matrix_from_local_to_new.transpose() * temp_pos;
+            current_pose_new.position.x = temp_pos_new(0);
+            current_pose_new.position.y = temp_pos_new(1);
+            current_pose_new.position.z = temp_pos_new(2);
+            std::cout << temp_pos_new.adjoint() << std::endl;
+            // position_target_new.position.x = 300;
+            // position_target_new.position.y = 0;
+            position_target_new.velocity.x = 10;
             if (camera_data.find_obs_flag)
             {
-                position_target.position.x = current_pose.pose.position.x + camera_data.dis + 5;
-                position_target.velocity.x = 0;
+                position_target_new.position.x = current_pose_new.position.x + camera_data.dis + 5;
+                position_target_new.velocity.x = 0;
                 if(camera_data.x_pos < CAM_CENTER_X)
                 {
-                    position_target.position.y = -3;
+                    position_target_new.position.y = -3;
                 }
                 else
                 {
-                    position_target.position.y = 3;
+                    position_target_new.position.y = 3;
                 }
             }
             else
             {
-                position_target.position.x = current_pose.pose.position.x + 3;
-                position_target.position.y = 0;
-                position_target.velocity.x = 10;
+                position_target_new.position.x = current_pose_new.position.x + 3;
+                position_target_new.position.y = 0;
+                position_target_new.velocity.x = 10;
             }
-            if(current_pose.pose.position.x > 310)
+            if(current_pose_new.position.x > 310)
             {
-                position_target.position.x = current_pose.pose.position.x;
-                position_target.position.y = current_pose.pose.position.y;
-                position_target.velocity.x = 0;
+                position_target_new.position.x = current_pose_new.position.x;
+                position_target_new.position.y = current_pose_new.position.y;
+                position_target_new.velocity.x = 0;
             }
-            local_target_pub.publish(position_target);
+
+            temp_pos_new << position_target_new.position.x,
+                            position_target_new.position.y,
+                            position_target_new.position.z;
+            Eigen::Vector3d temp_vel_new(position_target_new.velocity.x, position_target_new.velocity.y, position_target_new.velocity.z);
+            Eigen::Vector3d temp_vel;
+            temp_pos = Matrix_from_local_to_new * temp_pos_new;
+            position_target_local.position.x = temp_pos(0);
+            position_target_local.position.y = temp_pos(1);
+            // position_target_local.position.z = temp_pos(2);
+            temp_vel = Matrix_from_local_to_new * temp_vel_new;
+            position_target_local.velocity.x = temp_vel(0);
+            position_target_local.velocity.y = temp_vel(1);
+            // position_target_local.velocity.z = temp_vel(2);
+            local_target_pub.publish(position_target_local);
         }
         
-
-
+        if(fly_log.is_open())
+        {
+            fly_log << std::setw(16) << current_pose.pose.position.x 
+                    << std::setw(16) << current_pose.pose.position.y 
+                    << std::setw(16) << current_pose.pose.position.z 
+                    << std::setw(16) << Quaternion2Euler(current_pose.pose.orientation).x
+                    << std::setw(16) << Quaternion2Euler(current_pose.pose.orientation).y
+                    << std::setw(16) << Quaternion2Euler(current_pose.pose.orientation).z 
+                    << std::endl;
+                    
+        }
+        // std::cout << fly_log.is_open() << std::endl;
         ros::spinOnce();
         rate.sleep();
     }
-
+    fly_log.close();
     return 0;
 }
