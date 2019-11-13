@@ -842,6 +842,32 @@ RangeImpl/fast:
 .PHONY : RangeImpl/fast
 
 #=============================================================================
+# Target rules for targets named offboard_take_off_test_node
+
+# Build rule for target.
+offboard_take_off_test_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 offboard_take_off_test_node
+.PHONY : offboard_take_off_test_node
+
+# fast build rule for target.
+offboard_take_off_test_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build
+.PHONY : offboard_take_off_test_node/fast
+
+#=============================================================================
+# Target rules for targets named offb_fixed_flight_node
+
+# Build rule for target.
+offb_fixed_flight_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 offb_fixed_flight_node
+.PHONY : offb_fixed_flight_node
+
+# fast build rule for target.
+offb_fixed_flight_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build
+.PHONY : offb_fixed_flight_node/fast
+
+#=============================================================================
 # Target rules for targets named CubicSplinePlanner
 
 # Build rule for target.
@@ -892,6 +918,19 @@ ez_sim_planning: cmake_check_build_system
 ez_sim_planning/fast:
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build
 .PHONY : ez_sim_planning/fast
+
+#=============================================================================
+# Target rules for targets named tracking_cam_node
+
+# Build rule for target.
+tracking_cam_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tracking_cam_node
+.PHONY : tracking_cam_node
+
+# fast build rule for target.
+tracking_cam_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build
+.PHONY : tracking_cam_node/fast
 
 #=============================================================================
 # Target rules for targets named std_srvs_generate_messages_lisp
@@ -1049,10 +1088,13 @@ help:
 	@echo "... QuarticPolynomial"
 	@echo "... generate_sim_planning_path"
 	@echo "... RangeImpl"
+	@echo "... offboard_take_off_test_node"
+	@echo "... offb_fixed_flight_node"
 	@echo "... CubicSplinePlanner"
 	@echo "... gazebo_one_drone_planning"
 	@echo "... QuinticPolynomial"
 	@echo "... ez_sim_planning"
+	@echo "... tracking_cam_node"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_eus"
 	@echo "... std_srvs_generate_messages_nodejs"

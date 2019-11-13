@@ -265,3 +265,27 @@ add_dependencies(ez_sim_planning ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 target_link_libraries(ez_sim_planning
   ${catkin_LIBRARIES}
 )
+
+add_executable(offboard_take_off_test_node
+  src/offboard_take_off_test_node.cpp
+)
+add_dependencies(offboard_take_off_test_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(offboard_take_off_test_node
+  ${catkin_LIBRARIES}
+)
+
+add_executable(offb_fixed_flight_node
+  src/offb_fixed_flight_node.cpp
+)
+add_dependencies(offb_fixed_flight_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(offb_fixed_flight_node
+  ${catkin_LIBRARIES}
+)
+
+add_executable(tracking_cam_node
+  src/tracking_cam_node.cpp
+)
+add_dependencies(tracking_cam_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(tracking_cam_node
+  ${catkin_LIBRARIES}
+)

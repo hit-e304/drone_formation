@@ -1,0 +1,74 @@
+# 一、软件在环仿真
+
+# 先进入Firmare路径
+cd Firmware
+# 打开gazebo仿真界面
+make px4_sitl_default gazebo #默认模型
+make posix gazebo_iris_opt_flow # 带光流的模型
+make posix gazebo_solo # 3DR Solo模型
+make posix gazebo_plane # 普通飞机模型
+# 链接到模型上
+roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
+# 执行自己的offboard程序
+rosrun mode_test_pkg mode_test_pub等
+
+
+
+
+# 二、多无人机仿真
+
+# source环境：
+source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd):$(pwd)/Tools/sitl_gazebo
+# 运行多机仿真的launch文件
+roslaunch px4 multi_uav_mavros_sitl.launch
+
+
+//将地理学坐标系(geographic coordinate system)中的点(球)投影到本地方位等距平面(XOY)中
+ 
+int map_projection_project(const struct map_projection_reference_s *ref, double lat, double lon, float *x,float *y)
+ 
+{
+ 
+if (!map_projection_initialized(ref)) {
+ 
+return -1;
+ 
+}
+ 
+double lat_rad = lat * M_DEG_TO_RAD; // 度 -> 弧度 A/57.295
+ 
+double lon_rad = lon * M_DEG_TO_RAD; // GPS数据角度单位为弧度
+ 
+double sin_lat = sin(lat_rad); //程序中三角运算使用的是弧度
+ 
+double cos_lat = cos(lat_rad);
+ 
+double cos_d_lon = cos(lon_rad - ref->lon_rad);
+ 
+double arg = ref->sin_lat * sin_lat + ref->cos_lat * cos_lat * cos_d_lon;
+ 
+if (arg > 1.0) {
+ 
+arg = 1.0;
+ 
+} else if (arg < -1.0) {
+ 
+arg = -1.0; //限幅
+ 
+}
+ 
+double c = acos(arg);
+ 
+double k = (fabs(c) < DBL_EPSILON) ? 1.0 : (c / sin(c));// c为正数
+ 
+*x = k * (ref->cos_lat * sin_lat - ref->sin_lat * cos_lat * cos_d_lon) * CONSTANTS_RADIUS_OF_EARTH;
+ 
+*y = k * cos_lat * sin(lon_rad - ref->lon_rad) * CONSTANTS_RADIUS_OF_EARTH;
+ 
+return 0;
+ 
+}
+
+
+

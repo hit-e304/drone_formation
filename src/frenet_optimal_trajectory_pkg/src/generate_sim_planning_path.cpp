@@ -250,6 +250,7 @@ int main(int argc, char *argv[])
     ros::NodeHandle nh("~");
     ros::Publisher sim_global_path_vis_pub = nh.advertise<visualization_msgs::Marker>("global_way_point", 1);
     ros::Publisher sim_local_path_vis_pub = nh.advertise<visualization_msgs::Marker>("local_way_point", 1);
+    ros::Publisher sim_obstacle_position_vis_pub = nh.advertise<visualization_msgs::Marker>("obstacle_position", 1);
 
     // ros::Subscriber local_position_sub = nh.subscribe("/mavros/local_position/pose", 1, local_pos_cb);
     
@@ -320,6 +321,28 @@ int main(int argc, char *argv[])
         sim_global_path_marker.points.push_back(gwp);
     }
 
+    visualization_msgs::Marker obstacle_position_marker;
+    obstacle_position_marker.id = 12;
+    obstacle_position_marker.header.frame_id = "local_origin";
+    obstacle_position_marker.header.stamp = ros::Time();
+    obstacle_position_marker.ns = "obstacle_position";
+    obstacle_position_marker.type = visualization_msgs::Marker::POINTS;
+    obstacle_position_marker.action = visualization_msgs::Marker::ADD;
+    obstacle_position_marker.scale.x = 3.0;
+    obstacle_position_marker.scale.y = 3.0;
+    obstacle_position_marker.color.a = 1.0;
+    obstacle_position_marker.color.r = 0.0;
+    obstacle_position_marker.color.g = 1.0;
+    obstacle_position_marker.color.b = 0.0;
+    geometry_msgs::Point op;
+    for(int i = 0; i < 6; i++)
+    {
+        op.x = ob(i, 0);
+        op.y = ob(i, 1);
+        op.z = HIGHT / 2;
+        obstacle_position_marker.points.push_back(op);
+    }
+
     visualization_msgs::Marker sim_local_path_marker;
     sim_local_path_marker.id = 11;
     sim_local_path_marker.header.frame_id = "local_origin";
@@ -362,6 +385,7 @@ int main(int argc, char *argv[])
         }
 
         sim_global_path_vis_pub.publish(sim_global_path_marker);
+        sim_obstacle_position_vis_pub.publish(obstacle_position_marker);
         sim_local_path_vis_pub.publish(sim_local_path_marker);
         ros::spinOnce();
         rate.sleep();

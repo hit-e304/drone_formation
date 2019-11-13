@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/dqn/drone_formation/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -79,16 +67,27 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target test
+test/fast: test
 
-.PHONY : edit_cache/fast
+.PHONY : test/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -111,27 +110,28 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install/local
-install/local/fast: install/local
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : install/local/fast
+.PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -211,6 +211,36 @@ RangeImpl/fast:
 .PHONY : RangeImpl/fast
 
 # Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
+
+# Convenience name for target.
+offboard_take_off_test_node: frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
+
+.PHONY : offboard_take_off_test_node
+
+# fast build rule for target.
+offboard_take_off_test_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build
+.PHONY : offboard_take_off_test_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
+
+# Convenience name for target.
+offb_fixed_flight_node: frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
+
+.PHONY : offb_fixed_flight_node
+
+# fast build rule for target.
+offb_fixed_flight_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build
+.PHONY : offb_fixed_flight_node/fast
+
+# Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule:
 	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
@@ -269,6 +299,21 @@ ez_sim_planning: frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/ru
 ez_sim_planning/fast:
 	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build
 .PHONY : ez_sim_planning/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
+
+# Convenience name for target.
+tracking_cam_node: frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
+
+.PHONY : tracking_cam_node
+
+# fast build rule for target.
+tracking_cam_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build
+.PHONY : tracking_cam_node/fast
 
 src/CubicSplinePlanner.o: src/CubicSplinePlanner.cpp.o
 
@@ -459,26 +504,110 @@ src/generate_sim_planning_path.cpp.s:
 	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/src/generate_sim_planning_path.cpp.s
 .PHONY : src/generate_sim_planning_path.cpp.s
 
+src/offb_fixed_flight_node.o: src/offb_fixed_flight_node.cpp.o
+
+.PHONY : src/offb_fixed_flight_node.o
+
+# target to build an object file
+src/offb_fixed_flight_node.cpp.o:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/src/offb_fixed_flight_node.cpp.o
+.PHONY : src/offb_fixed_flight_node.cpp.o
+
+src/offb_fixed_flight_node.i: src/offb_fixed_flight_node.cpp.i
+
+.PHONY : src/offb_fixed_flight_node.i
+
+# target to preprocess a source file
+src/offb_fixed_flight_node.cpp.i:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/src/offb_fixed_flight_node.cpp.i
+.PHONY : src/offb_fixed_flight_node.cpp.i
+
+src/offb_fixed_flight_node.s: src/offb_fixed_flight_node.cpp.s
+
+.PHONY : src/offb_fixed_flight_node.s
+
+# target to generate assembly for a file
+src/offb_fixed_flight_node.cpp.s:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/src/offb_fixed_flight_node.cpp.s
+.PHONY : src/offb_fixed_flight_node.cpp.s
+
+src/offboard_take_off_test_node.o: src/offboard_take_off_test_node.cpp.o
+
+.PHONY : src/offboard_take_off_test_node.o
+
+# target to build an object file
+src/offboard_take_off_test_node.cpp.o:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/src/offboard_take_off_test_node.cpp.o
+.PHONY : src/offboard_take_off_test_node.cpp.o
+
+src/offboard_take_off_test_node.i: src/offboard_take_off_test_node.cpp.i
+
+.PHONY : src/offboard_take_off_test_node.i
+
+# target to preprocess a source file
+src/offboard_take_off_test_node.cpp.i:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/src/offboard_take_off_test_node.cpp.i
+.PHONY : src/offboard_take_off_test_node.cpp.i
+
+src/offboard_take_off_test_node.s: src/offboard_take_off_test_node.cpp.s
+
+.PHONY : src/offboard_take_off_test_node.s
+
+# target to generate assembly for a file
+src/offboard_take_off_test_node.cpp.s:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/src/offboard_take_off_test_node.cpp.s
+.PHONY : src/offboard_take_off_test_node.cpp.s
+
+src/tracking_cam_node.o: src/tracking_cam_node.cpp.o
+
+.PHONY : src/tracking_cam_node.o
+
+# target to build an object file
+src/tracking_cam_node.cpp.o:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/src/tracking_cam_node.cpp.o
+.PHONY : src/tracking_cam_node.cpp.o
+
+src/tracking_cam_node.i: src/tracking_cam_node.cpp.i
+
+.PHONY : src/tracking_cam_node.i
+
+# target to preprocess a source file
+src/tracking_cam_node.cpp.i:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/src/tracking_cam_node.cpp.i
+.PHONY : src/tracking_cam_node.cpp.i
+
+src/tracking_cam_node.s: src/tracking_cam_node.cpp.s
+
+.PHONY : src/tracking_cam_node.s
+
+# target to generate assembly for a file
+src/tracking_cam_node.cpp.s:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/src/tracking_cam_node.cpp.s
+.PHONY : src/tracking_cam_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... install/local"
 	@echo "... QuarticPolynomial"
 	@echo "... generate_sim_planning_path"
 	@echo "... RangeImpl"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... offboard_take_off_test_node"
+	@echo "... offb_fixed_flight_node"
 	@echo "... CubicSplinePlanner"
 	@echo "... gazebo_one_drone_planning"
 	@echo "... edit_cache"
 	@echo "... QuinticPolynomial"
 	@echo "... ez_sim_planning"
-	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... test"
+	@echo "... install"
+	@echo "... tracking_cam_node"
 	@echo "... src/CubicSplinePlanner.o"
 	@echo "... src/CubicSplinePlanner.i"
 	@echo "... src/CubicSplinePlanner.s"
@@ -500,6 +629,15 @@ help:
 	@echo "... src/generate_sim_planning_path.o"
 	@echo "... src/generate_sim_planning_path.i"
 	@echo "... src/generate_sim_planning_path.s"
+	@echo "... src/offb_fixed_flight_node.o"
+	@echo "... src/offb_fixed_flight_node.i"
+	@echo "... src/offb_fixed_flight_node.s"
+	@echo "... src/offboard_take_off_test_node.o"
+	@echo "... src/offboard_take_off_test_node.i"
+	@echo "... src/offboard_take_off_test_node.s"
+	@echo "... src/tracking_cam_node.o"
+	@echo "... src/tracking_cam_node.i"
+	@echo "... src/tracking_cam_node.s"
 .PHONY : help
 
 

@@ -271,6 +271,7 @@ int main(int argc, char **argv)
             local_target_pub.publish(position_target_local);
         }
         
+        
         if(fly_log.is_open())
         {
             fly_log << std::setw(16) << current_pose.pose.position.x 
