@@ -1,0 +1,6 @@
+<launch> 
+       
+<node pkg="rviz" type="rviz" name="rviz" output="screen" 
+    args="-d $(find ur_rviz_plugin)/rviz_cfg/test.rviz"/> 
+       
+</launch> 

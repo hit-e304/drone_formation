@@ -1,0 +1,8 @@
+prefix=/home/dqn/drone_formation/install
+
+Name: ur_rviz_plugin
+Description: Description of ur_rviz_plugin
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/dqn/drone_formation/install/lib 
+Requires: 

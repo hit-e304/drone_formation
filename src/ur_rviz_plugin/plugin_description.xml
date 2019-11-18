@@ -1,0 +1,9 @@
+<library path="lib/libur_rviz_plugin">
+  <class name="ur_rviz_plugin/UrPanel"
+         type="ur_rviz_plugin::UrPanel"
+         base_class_type="rviz::Panel">
+    <description>
+      A panel widget which is used to control universal robot.
+    </description>
+  </class>
+</library>

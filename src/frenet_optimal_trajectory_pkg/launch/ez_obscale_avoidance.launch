@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find opencvtest)/launch/opencvtest.launch">
+    </include>
+
+    <node pkg="frenet_optimal_trajectory_pkg" type="ez_sim_planning" name="ez_sim_planning" />
+    <node name="rviz" pkg="rviz" type="rviz"/>
+
+</launch>

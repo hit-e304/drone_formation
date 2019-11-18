@@ -7,4 +7,5 @@
 subdirs(gtest)
 subdirs(opencvtest)
 subdirs(frenet_optimal_trajectory_pkg)
+subdirs(ur_rviz_plugin)
 subdirs(usb_cam)
