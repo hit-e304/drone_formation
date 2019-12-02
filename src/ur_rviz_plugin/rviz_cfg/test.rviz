@@ -27,8 +27,8 @@ Panels:
     Name: Time
     SyncMode: 0
     SyncSource: ""
-  - Class: ur_rviz_plugin/UrPanel
-    Name: UrPanel
+  - Class: ur_rviz_plugin/PX4_Panel
+    Name: PX4_Panel
     Topic: ""
 Visualization Manager:
   Class: ""
@@ -226,7 +226,7 @@ Window Geometry:
     collapsed: false
   Tool Properties:
     collapsed: false
-  UrPanel:
+  PX4_Panel:
     collapsed: false
   Views:
     collapsed: false

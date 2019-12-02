@@ -248,6 +248,7 @@ ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o
  /opt/ros/kinetic/include/sensor_msgs/CompressedImage.h
  /opt/ros/kinetic/include/sensor_msgs/Image.h
  /opt/ros/kinetic/include/sensor_msgs/JointState.h
+ /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
  /opt/ros/kinetic/include/sensor_msgs/PointCloud.h
  /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
  /opt/ros/kinetic/include/std_msgs/Empty.h
@@ -821,6 +822,7 @@ ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o
  /opt/ros/kinetic/include/sensor_msgs/CompressedImage.h
  /opt/ros/kinetic/include/sensor_msgs/Image.h
  /opt/ros/kinetic/include/sensor_msgs/JointState.h
+ /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
  /opt/ros/kinetic/include/sensor_msgs/PointCloud.h
  /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
  /opt/ros/kinetic/include/std_msgs/Empty.h

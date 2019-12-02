@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
+
+# Convenience name for target.
+tracking_cam_anyyaw_node: frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
+
+.PHONY : tracking_cam_anyyaw_node
+
+# fast build rule for target.
+tracking_cam_anyyaw_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build
+.PHONY : tracking_cam_anyyaw_node/fast
+
+# Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule:
 	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule
@@ -558,6 +573,33 @@ src/offboard_take_off_test_node.cpp.s:
 	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/src/offboard_take_off_test_node.cpp.s
 .PHONY : src/offboard_take_off_test_node.cpp.s
 
+src/tracking_cam_anyyaw_node.o: src/tracking_cam_anyyaw_node.cpp.o
+
+.PHONY : src/tracking_cam_anyyaw_node.o
+
+# target to build an object file
+src/tracking_cam_anyyaw_node.cpp.o:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/src/tracking_cam_anyyaw_node.cpp.o
+.PHONY : src/tracking_cam_anyyaw_node.cpp.o
+
+src/tracking_cam_anyyaw_node.i: src/tracking_cam_anyyaw_node.cpp.i
+
+.PHONY : src/tracking_cam_anyyaw_node.i
+
+# target to preprocess a source file
+src/tracking_cam_anyyaw_node.cpp.i:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/src/tracking_cam_anyyaw_node.cpp.i
+.PHONY : src/tracking_cam_anyyaw_node.cpp.i
+
+src/tracking_cam_anyyaw_node.s: src/tracking_cam_anyyaw_node.cpp.s
+
+.PHONY : src/tracking_cam_anyyaw_node.s
+
+# target to generate assembly for a file
+src/tracking_cam_anyyaw_node.cpp.s:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/src/tracking_cam_anyyaw_node.cpp.s
+.PHONY : src/tracking_cam_anyyaw_node.cpp.s
+
 src/tracking_cam_node.o: src/tracking_cam_node.cpp.o
 
 .PHONY : src/tracking_cam_node.o
@@ -594,6 +636,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... install/local"
+	@echo "... tracking_cam_anyyaw_node"
 	@echo "... QuarticPolynomial"
 	@echo "... generate_sim_planning_path"
 	@echo "... RangeImpl"
@@ -635,6 +678,9 @@ help:
 	@echo "... src/offboard_take_off_test_node.o"
 	@echo "... src/offboard_take_off_test_node.i"
 	@echo "... src/offboard_take_off_test_node.s"
+	@echo "... src/tracking_cam_anyyaw_node.o"
+	@echo "... src/tracking_cam_anyyaw_node.i"
+	@echo "... src/tracking_cam_anyyaw_node.s"
 	@echo "... src/tracking_cam_node.o"
 	@echo "... src/tracking_cam_node.i"
 	@echo "... src/tracking_cam_node.s"

@@ -12,7 +12,8 @@
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/Transform.h>
 #include <mavros_msgs/State.h>
-
+// #include <sensor_msgs/NavSatFix.h>         //GPS_fix    ---rosmsg show sensor_msgs/NavSatFix
+#include <sensor_msgs/NavSatStatus.h>
 #include <actionlib/client/simple_action_client.h>
 #include <control_msgs/FollowJointTrajectoryAction.h> 
 //#include <ur_controller_action/multi_grasptarget_box.h>
@@ -54,13 +55,13 @@ class QToolBox;
 namespace ur_rviz_plugin
 {
 // 所有的plugin都必须是rviz::Panel的子类
-class UrPanel: public rviz::Panel
+class PX4_Panel: public rviz::Panel
 {
 // 后边需要用到Qt的信号和槽，都是QObject的子类，所以需要声明Q_OBJECT宏
 Q_OBJECT
 public:
   // 构造函数，在类中会用到QWidget的实例来实现GUI界面，这里先初始化为0即可
-  UrPanel( QWidget* parent = 0 );
+  PX4_Panel( QWidget* parent = 0 );
 
   void publish_speedj_(int joint_index , int d_or_i);
   void publish_speedl_(int dimension , int d_or_i);
@@ -100,9 +101,10 @@ protected Q_SLOTS:
   void switch_radian_degree();    // 切换显示关节信息的单位
   void updata_plane_state();        // 更新飞机的状态信息，每100ms触发一次
   void updata_movej_editors();    // 把当天的关节信息复制到movej的editors里
-  void update_recogniton_result();// 更新识别的结果
-  void confirm_recognition_result();  //锁定识别结果
-  void send_recognition_result();     //发送识别结果，call抓取service
+  void take_off_result();        // take_off的结果
+  void autoScroll();               //光标到最后
+  void update_recogniton_result();  //锁定识别结果
+  void shut_down_result();     //发送识别结果，call抓取service
 
   void control_robot_speedj_1();   // jog joint响应按钮
   void control_robot_speedj_2();   // jog joint响应按钮
@@ -154,7 +156,7 @@ protected:
   QPushButton* push_button_speedl_[6*2];
  
   QPushButton* push_button_recognition_;
-  QPushButton* push_button_confirm_recognition_;
+  QPushButton* push_button_take_off_;
   QPushButton* push_button_call_service_;
 
   QTextBrowser* text_browser_recogniton_result_;
@@ -194,7 +196,7 @@ protected:
   virtual void robot_state_callback(const sensor_msgs::JointStateConstPtr& state);
 
   ros::Subscriber recogtion_result_subscriber_;
-  ros::Subscriber state_sub;
+  ros::Subscriber state_sub,GPS_sub;
   virtual void recognition_result_callback(const geometry_msgs::PoseStampedPtr msg);
   geometry_msgs::Pose target_pose_in_robot_base_;
   // The ROS node handle.

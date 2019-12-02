@@ -78,6 +78,7 @@
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/rebuild_cache.dir
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/test.dir
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/install/local.dir
+/home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir

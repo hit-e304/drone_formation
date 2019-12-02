@@ -2,6 +2,7 @@
 // 功能类的插件在头文件中声明
 
 #include <stdio.h>
+#include <string>
 #include <time.h>
 #include <QPainter>
 #include <QLineEdit>
@@ -23,7 +24,7 @@
 
 #include <trajectory_msgs/JointTrajectory.h>
 #include <std_msgs/Int16.h>
-
+using namespace std;
 
 
 /*
@@ -31,22 +32,28 @@ std_msgs/Header header
 bool connected
 bool armed
 bool guided
-bool manual_input
 string mode
 uint8 system_status
 */
-mavros_msgs::State current_state;        
 
-void state_cb(const mavros_msgs::State::ConstPtr& msg)
+mavros_msgs::State current_state;    //无人机的状态
+sensor_msgs::NavSatStatus GPS_fix_state;   //GPS搜索数量
+QString output_msgs;
+QProcess *take_off_Process = new QProcess;
+
+void state_sub_fuction(const mavros_msgs::State::ConstPtr& msg)
 {
     current_state = *msg;
-
+}
+void GPS_fix_sub(const sensor_msgs::NavSatStatus::ConstPtr& msg)
+{
+    GPS_fix_state = *msg;
 }
 namespace ur_rviz_plugin
 {
 
 // 构造函数，初始化变量
-UrPanel::UrPanel( QWidget* parent )
+PX4_Panel::PX4_Panel( QWidget* parent )
   : rviz::Panel( parent )
   , joint_positions_movej_(6,0.0) 
   , joint_states_(6,0.0) 
@@ -81,19 +88,20 @@ UrPanel::UrPanel( QWidget* parent )
 
 
   
+  
+  //  
 
-
-  /*capability tab控件*/             //中间的框
-  QHBoxLayout* capbility_layout = new QHBoxLayout;//竖直(Vertical)排列部件的layout层
-
+  /*capability tab控件*/                              //中间的框
+  QHBoxLayout* capbility_layout = new QHBoxLayout;   //竖直(Vertical)排列部件的layout层
   QTabWidget* capbility_tag_widget = new QTabWidget(this);
   capbility_tag_widget->setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Fixed);
   capbility_tag_widget->setMinimumWidth(100);
   capbility_tag_widget->setMaximumWidth(300);
-  QWidget *tab_control_robot=new QWidget(this);
-  capbility_tag_widget->addTab(tab_control_robot,"robot control");
+  
   QWidget *tab_recognition=new QWidget(this);
   capbility_tag_widget->addTab(tab_recognition,"recognition");
+  QWidget *tab_control_robot=new QWidget(this);
+  capbility_tag_widget->addTab(tab_control_robot,"robot control");
 
   //tab_control_robot
   QGridLayout* robot_control_gridlayout = new QGridLayout(tab_control_robot);        //中间的网格布局
@@ -177,22 +185,30 @@ UrPanel::UrPanel( QWidget* parent )
   tab_control_robot->setLayout(robot_control_gridlayout);
 
     //tab_recognition
-  QGridLayout* recogniton_gridlayout = new QGridLayout(tab_control_robot);
+  QGridLayout* recogniton_gridlayout = new QGridLayout(tab_recognition);
+
   push_button_recognition_ = new QPushButton("Recognition");
+  push_button_recognition_->setStyleSheet("background-color:rgb(255,255,255)");
   connect(push_button_recognition_,SIGNAL(clicked()),this,SLOT(update_recogniton_result() ));
   recogniton_gridlayout->addWidget(push_button_recognition_,0,0,1,2,Qt::AlignRight | Qt::AlignVCenter);
   
-  push_button_confirm_recognition_ = new QPushButton("Confirm");
-  connect(push_button_confirm_recognition_,SIGNAL(clicked()),this,SLOT(confirm_recognition_result() ));
-  recogniton_gridlayout->addWidget(push_button_confirm_recognition_,0,2,1,2,Qt::AlignRight | Qt::AlignVCenter);
+
+  push_button_take_off_ = new QPushButton("Take_off");
+  push_button_take_off_->setStyleSheet("background-color:rgb(255,255,255)");
+  connect(push_button_take_off_,SIGNAL(clicked()),this,SLOT(take_off_result() ));
+  recogniton_gridlayout->addWidget(push_button_take_off_,0,2,1,2,Qt::AlignRight | Qt::AlignVCenter);
   
-  push_button_call_service_ = new QPushButton("grasp");
-  connect(push_button_call_service_,SIGNAL(clicked()),this,SLOT(send_recognition_result() ));
+
+  push_button_call_service_ = new QPushButton("shut_down");
+  push_button_call_service_->setStyleSheet("background-color:rgb(255,255,255)");
+  push_button_call_service_->setEnabled(false);
+  connect(push_button_call_service_,SIGNAL(clicked()),this,SLOT(shut_down_result() ));
   recogniton_gridlayout->addWidget(push_button_call_service_,0,4,1,2,Qt::AlignRight | Qt::AlignVCenter);
   
   text_browser_recogniton_result_ = new QTextBrowser;
   recogniton_gridlayout->addWidget(text_browser_recogniton_result_,1,0,3,6);        //四个数，左上角的点及框的大小 左上y-左上x-纵向长度-
-
+  connect(text_browser_recogniton_result_, SIGNAL(cursorPositionChanged()), this, SLOT(autoScroll()));
+  
 
   tab_recognition->setLayout(recogniton_gridlayout);
 
@@ -204,8 +220,8 @@ UrPanel::UrPanel( QWidget* parent )
 
 
   
-  /*关节信息层*/                                          //最左边的框
-  QGridLayout *joints_state_gridlayout_7x3 = new QGridLayout();
+  /*左侧状态信息层*/                                          //最左边的框
+  QGridLayout *PX4_state_gridlayout_n_2 = new QGridLayout();
 
 
  
@@ -213,22 +229,22 @@ UrPanel::UrPanel( QWidget* parent )
 
 //   push_button_radian_degree_switch_ = new QPushButton("&R/D");
 //   push_button_radian_degree_switch_->setFixedWidth(60);
-//   joints_state_gridlayout_7x3->addWidget(push_button_radian_degree_switch_,0,1,1,1);
+//   PX4_state_gridlayout_n_2->addWidget(push_button_radian_degree_switch_,0,1,1,1);
 //   connect(push_button_radian_degree_switch_,SIGNAL(clicked()),this,SLOT( switch_radian_degree() )  );
 
   /*movej 按钮*/
   push_button_updata_movej_editors_ = new QPushButton("&Update") ;
   push_button_updata_movej_editors_->setFixedWidth(60);
-  joints_state_gridlayout_7x3->addWidget( push_button_updata_movej_editors_,0,1,1,1,Qt::AlignRight | Qt::AlignVCenter );
+  PX4_state_gridlayout_n_2->addWidget( push_button_updata_movej_editors_,0,1,1,1,Qt::AlignRight | Qt::AlignVCenter );
   connect(push_button_updata_movej_editors_,SIGNAL(clicked()),this,SLOT( updata_movej_editors() )  );
   
-  joints_state_gridlayout_7x3->addWidget(new QLabel("Parameters"),0,0);
-  joints_state_gridlayout_7x3->addWidget(new QLabel("connected:"),1,0);
-  joints_state_gridlayout_7x3->addWidget(new QLabel("armed:"),2,0);
-  joints_state_gridlayout_7x3->addWidget(new QLabel("guided:"),3,0);
-  joints_state_gridlayout_7x3->addWidget(new QLabel("manual_input:"),4,0);
-  joints_state_gridlayout_7x3->addWidget(new QLabel("mode:"),5,0);
-  joints_state_gridlayout_7x3->addWidget(new QLabel("system_status:"),6,0);
+  PX4_state_gridlayout_n_2->addWidget(new QLabel("Parameters"),0,0);
+  PX4_state_gridlayout_n_2->addWidget(new QLabel("connected:"),1,0);
+  PX4_state_gridlayout_n_2->addWidget(new QLabel("armed:"),2,0);
+  PX4_state_gridlayout_n_2->addWidget(new QLabel("guided:"),3,0);
+  PX4_state_gridlayout_n_2->addWidget(new QLabel("GPS_Ready:"),4,0);
+  PX4_state_gridlayout_n_2->addWidget(new QLabel("mode:"),5,0);
+  PX4_state_gridlayout_n_2->addWidget(new QLabel("system_status:"),6,0);
   
 
 
@@ -237,10 +253,10 @@ UrPanel::UrPanel( QWidget* parent )
   for(int i=0;i<6;i++)
   {
     //   joint_states_label_[i-1] = new QLabel;
-    //   joints_state_gridlayout_7x3->addWidget(joint_states_label_[i-1],i,1,1,1,Qt::AlignRight | Qt::AlignVCenter);
+    //   PX4_state_gridlayout_n_2->addWidget(joint_states_label_[i-1],i,1,1,1,Qt::AlignRight | Qt::AlignVCenter);
     //   joint_states_label_[i-1]->setFixedWidth(60);
       plane_state_msgs[i] = new QLineEdit;
-      joints_state_gridlayout_7x3->addWidget(plane_state_msgs[i],i+1,1,1,1,Qt::AlignRight | Qt::AlignVCenter);
+      PX4_state_gridlayout_n_2->addWidget(plane_state_msgs[i],i+1,1,1,1,Qt::AlignRight | Qt::AlignVCenter);
     //   connect(plane_state_msgs[i-1],SIGNAL(editingFinished()),this,SLOT(updata_plane_state()));
       plane_state_msgs[i]->setFixedWidth(60);
   }
@@ -273,7 +289,7 @@ UrPanel::UrPanel( QWidget* parent )
   pushbutton_layout_1x1->addWidget( push_button_RobotSTOP );
  
   push_button_movej = new QPushButton("&Movej") ;
-  push_button_movej->setEnabled(false);
+  push_button_movej->setEnabled(false);       //设置是否使能
   push_button_movej->setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Fixed);
   push_button_movej->setMinimumWidth(10);
   push_button_movej->setMaximumWidth(60);
@@ -301,7 +317,7 @@ UrPanel::UrPanel( QWidget* parent )
 
 
   QHBoxLayout* horizontal_layout = new QHBoxLayout;//水平(Horizontal)排列部件的layout层
-  horizontal_layout->addLayout( joints_state_gridlayout_7x3 );
+  horizontal_layout->addLayout( PX4_state_gridlayout_n_2 );
   //horizontal_layout->addStretch();
   horizontal_layout->addLayout( capbility_layout );
   //horizontal_layout->addStretch();
@@ -325,9 +341,12 @@ UrPanel::UrPanel( QWidget* parent )
   output_timer->start( 100 );
 
   //订阅消息，在定时器中进入回调函数
-  robot_state_subscriber_ = nh_.subscribe("joint_states", 1000, &UrPanel::robot_state_callback, this);
-  recogtion_result_subscriber_ = nh_.subscribe("/aruco_single/pose", 1000, &UrPanel::recognition_result_callback, this);
-  state_sub = nh_.subscribe<mavros_msgs::State>("mavros/state", 10, state_cb);
+  robot_state_subscriber_ = nh_.subscribe("joint_states", 1000, &PX4_Panel::robot_state_callback, this);
+  recogtion_result_subscriber_ = nh_.subscribe("/aruco_single/pose", 1000, &PX4_Panel::recognition_result_callback, this);
+  //state_sub = nh_.subscribe<mavros_msgs::State>("mavros/state", 10, state_sub);
+  state_sub = nh_.subscribe("mavros/state",10,state_sub_fuction);
+  //  mavros/global_position/raw/fix   -----GPS_fix话题
+  GPS_sub = nh_.subscribe("mavros/global_position/raw/fix", 10, GPS_fix_sub);
   //service client 
   //execute_grasp_service_client_ = nh_.serviceClient<ur_controller_action::multi_grasptarget_box>("/grasp_target_receiver");
 
@@ -336,7 +355,7 @@ UrPanel::UrPanel( QWidget* parent )
 }
 
 // 更新线速度值
-void UrPanel::update_Linear_Velocity()
+void PX4_Panel::update_Linear_Velocity()
 {
     // 获取输入框内的数据
     QString temp_string = output_topic_editor_1->text();
@@ -349,7 +368,7 @@ void UrPanel::update_Linear_Velocity()
 }
 
 // 更新角速度值
-void UrPanel::update_Angular_Velocity()
+void PX4_Panel::update_Angular_Velocity()
 {
     QString temp_string = output_topic_editor_2->text();
     float ang = temp_string.toFloat();  
@@ -357,20 +376,20 @@ void UrPanel::update_Angular_Velocity()
 }
 
 // 更新topic命名
-void UrPanel::updateTopic()
+void PX4_Panel::updateTopic()
 {
   setTopic( output_topic_editor_->text() );
 }
 
 //界面中按按钮程序停止机器人
-void UrPanel::RobotSTOP_clicked()
+void PX4_Panel::RobotSTOP_clicked()
 {
     TrajClient_->cancelAllGoals();	//机器人停下来
     ROS_ERROR("EMERGENCY! STOP ROBOT!");
 }
 
 //界面中movej按钮
-void UrPanel::control_robot_movej()
+void PX4_Panel::control_robot_movej()
 {
     trajectory_msgs::JointTrajectory msg;
     msg.joint_names.push_back("shoulder_pan_joint");
@@ -399,7 +418,7 @@ void UrPanel::control_robot_movej()
     control_robot_position_movej_publisher_.publish(msg);
 }
 //界面中Track按钮
-void UrPanel::track_aruco_enable()
+void PX4_Panel::track_aruco_enable()
 {
      
     std_msgs::Int16 msg;
@@ -417,7 +436,7 @@ void UrPanel::track_aruco_enable()
 }
 
 //界面中的updata按键
-void UrPanel::updata_movej_editors()
+void PX4_Panel::updata_movej_editors()
 {
     if(!push_button_movej->isEnabled())
     {
@@ -432,28 +451,65 @@ void UrPanel::updata_movej_editors()
 }
 
 //tab widget 中的 recognition按键
-void UrPanel::update_recogniton_result()
+void PX4_Panel::update_recogniton_result()
 {
     std::string temp_str = std::to_string(123443435); 
-    text_browser_recogniton_result_->setText( QString::fromStdString(temp_str.substr(0,temp_str.size()-3) ) );
+    //text_browser_recogniton_result_->append( QString::fromStdString(temp_str.substr(0,temp_str.size()-2) ) );    //添加
+    // text_browser_recogniton_result_->setText( output_msgs );  //设置
+}
+
+void PX4_Panel::autoScroll() 
+{
+    text_browser_recogniton_result_->moveCursor(QTextCursor::End);  //将接收文本框的滚动条滑到最下面
 }
 //tab widget 中的 confirm 按键
-void UrPanel::confirm_recognition_result()
+void PX4_Panel::take_off_result()
 {
-    ROS_INFO("EMERGENCY! STOP ROBOT!");
-    std::cout<<"aaaaaaaa"<<std::endl;
-    QProcess *dos2unix_Process = new QProcess;
+    //参考：https://www.cnblogs.com/wang1994/p/5943154.html
+    //ROS_INFO("EMERGENCY! STOP ROBOT!");
+    //std::cout<<"aaaaaaaa"<<std::endl;
     QString program = "rosrun frenet_optimal_trajectory_pkg offboard_take_off_test_node";
     QStringList arg;
-    dos2unix_Process->setStandardOutputFile("../usb_cam_log.txt"); //可将终端上显示的内容写入到log.txt文件中
-    dos2unix_Process->start(program);
+    //take_off_Process->setStandardOutputFile("/usb_cam_log.txt"); //可将终端上显示的内容写入到log.txt文件中
+    take_off_Process->start(program);
+    if(!take_off_Process->waitForStarted())
+    {
+        qDebug()<<"failure!";
+    }else
+    {
+        qDebug()<<"succ!";
+        //启动成功的判断条件
+        push_button_take_off_->setStyleSheet("background-color:rgb(0,255,0)");
+        push_button_take_off_->setEnabled(false);
+        push_button_call_service_->setEnabled(true);
+        push_button_call_service_->setStyleSheet("background-color:rgb(255,0,0)");
+
+    }
+    QProcess::ProcessState take_off_state = take_off_Process->state();    //获取当前进程的状态
+    switch(take_off_state)
+    {
+        case QProcess::NotRunning:
+            qDebug()<<"Not Running";
+            break;
+        case QProcess::Starting:
+            qDebug()<<"Starting";
+            break;
+        case QProcess::Running:
+            qDebug()<<"Running";
+            break;
+        default:
+            qDebug()<<"otherState";
+            break;
+    }
+
+
     //system("roslaunch usb_cam usb_cam.launch");
-    qDebug()<<"code ending.";
-    qDebug()<<QString::fromLocal8Bit(dos2unix_Process->readAllStandardOutput());
+    //qDebug()<<"code ending.";
+    //qDebug()<<QString::fromLocal8Bit(dos2unix_Process->readAllStandardOutput());
 
 }
 //tab widget 中的 grasp按键
-void UrPanel::send_recognition_result()
+void PX4_Panel::shut_down_result()
 {   
     // multi_grasptarget_srv_.request.grasp_target_pose.resize(0);
     // multi_grasptarget_srv_.request.placement_pose.resize(1);
@@ -485,85 +541,118 @@ void UrPanel::send_recognition_result()
     //     ROS_ERROR("Failed to call service target_position_and_pos");
     // }
 
+    //关闭Take_off程序
+    QString c = "rosrun frenet_optimal_trajectory_pkg offboard_take_off_test_node";
+    //int pInt = QProcess::execute(c);    //关闭后台notepad.exe进程，阻塞式运行,一直占用cpu,成功返回0，失败返回1
+    //qDebug()<<"pInt:"<<pInt;
+    take_off_Process->close();
+    // if(!take_off_Process->waitForFinished())
+    // {
+    //     qDebug()<<"failure!";
+    // }else
+    // {
+    //     qDebug()<<"succ!";
+    // }
+    QProcess::ProcessState take_off_state = take_off_Process->state();    //获取当前进程的状态
+    switch(take_off_state)
+    {
+        case QProcess::NotRunning:
+            qDebug()<<"Not Running";
+            break;
+        case QProcess::Starting:
+            qDebug()<<"Starting";
+            break;
+        case QProcess::Running:
+            qDebug()<<"Running";
+            break;
+        default:
+            qDebug()<<"otherState";
+            break;
+    }
+    push_button_take_off_->setStyleSheet("background-color:rgb(255,255,255)");
+    push_button_take_off_->setEnabled(true);
+    push_button_call_service_->setEnabled(false);
+    push_button_call_service_->setStyleSheet("background-color:rgb(255,255,255)");
+
 }
 
 
 //tab widget 中的 control robot 中的按键
-void UrPanel::control_robot_speedj_1()
+void PX4_Panel::control_robot_speedj_1()
 {
     publish_speedj_(0,1);
 }
-void UrPanel::control_robot_speedj_2()
+void PX4_Panel::control_robot_speedj_2()
 {
     publish_speedj_(0,-1);
 }
-void UrPanel::control_robot_speedj_3()
+void PX4_Panel::control_robot_speedj_3()
 {
     publish_speedj_(1,1);
 }
-void UrPanel::control_robot_speedj_4()
+void PX4_Panel::control_robot_speedj_4()
 {
     publish_speedj_(1,-1);
 }
-void UrPanel::control_robot_speedj_5()
+void PX4_Panel::control_robot_speedj_5()
 {
     publish_speedj_(2,1);
 }
-void UrPanel::control_robot_speedj_6()
+void PX4_Panel::control_robot_speedj_6()
 {
     publish_speedj_(2,-1);
 }
-void UrPanel::control_robot_speedj_7()
+void PX4_Panel::control_robot_speedj_7()
 {
     publish_speedj_(3,1);
 }
-void UrPanel::control_robot_speedj_8()
+void PX4_Panel::control_robot_speedj_8()
 {
     publish_speedj_(3,-1);
 }
-void UrPanel::control_robot_speedj_9()
+void PX4_Panel::control_robot_speedj_9()
 {
     publish_speedj_(4,1);
 }
-void UrPanel::control_robot_speedj_10()
+void PX4_Panel::control_robot_speedj_10()
 {
     publish_speedj_(4,-1);
 }
-void UrPanel::control_robot_speedj_11()
+void PX4_Panel::control_robot_speedj_11()
 {
     publish_speedj_(5,1);
 }
-void UrPanel::control_robot_speedj_12()
+void PX4_Panel::control_robot_speedj_12()
 {
     publish_speedj_(5,-1);
 }
 
-void UrPanel::control_robot_speedl_1()
+void PX4_Panel::control_robot_speedl_1()
 {
     publish_speedl_(0,1);
 }
-void UrPanel::control_robot_speedl_2()
+void PX4_Panel::control_robot_speedl_2()
 {
     publish_speedl_(0,-1);
 }
-void UrPanel::control_robot_speedl_3()
+void PX4_Panel::control_robot_speedl_3()
 {
     publish_speedl_(1,1);
 }
-void UrPanel::control_robot_speedl_4()
+void PX4_Panel::control_robot_speedl_4()
 {
     publish_speedl_(1,-1);
 }
-void UrPanel::control_robot_speedl_5()
+void PX4_Panel::control_robot_speedl_5()
 {
     publish_speedl_(2,1);
 }
-void UrPanel::control_robot_speedl_6()
+void PX4_Panel::control_robot_speedl_6()
 {
     publish_speedl_(2,-1);
 }
 
-void UrPanel::switch_radian_degree()
+void PX4_Panel::switch_radian_degree()
 {
     if(jointstates_use_radian_FLAG_==true)
     {
@@ -585,7 +674,7 @@ void UrPanel::switch_radian_degree()
 
 
 //更新无人机的状态
-void UrPanel::updata_plane_state()
+void PX4_Panel::updata_plane_state()
 {
     // srand((unsigned)time(NULL));  
     // for(int i=0;i<6;i++)
@@ -633,19 +722,26 @@ void UrPanel::updata_plane_state()
     // {
     //     data = "true";
     // }
+    data = std::to_string(GPS_fix_state.status);
     plane_state_msgs[3]->setText( QString::fromStdString(data) );
     plane_state_msgs[4]->setText( QString::fromStdString(current_state.mode) );
     data = std::to_string(current_state.system_status);
     plane_state_msgs[5]->setText( QString::fromStdString(data) );
+    // //test
+    // std::cout<<GPS_fix_state.status<<std::endl;
+    // std::cout<<"-------------"<<std::endl;
+    output_msgs = take_off_Process->readAllStandardOutput();  //将takeoff程序的输出内容获取
+    if(output_msgs.size()>0)
+    {
+        text_browser_recogniton_result_->append( output_msgs );  //追加文字
 
-
-
+    }
 
 }
 
 
 // 设置topic命名
-void UrPanel::setTopic( const QString& new_topic )
+void PX4_Panel::setTopic( const QString& new_topic )
 {
   // 检查topic是否发生改变.
   if( new_topic != output_topic_ )
@@ -668,7 +764,7 @@ void UrPanel::setTopic( const QString& new_topic )
 }
 
 // 发布消息
-void UrPanel::sendVel()
+void PX4_Panel::sendVel()
 {
     if( ros::ok() && velocity_publisher_ )
     {
@@ -700,14 +796,14 @@ void UrPanel::sendVel()
 }
 
 // 重载父类的功能
-void UrPanel::save( rviz::Config config ) const
+void PX4_Panel::save( rviz::Config config ) const
 {
   rviz::Panel::save( config );
   config.mapSetValue( "Topic", output_topic_ );
 }
 
 // 重载父类的功能，加载配置数据
-void UrPanel::load( const rviz::Config& config )
+void PX4_Panel::load( const rviz::Config& config )
 {
   rviz::Panel::load( config );
   QString topic;
@@ -718,7 +814,7 @@ void UrPanel::load( const rviz::Config& config )
 
 
 
-void UrPanel::robot_state_callback(const sensor_msgs::JointStateConstPtr& state)
+void PX4_Panel::robot_state_callback(const sensor_msgs::JointStateConstPtr& state)
 {
     joint_states_.resize(6);
     double velocities_square_sum =0;
@@ -758,7 +854,7 @@ void UrPanel::robot_state_callback(const sensor_msgs::JointStateConstPtr& state)
     }    
 }
 
-void UrPanel::recognition_result_callback(const geometry_msgs::PoseStampedPtr msg)
+void PX4_Panel::recognition_result_callback(const geometry_msgs::PoseStampedPtr msg)
 {
     try{
         geometry_msgs::TransformStamped transformStamped;
@@ -807,7 +903,7 @@ void UrPanel::recognition_result_callback(const geometry_msgs::PoseStampedPtr ms
  
 
 }
-void UrPanel::publish_speedj_(int joint_index , int d_or_i)
+void PX4_Panel::publish_speedj_(int joint_index , int d_or_i)
 {
     trajectory_msgs::JointTrajectory msg;
     msg.joint_names.push_back("shoulder_pan_joint");
@@ -834,7 +930,7 @@ void UrPanel::publish_speedj_(int joint_index , int d_or_i)
     control_robot_speedj_publisher_.publish(msg);
 }
 
-void UrPanel::publish_speedl_(int dimension , int d_or_i)
+void PX4_Panel::publish_speedl_(int dimension , int d_or_i)
 {
     trajectory_msgs::JointTrajectory msg;
     msg.points.resize(1);
@@ -857,7 +953,7 @@ void UrPanel::publish_speedl_(int dimension , int d_or_i)
     control_robot_speddl_publisher_.publish(msg);
 }
 
-bool UrPanel::ReadMatrix(std::string FileName, Eigen::Matrix4d& transMat)
+bool PX4_Panel::ReadMatrix(std::string FileName, Eigen::Matrix4d& transMat)
 {
     cv::FileStorage fs(FileName, cv::FileStorage::READ);
     if (!fs.isOpened())
@@ -871,7 +967,7 @@ bool UrPanel::ReadMatrix(std::string FileName, Eigen::Matrix4d& transMat)
     return true;
 }
 
-Eigen::Matrix4d UrPanel::transRosMsgPose2EigenMatrix(geometry_msgs::Pose pose)
+Eigen::Matrix4d PX4_Panel::transRosMsgPose2EigenMatrix(geometry_msgs::Pose pose)
 {
 	Eigen::Matrix4d matrix_temp = Eigen::Matrix4d::Identity();
 	Eigen::Quaterniond q_temp; 
@@ -905,7 +1001,7 @@ Eigen::Matrix4d transRosMsgTransform2EigenMatrix(geometry_msgs::Transform transf
     // ROS_ERROR("5");
 	return matrix_temp;
 }
-geometry_msgs::Pose UrPanel::transEigenMatrix2RosMsgPose(Eigen::Matrix4d matrix)
+geometry_msgs::Pose PX4_Panel::transEigenMatrix2RosMsgPose(Eigen::Matrix4d matrix)
 {
     geometry_msgs::Pose pose_temp;
     pose_temp.position.x = matrix(0,3);
@@ -937,5 +1033,5 @@ geometry_msgs::Pose UrPanel::transEigenMatrix2RosMsgPose(Eigen::Matrix4d matrix)
 
 // 声明此类是一个rviz的插件
 #include <pluginlib/class_list_macros.h>
-PLUGINLIB_EXPORT_CLASS(ur_rviz_plugin::UrPanel,rviz::Panel )
+PLUGINLIB_EXPORT_CLASS(ur_rviz_plugin::PX4_Panel,rviz::Panel )
 // END_TUTORIAL

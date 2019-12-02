@@ -289,3 +289,19 @@ add_dependencies(tracking_cam_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_
 target_link_libraries(tracking_cam_node
   ${catkin_LIBRARIES}
 )
+
+add_executable(tracking_cam_anyyaw_node
+  src/tracking_cam_anyyaw_node.cpp
+)
+add_dependencies(tracking_cam_anyyaw_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(tracking_cam_anyyaw_node
+  ${catkin_LIBRARIES}
+)
+
+add_executable(path_tracking_node
+  src/path_tracking_node.cpp
+)
+add_dependencies(path_tracking_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(path_tracking_node
+  ${catkin_LIBRARIES}
+)

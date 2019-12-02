@@ -247,6 +247,7 @@ ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o: /opt/ros/ki
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/CompressedImage.h
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Image.h
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/JointState.h
+ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/PointCloud.h
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o: /opt/ros/kinetic/include/std_msgs/Empty.h
@@ -820,6 +821,7 @@ ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o: /opt/ros/kineti
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/CompressedImage.h
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Image.h
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/JointState.h
+ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/PointCloud.h
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o: /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o: /opt/ros/kinetic/include/std_msgs/Empty.h

@@ -17,6 +17,8 @@ QtCore/qmetatype.h
 /home/dqn/drone_formation/src/ur_rviz_plugin/src/ur_panel.cpp
 stdio.h
 -
+string
+-
 time.h
 -
 QPainter
@@ -68,6 +70,8 @@ geometry_msgs/PoseStamped.h
 geometry_msgs/Transform.h
 -
 mavros_msgs/State.h
+-
+sensor_msgs/NavSatStatus.h
 -
 actionlib/client/simple_action_client.h
 -
@@ -3018,6 +3022,22 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 std_msgs/Header.h
+-
+
+/opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 
 /opt/ros/kinetic/include/sensor_msgs/PointCloud.h

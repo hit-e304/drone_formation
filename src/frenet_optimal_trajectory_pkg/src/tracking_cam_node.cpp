@@ -83,7 +83,15 @@
 //     }
 // }
 
-int flag_take_off = 1;
+
+enum MissionState
+{
+    TakeOff,//起飞
+    Patrol,//巡逻
+    TrackingCam
+};
+// int flag_take_off = 1;
+MissionState PX4_current_mission_state = TakeOff;
 tfScalar yaw,pitch,roll;
 tf::Quaternion q;
 mavros_msgs::State current_state;
@@ -205,7 +213,7 @@ int main(int argc, char **argv)
             }
         }
 
-        if(flag_take_off)
+        if(PX4_current_mission_state == TakeOff)
         {
             position_target_local.position.x = 0;
             position_target_local.position.y = 0;
@@ -213,11 +221,24 @@ int main(int argc, char **argv)
 
             if(3 - current_pose.pose.position.z < 0.2)
             {
-                flag_take_off = 0;
+                PX4_current_mission_state = Patrol;
             }
             local_target_pub.publish(position_target_local);
         }
-        else 
+        else if(PX4_current_mission_state == Patrol)
+        {
+            position_target_local.type_mask = mavros_msgs::PositionTarget::IGNORE_YAW;
+            position_target_local.position.x = 0;
+            position_target_local.position.y = 0;
+            position_target_local.position.z = 3;
+            position_target_local.yaw_rate = 1;
+            if(camera_data.find_obs_flag)
+            {
+                PX4_current_mission_state = TrackingCam;
+            }
+            local_target_pub.publish(position_target_local);
+        }
+        else if(PX4_current_mission_state == TrackingCam)
         {
             Eigen::Vector3d temp_pos(current_pose.pose.position.x, current_pose.pose.position.y, current_pose.pose.position.z);
             Eigen::Vector3d temp_pos_new;
@@ -262,6 +283,7 @@ int main(int argc, char **argv)
             temp_vel = Matrix_from_local_to_new * temp_vel_new;
             position_target_local.velocity.x = temp_vel(0);
             position_target_local.velocity.y = temp_vel(1);
+            // position_target_local.yaw_rate = 0;
             // position_target_local.velocity.z = temp_vel(2);
             local_target_pub.publish(position_target_local);
         }
