@@ -256,6 +256,21 @@ offb_fixed_flight_node/fast:
 .PHONY : offb_fixed_flight_node/fast
 
 # Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
+
+# Convenience name for target.
+path_tracking_node: frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
+
+.PHONY : path_tracking_node
+
+# fast build rule for target.
+path_tracking_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build
+.PHONY : path_tracking_node/fast
+
+# Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule:
 	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
@@ -573,6 +588,33 @@ src/offboard_take_off_test_node.cpp.s:
 	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/src/offboard_take_off_test_node.cpp.s
 .PHONY : src/offboard_take_off_test_node.cpp.s
 
+src/path_tracking_node.o: src/path_tracking_node.cpp.o
+
+.PHONY : src/path_tracking_node.o
+
+# target to build an object file
+src/path_tracking_node.cpp.o:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o
+.PHONY : src/path_tracking_node.cpp.o
+
+src/path_tracking_node.i: src/path_tracking_node.cpp.i
+
+.PHONY : src/path_tracking_node.i
+
+# target to preprocess a source file
+src/path_tracking_node.cpp.i:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.i
+.PHONY : src/path_tracking_node.cpp.i
+
+src/path_tracking_node.s: src/path_tracking_node.cpp.s
+
+.PHONY : src/path_tracking_node.s
+
+# target to generate assembly for a file
+src/path_tracking_node.cpp.s:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.s
+.PHONY : src/path_tracking_node.cpp.s
+
 src/tracking_cam_anyyaw_node.o: src/tracking_cam_anyyaw_node.cpp.o
 
 .PHONY : src/tracking_cam_anyyaw_node.o
@@ -644,6 +686,7 @@ help:
 	@echo "... install/strip"
 	@echo "... offboard_take_off_test_node"
 	@echo "... offb_fixed_flight_node"
+	@echo "... path_tracking_node"
 	@echo "... CubicSplinePlanner"
 	@echo "... gazebo_one_drone_planning"
 	@echo "... edit_cache"
@@ -678,6 +721,9 @@ help:
 	@echo "... src/offboard_take_off_test_node.o"
 	@echo "... src/offboard_take_off_test_node.i"
 	@echo "... src/offboard_take_off_test_node.s"
+	@echo "... src/path_tracking_node.o"
+	@echo "... src/path_tracking_node.i"
+	@echo "... src/path_tracking_node.s"
 	@echo "... src/tracking_cam_anyyaw_node.o"
 	@echo "... src/tracking_cam_anyyaw_node.i"
 	@echo "... src/tracking_cam_anyyaw_node.s"

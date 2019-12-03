@@ -86,6 +86,7 @@
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/install/strip.dir
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir
+/home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir
 /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/edit_cache.dir

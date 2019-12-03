@@ -881,6 +881,19 @@ offb_fixed_flight_node/fast:
 .PHONY : offb_fixed_flight_node/fast
 
 #=============================================================================
+# Target rules for targets named path_tracking_node
+
+# Build rule for target.
+path_tracking_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 path_tracking_node
+.PHONY : path_tracking_node
+
+# fast build rule for target.
+path_tracking_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build
+.PHONY : path_tracking_node/fast
+
+#=============================================================================
 # Target rules for targets named CubicSplinePlanner
 
 # Build rule for target.
@@ -1702,6 +1715,7 @@ help:
 	@echo "... RangeImpl"
 	@echo "... offboard_take_off_test_node"
 	@echo "... offb_fixed_flight_node"
+	@echo "... path_tracking_node"
 	@echo "... CubicSplinePlanner"
 	@echo "... gazebo_one_drone_planning"
 	@echo "... QuinticPolynomial"

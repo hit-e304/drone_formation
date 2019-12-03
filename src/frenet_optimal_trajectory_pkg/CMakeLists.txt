@@ -301,7 +301,9 @@ target_link_libraries(tracking_cam_anyyaw_node
 add_executable(path_tracking_node
   src/path_tracking_node.cpp
 )
-add_dependencies(path_tracking_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(path_tracking_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} RangeImpl CubicSplinePlanner)
 target_link_libraries(path_tracking_node
   ${catkin_LIBRARIES}
+  RangeImpl
+  CubicSplinePlanner
 )
