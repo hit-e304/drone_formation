@@ -56,38 +56,28 @@ CMAKE_BINARY_DIR = /home/dqn/drone_formation/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
-.PHONY : rebuild_cache/fast
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -110,28 +100,38 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target install/local
+install/local/fast: install/local
 
-.PHONY : edit_cache/fast
+.PHONY : install/local/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,154 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
+frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
 
 # Convenience name for target.
-tracking_cam_anyyaw_node: frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
+tracking_cam_node: frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
 
-.PHONY : tracking_cam_anyyaw_node
+.PHONY : tracking_cam_node
 
 # fast build rule for target.
-tracking_cam_anyyaw_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build
-.PHONY : tracking_cam_anyyaw_node/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule
-
-# Convenience name for target.
-QuarticPolynomial: frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule
-
-.PHONY : QuarticPolynomial
-
-# fast build rule for target.
-QuarticPolynomial/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build
-.PHONY : QuarticPolynomial/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule
-
-# Convenience name for target.
-generate_sim_planning_path: frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule
-
-.PHONY : generate_sim_planning_path
-
-# fast build rule for target.
-generate_sim_planning_path/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build
-.PHONY : generate_sim_planning_path/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
-
-# Convenience name for target.
-RangeImpl: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
-
-.PHONY : RangeImpl
-
-# fast build rule for target.
-RangeImpl/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
-.PHONY : RangeImpl/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
-
-# Convenience name for target.
-offboard_take_off_test_node: frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
-
-.PHONY : offboard_take_off_test_node
-
-# fast build rule for target.
-offboard_take_off_test_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build
-.PHONY : offboard_take_off_test_node/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
-
-# Convenience name for target.
-offb_fixed_flight_node: frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
-
-.PHONY : offb_fixed_flight_node
-
-# fast build rule for target.
-offb_fixed_flight_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build
-.PHONY : offb_fixed_flight_node/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
-
-# Convenience name for target.
-path_tracking_node: frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
-
-.PHONY : path_tracking_node
-
-# fast build rule for target.
-path_tracking_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build
-.PHONY : path_tracking_node/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
-
-# Convenience name for target.
-CubicSplinePlanner: frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
-
-.PHONY : CubicSplinePlanner
-
-# fast build rule for target.
-CubicSplinePlanner/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build
-.PHONY : CubicSplinePlanner/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
-
-# Convenience name for target.
-gazebo_one_drone_planning: frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
-
-.PHONY : gazebo_one_drone_planning
-
-# fast build rule for target.
-gazebo_one_drone_planning/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build
-.PHONY : gazebo_one_drone_planning/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule
-
-# Convenience name for target.
-QuinticPolynomial: frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule
-
-.PHONY : QuinticPolynomial
-
-# fast build rule for target.
-QuinticPolynomial/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build
-.PHONY : QuinticPolynomial/fast
+tracking_cam_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build
+.PHONY : tracking_cam_node/fast
 
 # Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/rule:
@@ -331,19 +196,214 @@ ez_sim_planning/fast:
 .PHONY : ez_sim_planning/fast
 
 # Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
+frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule
 
 # Convenience name for target.
-tracking_cam_node: frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
+QuinticPolynomial: frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule
 
-.PHONY : tracking_cam_node
+.PHONY : QuinticPolynomial
 
 # fast build rule for target.
-tracking_cam_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build
-.PHONY : tracking_cam_node/fast
+QuinticPolynomial/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build
+.PHONY : QuinticPolynomial/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
+
+# Convenience name for target.
+CubicSplinePlanner: frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
+
+.PHONY : CubicSplinePlanner
+
+# fast build rule for target.
+CubicSplinePlanner/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build
+.PHONY : CubicSplinePlanner/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
+
+# Convenience name for target.
+offb_fixed_flight_node: frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
+
+.PHONY : offb_fixed_flight_node
+
+# fast build rule for target.
+offb_fixed_flight_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build
+.PHONY : offb_fixed_flight_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
+
+# Convenience name for target.
+offboard_take_off_test_node: frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
+
+.PHONY : offboard_take_off_test_node
+
+# fast build rule for target.
+offboard_take_off_test_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build
+.PHONY : offboard_take_off_test_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule
+
+# Convenience name for target.
+generate_sim_planning_path: frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule
+
+.PHONY : generate_sim_planning_path
+
+# fast build rule for target.
+generate_sim_planning_path/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build
+.PHONY : generate_sim_planning_path/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
+
+# Convenience name for target.
+tracking_cam_anyyaw_node: frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
+
+.PHONY : tracking_cam_anyyaw_node
+
+# fast build rule for target.
+tracking_cam_anyyaw_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build
+.PHONY : tracking_cam_anyyaw_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule
+
+# Convenience name for target.
+three_drone_take_off_test_node: frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule
+
+.PHONY : three_drone_take_off_test_node
+
+# fast build rule for target.
+three_drone_take_off_test_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build
+.PHONY : three_drone_take_off_test_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
+
+# Convenience name for target.
+gazebo_one_drone_planning: frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
+
+.PHONY : gazebo_one_drone_planning
+
+# fast build rule for target.
+gazebo_one_drone_planning/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build
+.PHONY : gazebo_one_drone_planning/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule
+
+# Convenience name for target.
+three_drone_take_off_together_node: frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule
+
+.PHONY : three_drone_take_off_together_node
+
+# fast build rule for target.
+three_drone_take_off_together_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build
+.PHONY : three_drone_take_off_together_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule
+
+# Convenience name for target.
+leader_follower_node: frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule
+
+.PHONY : leader_follower_node
+
+# fast build rule for target.
+leader_follower_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build
+.PHONY : leader_follower_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule
+
+# Convenience name for target.
+virtual_structure_node: frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule
+
+.PHONY : virtual_structure_node
+
+# fast build rule for target.
+virtual_structure_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build
+.PHONY : virtual_structure_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
+
+# Convenience name for target.
+path_tracking_node: frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
+
+.PHONY : path_tracking_node
+
+# fast build rule for target.
+path_tracking_node/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build
+.PHONY : path_tracking_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+
+# Convenience name for target.
+RangeImpl: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+
+.PHONY : RangeImpl
+
+# fast build rule for target.
+RangeImpl/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
+.PHONY : RangeImpl/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule
+
+# Convenience name for target.
+QuarticPolynomial: frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule
+
+.PHONY : QuarticPolynomial
+
+# fast build rule for target.
+QuarticPolynomial/fast:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build
+.PHONY : QuarticPolynomial/fast
 
 src/CubicSplinePlanner.o: src/CubicSplinePlanner.cpp.o
 
@@ -534,6 +594,33 @@ src/generate_sim_planning_path.cpp.s:
 	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/src/generate_sim_planning_path.cpp.s
 .PHONY : src/generate_sim_planning_path.cpp.s
 
+src/leader_follower_node.o: src/leader_follower_node.cpp.o
+
+.PHONY : src/leader_follower_node.o
+
+# target to build an object file
+src/leader_follower_node.cpp.o:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/src/leader_follower_node.cpp.o
+.PHONY : src/leader_follower_node.cpp.o
+
+src/leader_follower_node.i: src/leader_follower_node.cpp.i
+
+.PHONY : src/leader_follower_node.i
+
+# target to preprocess a source file
+src/leader_follower_node.cpp.i:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/src/leader_follower_node.cpp.i
+.PHONY : src/leader_follower_node.cpp.i
+
+src/leader_follower_node.s: src/leader_follower_node.cpp.s
+
+.PHONY : src/leader_follower_node.s
+
+# target to generate assembly for a file
+src/leader_follower_node.cpp.s:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/src/leader_follower_node.cpp.s
+.PHONY : src/leader_follower_node.cpp.s
+
 src/offb_fixed_flight_node.o: src/offb_fixed_flight_node.cpp.o
 
 .PHONY : src/offb_fixed_flight_node.o
@@ -615,6 +702,60 @@ src/path_tracking_node.cpp.s:
 	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.s
 .PHONY : src/path_tracking_node.cpp.s
 
+src/three_drone_take_off_test_node.o: src/three_drone_take_off_test_node.cpp.o
+
+.PHONY : src/three_drone_take_off_test_node.o
+
+# target to build an object file
+src/three_drone_take_off_test_node.cpp.o:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/src/three_drone_take_off_test_node.cpp.o
+.PHONY : src/three_drone_take_off_test_node.cpp.o
+
+src/three_drone_take_off_test_node.i: src/three_drone_take_off_test_node.cpp.i
+
+.PHONY : src/three_drone_take_off_test_node.i
+
+# target to preprocess a source file
+src/three_drone_take_off_test_node.cpp.i:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/src/three_drone_take_off_test_node.cpp.i
+.PHONY : src/three_drone_take_off_test_node.cpp.i
+
+src/three_drone_take_off_test_node.s: src/three_drone_take_off_test_node.cpp.s
+
+.PHONY : src/three_drone_take_off_test_node.s
+
+# target to generate assembly for a file
+src/three_drone_take_off_test_node.cpp.s:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/src/three_drone_take_off_test_node.cpp.s
+.PHONY : src/three_drone_take_off_test_node.cpp.s
+
+src/three_drone_take_off_together_node.o: src/three_drone_take_off_together_node.cpp.o
+
+.PHONY : src/three_drone_take_off_together_node.o
+
+# target to build an object file
+src/three_drone_take_off_together_node.cpp.o:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/src/three_drone_take_off_together_node.cpp.o
+.PHONY : src/three_drone_take_off_together_node.cpp.o
+
+src/three_drone_take_off_together_node.i: src/three_drone_take_off_together_node.cpp.i
+
+.PHONY : src/three_drone_take_off_together_node.i
+
+# target to preprocess a source file
+src/three_drone_take_off_together_node.cpp.i:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/src/three_drone_take_off_together_node.cpp.i
+.PHONY : src/three_drone_take_off_together_node.cpp.i
+
+src/three_drone_take_off_together_node.s: src/three_drone_take_off_together_node.cpp.s
+
+.PHONY : src/three_drone_take_off_together_node.s
+
+# target to generate assembly for a file
+src/three_drone_take_off_together_node.cpp.s:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/src/three_drone_take_off_together_node.cpp.s
+.PHONY : src/three_drone_take_off_together_node.cpp.s
+
 src/tracking_cam_anyyaw_node.o: src/tracking_cam_anyyaw_node.cpp.o
 
 .PHONY : src/tracking_cam_anyyaw_node.o
@@ -669,31 +810,62 @@ src/tracking_cam_node.cpp.s:
 	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/src/tracking_cam_node.cpp.s
 .PHONY : src/tracking_cam_node.cpp.s
 
+src/virtual_structure_node.o: src/virtual_structure_node.cpp.o
+
+.PHONY : src/virtual_structure_node.o
+
+# target to build an object file
+src/virtual_structure_node.cpp.o:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/src/virtual_structure_node.cpp.o
+.PHONY : src/virtual_structure_node.cpp.o
+
+src/virtual_structure_node.i: src/virtual_structure_node.cpp.i
+
+.PHONY : src/virtual_structure_node.i
+
+# target to preprocess a source file
+src/virtual_structure_node.cpp.i:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/src/virtual_structure_node.cpp.i
+.PHONY : src/virtual_structure_node.cpp.i
+
+src/virtual_structure_node.s: src/virtual_structure_node.cpp.s
+
+.PHONY : src/virtual_structure_node.s
+
+# target to generate assembly for a file
+src/virtual_structure_node.cpp.s:
+	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/src/virtual_structure_node.cpp.s
+.PHONY : src/virtual_structure_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... test"
-	@echo "... install/local"
-	@echo "... tracking_cam_anyyaw_node"
-	@echo "... QuarticPolynomial"
-	@echo "... generate_sim_planning_path"
-	@echo "... RangeImpl"
-	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... offboard_take_off_test_node"
-	@echo "... offb_fixed_flight_node"
-	@echo "... path_tracking_node"
-	@echo "... CubicSplinePlanner"
-	@echo "... gazebo_one_drone_planning"
-	@echo "... edit_cache"
-	@echo "... QuinticPolynomial"
-	@echo "... ez_sim_planning"
-	@echo "... install"
 	@echo "... tracking_cam_node"
+	@echo "... install"
+	@echo "... ez_sim_planning"
+	@echo "... QuinticPolynomial"
+	@echo "... edit_cache"
+	@echo "... CubicSplinePlanner"
+	@echo "... offb_fixed_flight_node"
+	@echo "... list_install_components"
+	@echo "... offboard_take_off_test_node"
+	@echo "... generate_sim_planning_path"
+	@echo "... tracking_cam_anyyaw_node"
+	@echo "... three_drone_take_off_test_node"
+	@echo "... gazebo_one_drone_planning"
+	@echo "... three_drone_take_off_together_node"
+	@echo "... leader_follower_node"
+	@echo "... install/strip"
+	@echo "... virtual_structure_node"
+	@echo "... path_tracking_node"
+	@echo "... install/local"
+	@echo "... RangeImpl"
+	@echo "... test"
+	@echo "... QuarticPolynomial"
+	@echo "... rebuild_cache"
 	@echo "... src/CubicSplinePlanner.o"
 	@echo "... src/CubicSplinePlanner.i"
 	@echo "... src/CubicSplinePlanner.s"
@@ -715,6 +887,9 @@ help:
 	@echo "... src/generate_sim_planning_path.o"
 	@echo "... src/generate_sim_planning_path.i"
 	@echo "... src/generate_sim_planning_path.s"
+	@echo "... src/leader_follower_node.o"
+	@echo "... src/leader_follower_node.i"
+	@echo "... src/leader_follower_node.s"
 	@echo "... src/offb_fixed_flight_node.o"
 	@echo "... src/offb_fixed_flight_node.i"
 	@echo "... src/offb_fixed_flight_node.s"
@@ -724,12 +899,21 @@ help:
 	@echo "... src/path_tracking_node.o"
 	@echo "... src/path_tracking_node.i"
 	@echo "... src/path_tracking_node.s"
+	@echo "... src/three_drone_take_off_test_node.o"
+	@echo "... src/three_drone_take_off_test_node.i"
+	@echo "... src/three_drone_take_off_test_node.s"
+	@echo "... src/three_drone_take_off_together_node.o"
+	@echo "... src/three_drone_take_off_together_node.i"
+	@echo "... src/three_drone_take_off_together_node.s"
 	@echo "... src/tracking_cam_anyyaw_node.o"
 	@echo "... src/tracking_cam_anyyaw_node.i"
 	@echo "... src/tracking_cam_anyyaw_node.s"
 	@echo "... src/tracking_cam_node.o"
 	@echo "... src/tracking_cam_node.i"
 	@echo "... src/tracking_cam_node.s"
+	@echo "... src/virtual_structure_node.o"
+	@echo "... src/virtual_structure_node.i"
+	@echo "... src/virtual_structure_node.s"
 .PHONY : help
 
 

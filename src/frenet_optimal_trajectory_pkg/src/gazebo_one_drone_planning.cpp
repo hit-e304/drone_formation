@@ -378,8 +378,9 @@ int main(int argc, char *argv[])
     while(ros::ok() && !current_state.connected){
         ros::spinOnce();
         rate.sleep();
-        cout << "aaaaaaa" << endl;
+        ROS_INFO("connecting...");
     }
+    ROS_INFO("connected!");
 
     geometry_msgs::PoseStamped pose;
     pose.pose.position.x = 0;

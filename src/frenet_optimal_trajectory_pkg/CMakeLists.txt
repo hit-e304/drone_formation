@@ -307,3 +307,39 @@ target_link_libraries(path_tracking_node
   RangeImpl
   CubicSplinePlanner
 )
+
+add_executable(three_drone_take_off_test_node
+  src/three_drone_take_off_test_node.cpp
+)
+add_dependencies(three_drone_take_off_test_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(three_drone_take_off_test_node
+  ${catkin_LIBRARIES}
+)
+
+add_executable(three_drone_take_off_together_node
+  src/three_drone_take_off_together_node.cpp
+)
+add_dependencies(three_drone_take_off_together_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(three_drone_take_off_together_node
+  ${catkin_LIBRARIES}
+)
+
+add_executable(leader_follower_node
+  src/leader_follower_node.cpp
+)
+add_dependencies(leader_follower_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} RangeImpl CubicSplinePlanner)
+target_link_libraries(leader_follower_node
+  ${catkin_LIBRARIES}
+  RangeImpl
+  CubicSplinePlanner
+)
+
+add_executable(virtual_structure_node
+  src/virtual_structure_node.cpp
+)
+add_dependencies(virtual_structure_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} RangeImpl CubicSplinePlanner)
+target_link_libraries(virtual_structure_node
+  ${catkin_LIBRARIES}
+  RangeImpl
+  CubicSplinePlanner
+)

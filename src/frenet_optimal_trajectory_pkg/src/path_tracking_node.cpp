@@ -30,6 +30,7 @@ double ahead_distance = 0.6;//实时目标点向前的距离
 double k = 0.1; //速度的增益
 
 int flag_take_off = 1;
+
 tfScalar yaw,pitch,roll;
 mavros_msgs::State current_state;
 void state_cb(const mavros_msgs::State::ConstPtr& msg){
@@ -70,7 +71,7 @@ generate_target_course(vector<double> x, vector<double> y, vector<double> &rx, v
     Spline2D csp(x, y);
     vector<double> ixy;
     // Cosmos::RangeImpl<int> s = Cosmos::Range(0, int(csp.s.back()), 5);
-    for (auto i_s : Cosmos::Range(0, int(csp.s.back()), 0.2)) {
+    for (auto i_s : Cosmos::Range(0, int(csp.s.back()), 0.02)) {
         ixy = csp.calc_position(i_s);
         rx.push_back(ixy[0]);
         ry.push_back(ixy[1]);
@@ -179,30 +180,40 @@ int main(int argc, char **argv)
     mavros_msgs::CommandBool arm_cmd;
     arm_cmd.request.value = true;
 
+    bool offboard_enabled_flag = offb_set_mode.response.mode_sent;
+    bool vehicle_armed_flag = arm_cmd.response.success;
+
     ros::Time last_request = ros::Time::now();
 
     ofstream fly_log("/home/dqn/drone_formation/src/fly_log.txt");
     
 
     while(ros::ok()){
-        if( current_state.mode != "OFFBOARD" &&
-            (ros::Time::now() - last_request > ros::Duration(5.0))){
-            if( set_mode_client.call(offb_set_mode) &&
-                offb_set_mode.response.mode_sent){
-                ROS_INFO("Offboard enabled");
-            }
-            last_request = ros::Time::now();
-        } else {
-            if( !current_state.armed &&
+        if(!(offboard_enabled_flag && vehicle_armed_flag)){
+            if( current_state.mode != "OFFBOARD" &&
                 (ros::Time::now() - last_request > ros::Duration(5.0))){
-                if( arming_client.call(arm_cmd) &&
-                    arm_cmd.response.success){
-                    ROS_INFO("Vehicle armed");
+                if( set_mode_client.call(offb_set_mode) &&
+                    offb_set_mode.response.mode_sent){
+                    ROS_INFO("Offboard enabled");
+                    
                 }
                 last_request = ros::Time::now();
+            } else {
+                if( !current_state.armed &&
+                    (ros::Time::now() - last_request > ros::Duration(5.0))){
+                    if( arming_client.call(arm_cmd) &&
+                        arm_cmd.response.success){
+                        ROS_INFO("Vehicle armed");
+                        
+                    }
+                    last_request = ros::Time::now();
+                }
             }
         }
-
+        offboard_enabled_flag = offb_set_mode.response.mode_sent;
+        vehicle_armed_flag = arm_cmd.response.success;
+    // }
+    // while(ros::ok()){
         if(flag_take_off)
         {
             position_target_local.position.x = 0;

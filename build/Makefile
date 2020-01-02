@@ -803,134 +803,17 @@ std_msgs_generate_messages_lisp/fast:
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named tracking_cam_anyyaw_node
+# Target rules for targets named tracking_cam_node
 
 # Build rule for target.
-tracking_cam_anyyaw_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tracking_cam_anyyaw_node
-.PHONY : tracking_cam_anyyaw_node
+tracking_cam_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tracking_cam_node
+.PHONY : tracking_cam_node
 
 # fast build rule for target.
-tracking_cam_anyyaw_node/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build
-.PHONY : tracking_cam_anyyaw_node/fast
-
-#=============================================================================
-# Target rules for targets named QuarticPolynomial
-
-# Build rule for target.
-QuarticPolynomial: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 QuarticPolynomial
-.PHONY : QuarticPolynomial
-
-# fast build rule for target.
-QuarticPolynomial/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build
-.PHONY : QuarticPolynomial/fast
-
-#=============================================================================
-# Target rules for targets named generate_sim_planning_path
-
-# Build rule for target.
-generate_sim_planning_path: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 generate_sim_planning_path
-.PHONY : generate_sim_planning_path
-
-# fast build rule for target.
-generate_sim_planning_path/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build
-.PHONY : generate_sim_planning_path/fast
-
-#=============================================================================
-# Target rules for targets named RangeImpl
-
-# Build rule for target.
-RangeImpl: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RangeImpl
-.PHONY : RangeImpl
-
-# fast build rule for target.
-RangeImpl/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
-.PHONY : RangeImpl/fast
-
-#=============================================================================
-# Target rules for targets named offboard_take_off_test_node
-
-# Build rule for target.
-offboard_take_off_test_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 offboard_take_off_test_node
-.PHONY : offboard_take_off_test_node
-
-# fast build rule for target.
-offboard_take_off_test_node/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build
-.PHONY : offboard_take_off_test_node/fast
-
-#=============================================================================
-# Target rules for targets named offb_fixed_flight_node
-
-# Build rule for target.
-offb_fixed_flight_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 offb_fixed_flight_node
-.PHONY : offb_fixed_flight_node
-
-# fast build rule for target.
-offb_fixed_flight_node/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build
-.PHONY : offb_fixed_flight_node/fast
-
-#=============================================================================
-# Target rules for targets named path_tracking_node
-
-# Build rule for target.
-path_tracking_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 path_tracking_node
-.PHONY : path_tracking_node
-
-# fast build rule for target.
-path_tracking_node/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build
-.PHONY : path_tracking_node/fast
-
-#=============================================================================
-# Target rules for targets named CubicSplinePlanner
-
-# Build rule for target.
-CubicSplinePlanner: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CubicSplinePlanner
-.PHONY : CubicSplinePlanner
-
-# fast build rule for target.
-CubicSplinePlanner/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build
-.PHONY : CubicSplinePlanner/fast
-
-#=============================================================================
-# Target rules for targets named gazebo_one_drone_planning
-
-# Build rule for target.
-gazebo_one_drone_planning: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gazebo_one_drone_planning
-.PHONY : gazebo_one_drone_planning
-
-# fast build rule for target.
-gazebo_one_drone_planning/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build
-.PHONY : gazebo_one_drone_planning/fast
-
-#=============================================================================
-# Target rules for targets named QuinticPolynomial
-
-# Build rule for target.
-QuinticPolynomial: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 QuinticPolynomial
-.PHONY : QuinticPolynomial
-
-# fast build rule for target.
-QuinticPolynomial/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build
-.PHONY : QuinticPolynomial/fast
+tracking_cam_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build
+.PHONY : tracking_cam_node/fast
 
 #=============================================================================
 # Target rules for targets named ez_sim_planning
@@ -946,17 +829,186 @@ ez_sim_planning/fast:
 .PHONY : ez_sim_planning/fast
 
 #=============================================================================
-# Target rules for targets named tracking_cam_node
+# Target rules for targets named QuinticPolynomial
 
 # Build rule for target.
-tracking_cam_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tracking_cam_node
-.PHONY : tracking_cam_node
+QuinticPolynomial: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 QuinticPolynomial
+.PHONY : QuinticPolynomial
 
 # fast build rule for target.
-tracking_cam_node/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build
-.PHONY : tracking_cam_node/fast
+QuinticPolynomial/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build
+.PHONY : QuinticPolynomial/fast
+
+#=============================================================================
+# Target rules for targets named CubicSplinePlanner
+
+# Build rule for target.
+CubicSplinePlanner: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CubicSplinePlanner
+.PHONY : CubicSplinePlanner
+
+# fast build rule for target.
+CubicSplinePlanner/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build
+.PHONY : CubicSplinePlanner/fast
+
+#=============================================================================
+# Target rules for targets named offb_fixed_flight_node
+
+# Build rule for target.
+offb_fixed_flight_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 offb_fixed_flight_node
+.PHONY : offb_fixed_flight_node
+
+# fast build rule for target.
+offb_fixed_flight_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build
+.PHONY : offb_fixed_flight_node/fast
+
+#=============================================================================
+# Target rules for targets named offboard_take_off_test_node
+
+# Build rule for target.
+offboard_take_off_test_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 offboard_take_off_test_node
+.PHONY : offboard_take_off_test_node
+
+# fast build rule for target.
+offboard_take_off_test_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build
+.PHONY : offboard_take_off_test_node/fast
+
+#=============================================================================
+# Target rules for targets named generate_sim_planning_path
+
+# Build rule for target.
+generate_sim_planning_path: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 generate_sim_planning_path
+.PHONY : generate_sim_planning_path
+
+# fast build rule for target.
+generate_sim_planning_path/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build
+.PHONY : generate_sim_planning_path/fast
+
+#=============================================================================
+# Target rules for targets named tracking_cam_anyyaw_node
+
+# Build rule for target.
+tracking_cam_anyyaw_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tracking_cam_anyyaw_node
+.PHONY : tracking_cam_anyyaw_node
+
+# fast build rule for target.
+tracking_cam_anyyaw_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build
+.PHONY : tracking_cam_anyyaw_node/fast
+
+#=============================================================================
+# Target rules for targets named three_drone_take_off_test_node
+
+# Build rule for target.
+three_drone_take_off_test_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 three_drone_take_off_test_node
+.PHONY : three_drone_take_off_test_node
+
+# fast build rule for target.
+three_drone_take_off_test_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build
+.PHONY : three_drone_take_off_test_node/fast
+
+#=============================================================================
+# Target rules for targets named gazebo_one_drone_planning
+
+# Build rule for target.
+gazebo_one_drone_planning: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gazebo_one_drone_planning
+.PHONY : gazebo_one_drone_planning
+
+# fast build rule for target.
+gazebo_one_drone_planning/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build
+.PHONY : gazebo_one_drone_planning/fast
+
+#=============================================================================
+# Target rules for targets named three_drone_take_off_together_node
+
+# Build rule for target.
+three_drone_take_off_together_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 three_drone_take_off_together_node
+.PHONY : three_drone_take_off_together_node
+
+# fast build rule for target.
+three_drone_take_off_together_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build
+.PHONY : three_drone_take_off_together_node/fast
+
+#=============================================================================
+# Target rules for targets named leader_follower_node
+
+# Build rule for target.
+leader_follower_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 leader_follower_node
+.PHONY : leader_follower_node
+
+# fast build rule for target.
+leader_follower_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build
+.PHONY : leader_follower_node/fast
+
+#=============================================================================
+# Target rules for targets named virtual_structure_node
+
+# Build rule for target.
+virtual_structure_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 virtual_structure_node
+.PHONY : virtual_structure_node
+
+# fast build rule for target.
+virtual_structure_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build
+.PHONY : virtual_structure_node/fast
+
+#=============================================================================
+# Target rules for targets named path_tracking_node
+
+# Build rule for target.
+path_tracking_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 path_tracking_node
+.PHONY : path_tracking_node
+
+# fast build rule for target.
+path_tracking_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build
+.PHONY : path_tracking_node/fast
+
+#=============================================================================
+# Target rules for targets named RangeImpl
+
+# Build rule for target.
+RangeImpl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RangeImpl
+.PHONY : RangeImpl
+
+# fast build rule for target.
+RangeImpl/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
+.PHONY : RangeImpl/fast
+
+#=============================================================================
+# Target rules for targets named QuarticPolynomial
+
+# Build rule for target.
+QuarticPolynomial: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 QuarticPolynomial
+.PHONY : QuarticPolynomial
+
+# fast build rule for target.
+QuarticPolynomial/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build
+.PHONY : QuarticPolynomial/fast
 
 #=============================================================================
 # Target rules for targets named nav_msgs_generate_messages_lisp
@@ -1709,18 +1761,22 @@ help:
 	@echo "... opencvtest_generate_messages_cpp"
 	@echo "... opencv_testcam"
 	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... tracking_cam_anyyaw_node"
-	@echo "... QuarticPolynomial"
-	@echo "... generate_sim_planning_path"
-	@echo "... RangeImpl"
-	@echo "... offboard_take_off_test_node"
-	@echo "... offb_fixed_flight_node"
-	@echo "... path_tracking_node"
-	@echo "... CubicSplinePlanner"
-	@echo "... gazebo_one_drone_planning"
-	@echo "... QuinticPolynomial"
-	@echo "... ez_sim_planning"
 	@echo "... tracking_cam_node"
+	@echo "... ez_sim_planning"
+	@echo "... QuinticPolynomial"
+	@echo "... CubicSplinePlanner"
+	@echo "... offb_fixed_flight_node"
+	@echo "... offboard_take_off_test_node"
+	@echo "... generate_sim_planning_path"
+	@echo "... tracking_cam_anyyaw_node"
+	@echo "... three_drone_take_off_test_node"
+	@echo "... gazebo_one_drone_planning"
+	@echo "... three_drone_take_off_together_node"
+	@echo "... leader_follower_node"
+	@echo "... virtual_structure_node"
+	@echo "... path_tracking_node"
+	@echo "... RangeImpl"
+	@echo "... QuarticPolynomial"
 	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf_generate_messages_lisp"
