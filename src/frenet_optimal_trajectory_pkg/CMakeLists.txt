@@ -343,3 +343,13 @@ target_link_libraries(virtual_structure_node
   RangeImpl
   CubicSplinePlanner
 )
+
+add_executable(cam_simulate_node
+  src/cam_simulate_node.cpp
+)
+add_dependencies(cam_simulate_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} RangeImpl CubicSplinePlanner)
+target_link_libraries(cam_simulate_node
+  ${catkin_LIBRARIES}
+  RangeImpl
+  CubicSplinePlanner
+)
