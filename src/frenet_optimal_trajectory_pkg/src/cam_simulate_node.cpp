@@ -1,20 +1,9 @@
 #include <ros/ros.h>
 #include <vector>
-#include <fstream>
 #include <tf/tf.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <geometry_msgs/TwistStamped.h>
-#include <mavros_msgs/CommandBool.h>
-#include <mavros_msgs/SetMode.h>
-#include <mavros_msgs/State.h>
-#include <mavros_msgs/PositionTarget.h>
-#include <sensor_msgs/NavSatFix.h>
-#include <Eigen/Dense>
-#include "frenet_optimal_trajectory_pkg/CubicSplinePlanner.h"
-#include "frenet_optimal_trajectory_pkg/RangeImpl.h"
 
-#include <opencvtest/contours.h>
-#include <opencvtest/img_pro_info.h>
+#include "opencvtest/img_pro_info.h"
 
 //两个框的位置和方向
 geometry_msgs::PoseStamped box_1;
