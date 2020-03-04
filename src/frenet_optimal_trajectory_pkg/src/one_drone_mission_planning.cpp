@@ -83,6 +83,8 @@
 //     }
 // }
 
+double ahead_distance = 10;//实时目标点向前的距离
+double k = 0.1; //速度的增益
 
 enum MissionState
 {
@@ -102,6 +104,11 @@ geometry_msgs::PoseStamped current_pose;
 void local_pos_cb(const geometry_msgs::PoseStamped::ConstPtr& curr_p)
 {
     current_pose = *curr_p;
+}
+geometry_msgs::TwistStamped current_velocity;
+void local_vel_cb(const geometry_msgs::TwistStamped::ConstPtr& curr_v)
+{
+    current_velocity = *curr_v;
 }
 opencvtest::img_pro_info camera_data;
 void cam_subCallback(const opencvtest::img_pro_info::ConstPtr& cam_data){ // camera data callback
@@ -127,6 +134,54 @@ geometry_msgs::Vector3 Quaternion2Euler(const geometry_msgs::Quaternion msg)
 	return rpy;
 }
 
+Spline2D
+generate_target_course(vector<double> x, vector<double> y, vector<double> &rx, vector<double> &ry, vector<double> &ryaw,
+                       vector<double> &rc) {
+    Spline2D csp(x, y);
+    vector<double> ixy;
+    // Cosmos::RangeImpl<int> s = Cosmos::Range(0, int(csp.s.back()), 5);
+    for (auto i_s : Cosmos::Range(0, int(csp.s.back()), 1)) {
+        ixy = csp.calc_position(i_s);
+        rx.push_back(ixy[0]);
+        ry.push_back(ixy[1]);
+        ryaw.push_back(csp.calc_yaw(i_s));
+        rc.push_back(csp.calc_curvature(i_s));
+    }
+    return csp;
+}
+
+int calc_target_index(geometry_msgs::PoseStamped curr_pose, vector<double> tx, vector<double> ty)
+{
+    int ind;
+    vector<double> dx;
+    vector<double> dy;
+    vector<double> d;
+    for(auto& itx : tx)
+    {
+        dx.push_back(curr_pose.pose.position.x - itx);
+    }
+    for(auto& ity : ty)
+    {
+        dy.push_back(curr_pose.pose.position.y - ity);
+    }
+    for(int i = 0; i < tx.size(); i++)
+    {
+        d.push_back(abs(sqrt(dx[i] * dx[i] + dy[i] * dy[i])));
+    }
+    auto d_min = min_element(d.begin(), d.end());
+    ind = distance(d.begin(), d_min);
+
+    double L = 0.0;
+    double LF = k * current_velocity.twist.linear.x + ahead_distance;
+    while (LF > L && ind + 1 < tx.size())
+    {
+        L += sqrt(pow(tx[ind + 1] - tx[ind], 2) + pow(ty[ind + 1] - ty[ind], 2));
+        ind += 1;
+    }
+    
+    return ind;
+}
+
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "offb_node");
@@ -142,6 +197,7 @@ int main(int argc, char **argv)
     // ros::Publisher body_att_pub = nh.advertise<geometry_msgs::PoseStamped>("/mavros/setpoint_attitude/attitude", 1);
 
     ros::Subscriber local_position_sub = nh.subscribe("/mavros/local_position/pose", 1, local_pos_cb);
+    ros::Subscriber local_velocity_sub = nh.subscribe("/mavros/local_position/velocity_body", 1, local_vel_cb);
     ros::Subscriber cam_sub = nh.subscribe("/contours_topic", 1, cam_subCallback);
     
     ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>("mavros/cmd/arming");
@@ -156,17 +212,18 @@ int main(int argc, char **argv)
         rate.sleep();
         ROS_INFO("connecting...");
     }
+    ROS_INFO("connected");
 
     // 目的地的local坐标位置
-    geometry_msgs::Pose destination;
-    destination.position.x = 300;
-    destination.position.y = 300;
+    // geometry_msgs::Pose destination;
+    // destination.position.x = 300;
+    // destination.position.y = 300;
 
     mavros_msgs::PositionTarget position_target_local;
     position_target_local.position.x = 0;
     position_target_local.position.y = 0;
-    position_target_local.position.z = 3;
-    position_target_local.yaw = atan2(destination.position.y, destination.position.x);
+    position_target_local.position.z = 14.3;
+    // position_target_local.yaw = atan2(destination.position.y, destination.position.x);
     // position_target_local.velocity.x = 0.5;
     // position_target_local.velocity.y = 2;
 
@@ -180,11 +237,22 @@ int main(int argc, char **argv)
 
 
     //send a few setpoints before starting
-    for(int i = 100; ros::ok() && i > 0; --i){
-        local_target_pub.publish(position_target_local);
-        ros::spinOnce();
-        rate.sleep();
-    }
+    // for(int i = 100; ros::ok() && i > 0; --i){
+    //     local_target_pub.publish(position_target_local);
+    //     ros::spinOnce();
+    //     rate.sleep();
+    // }
+
+    vector<double> x = {0.0, 50.0, 150.0, 200.0, 400.0, 500.0, 600.0, 750.0, 800.0, 800.0, 750.0, 600.0, 500.0, 400.0, 200.0, 150.0, 100.0, 0.0};
+    vector<double> y = {0.0, 50.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 300.0, 300.0, 300.0, 300.0, 300.0, 300.0, 300.0, 250.0, 0.0};
+
+    vector<double> tx;  //x坐标
+    vector<double> ty;  //y坐标
+    vector<double> tyaw;//偏航
+    vector<double> tc;  //曲率
+    int target_index;          //目标索引
+
+    Spline2D csp = generate_target_course(x, y, tx, ty, tyaw, tc);//规划轨迹
 
     mavros_msgs::SetMode offb_set_mode;
     offb_set_mode.request.custom_mode = "OFFBOARD";
@@ -217,26 +285,25 @@ int main(int argc, char **argv)
         {
             position_target_local.position.x = 0;
             position_target_local.position.y = 0;
-            position_target_local.position.z = 3;
+            position_target_local.position.z = 14.3;
 
-            if(3 - current_pose.pose.position.z < 0.2)
+            if(14.3 - current_pose.pose.position.z < 0.2)
             {
                 PX4_current_mission_state = Patrol;
             }
-            local_target_pub.publish(position_target_local);
+            
         }
         else if(PX4_current_mission_state == Patrol)
         {
-            position_target_local.type_mask = mavros_msgs::PositionTarget::IGNORE_YAW;
-            position_target_local.position.x = 0;
-            position_target_local.position.y = 0;
-            position_target_local.position.z = 3;
-            position_target_local.yaw_rate = 1;
+            target_index = calc_target_index(current_pose, tx, ty);
+            position_target_local.position.x = tx[target_index];
+            position_target_local.position.y = ty[target_index];
+            position_target_local.yaw = tyaw[target_index];
             if(camera_data.find_obs_flag)
             {
                 PX4_current_mission_state = TrackingCam;
             }
-            local_target_pub.publish(position_target_local);
+            
         }
         else if(PX4_current_mission_state == TrackingCam)
         {
@@ -263,10 +330,12 @@ int main(int argc, char **argv)
             }
             else
             {
-                position_target_new.position.x = 0;
-                position_target_new.position.y = 0;
-                position_target_new.position.z = 3;
-                position_target_new.velocity.x = 0;
+                // position_target_new.position.x = 0;
+                // position_target_new.position.y = 0;
+                // position_target_new.position.z = 3;
+                // position_target_new.velocity.x = 0;
+
+                PX4_current_mission_state = Patrol;
             }
             // if(current_pose_new.position.x > 310)
             // {
@@ -289,10 +358,10 @@ int main(int argc, char **argv)
             position_target_local.velocity.y = temp_vel(1);
             position_target_local.yaw_rate = 0;
             // position_target_local.velocity.z = temp_vel(2);
-            local_target_pub.publish(position_target_local);
+            
         }
         
-        
+        local_target_pub.publish(position_target_local);
         // std::cout << fly_log.is_open() << std::endl;
         ros::spinOnce();
         rate.sleep();
