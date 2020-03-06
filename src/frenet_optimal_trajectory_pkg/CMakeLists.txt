@@ -100,7 +100,7 @@ find_package(Eigen3 REQUIRED)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
+  INCLUDE_DIRS include
 #  LIBRARIES frenet_optimal_trajectory_pkg
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
@@ -344,11 +344,11 @@ target_link_libraries(virtual_structure_node
   CubicSplinePlanner
 )
 
-add_executable(cam_simulate_node
-  src/cam_simulate_node.cpp
+add_executable(cam_sim_node
+  src/cam_sim_node.cpp
 )
-add_dependencies(cam_simulate_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )
-target_link_libraries(cam_simulate_node
+add_dependencies(cam_sim_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(cam_sim_node
   ${catkin_LIBRARIES}
 )
 
@@ -356,7 +356,7 @@ add_executable(one_drone_mission_planning
   src/one_drone_mission_planning.cpp
 )
 add_dependencies(one_drone_mission_planning ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} RangeImpl CubicSplinePlanner)
-target_link_libraries(virtual_structure_node
+target_link_libraries(one_drone_mission_planning
   ${catkin_LIBRARIES}
   RangeImpl
   CubicSplinePlanner

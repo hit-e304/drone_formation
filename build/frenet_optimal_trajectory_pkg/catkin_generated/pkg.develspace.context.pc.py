@@ -1,8 +1,8 @@
 # generated from catkin/cmake/template/pkg.context.pc.in
 CATKIN_PACKAGE_PREFIX = ""
-PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
+PROJECT_PKG_CONFIG_INCLUDE_DIRS = "/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/include".split(';') if "/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/include" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "frenet_optimal_trajectory_pkg"
-PROJECT_SPACE_DIR = "/home/dqn/drone_formation/devel"
+PROJECT_SPACE_DIR = "/home/lihai/drone_test_ws/drone_formation/devel"
 PROJECT_VERSION = "0.0.0"

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dqn/drone_formation/src
+CMAKE_SOURCE_DIR = /home/lihai/drone_test_ws/drone_formation/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dqn/drone_formation/build
+CMAKE_BINARY_DIR = /home/lihai/drone_test_ws/drone_formation/build
 
 # Utility rule file for clean_test_results.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/dqn/drone_formation/build
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/dqn/drone_formation/build/test_results
+	/usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/lihai/drone_test_ws/drone_formation/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 CMakeFiles/clean_test_results.dir/depend:
-	cd /home/dqn/drone_formation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dqn/drone_formation/src /home/dqn/drone_formation/src /home/dqn/drone_formation/build /home/dqn/drone_formation/build /home/dqn/drone_formation/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lihai/drone_test_ws/drone_formation/src /home/lihai/drone_test_ws/drone_formation/src /home/lihai/drone_test_ws/drone_formation/build /home/lihai/drone_test_ws/drone_formation/build /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results.dir/depend
 

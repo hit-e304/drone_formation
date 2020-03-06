@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dqn/drone_formation/src
+CMAKE_SOURCE_DIR = /home/lihai/drone_test_ws/drone_formation/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dqn/drone_formation/build
+CMAKE_BINARY_DIR = /home/lihai/drone_test_ws/drone_formation/build
 
 # Include any dependencies generated for this target.
 include usb_cam/CMakeFiles/usb_cam.dir/depend.make
@@ -58,17 +58,17 @@ include usb_cam/CMakeFiles/usb_cam.dir/progress.make
 include usb_cam/CMakeFiles/usb_cam.dir/flags.make
 
 usb_cam/CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o: usb_cam/CMakeFiles/usb_cam.dir/flags.make
-usb_cam/CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o: /home/dqn/drone_formation/src/usb_cam/src/usb_cam.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dqn/drone_formation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object usb_cam/CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o"
-	cd /home/dqn/drone_formation/build/usb_cam && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o -c /home/dqn/drone_formation/src/usb_cam/src/usb_cam.cpp
+usb_cam/CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o: /home/lihai/drone_test_ws/drone_formation/src/usb_cam/src/usb_cam.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object usb_cam/CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o"
+	cd /home/lihai/drone_test_ws/drone_formation/build/usb_cam && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o -c /home/lihai/drone_test_ws/drone_formation/src/usb_cam/src/usb_cam.cpp
 
 usb_cam/CMakeFiles/usb_cam.dir/src/usb_cam.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/usb_cam.dir/src/usb_cam.cpp.i"
-	cd /home/dqn/drone_formation/build/usb_cam && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dqn/drone_formation/src/usb_cam/src/usb_cam.cpp > CMakeFiles/usb_cam.dir/src/usb_cam.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build/usb_cam && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lihai/drone_test_ws/drone_formation/src/usb_cam/src/usb_cam.cpp > CMakeFiles/usb_cam.dir/src/usb_cam.cpp.i
 
 usb_cam/CMakeFiles/usb_cam.dir/src/usb_cam.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/usb_cam.dir/src/usb_cam.cpp.s"
-	cd /home/dqn/drone_formation/build/usb_cam && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dqn/drone_formation/src/usb_cam/src/usb_cam.cpp -o CMakeFiles/usb_cam.dir/src/usb_cam.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build/usb_cam && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lihai/drone_test_ws/drone_formation/src/usb_cam/src/usb_cam.cpp -o CMakeFiles/usb_cam.dir/src/usb_cam.cpp.s
 
 usb_cam/CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o.requires:
 
@@ -88,46 +88,46 @@ usb_cam_OBJECTS = \
 # External object files for target usb_cam
 usb_cam_EXTERNAL_OBJECTS =
 
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: usb_cam/CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: usb_cam/CMakeFiles/usb_cam.dir/build.make
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libimage_transport.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libmessage_filters.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libclass_loader.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/libPocoFoundation.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libroslib.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/librospack.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libcamera_info_manager.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libcamera_calibration_parsers.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libroscpp.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/librosconsole.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/librostime.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libcpp_common.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/dqn/drone_formation/devel/lib/libusb_cam.so: usb_cam/CMakeFiles/usb_cam.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dqn/drone_formation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/dqn/drone_formation/devel/lib/libusb_cam.so"
-	cd /home/dqn/drone_formation/build/usb_cam && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/usb_cam.dir/link.txt --verbose=$(VERBOSE)
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: usb_cam/CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: usb_cam/CMakeFiles/usb_cam.dir/build.make
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libimage_transport.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libclass_loader.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/libPocoFoundation.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libroslib.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/librospack.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libcamera_info_manager.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libcamera_calibration_parsers.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libroscpp.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/librosconsole.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/librostime.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /opt/ros/kinetic/lib/libcpp_common.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so: usb_cam/CMakeFiles/usb_cam.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so"
+	cd /home/lihai/drone_test_ws/drone_formation/build/usb_cam && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/usb_cam.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-usb_cam/CMakeFiles/usb_cam.dir/build: /home/dqn/drone_formation/devel/lib/libusb_cam.so
+usb_cam/CMakeFiles/usb_cam.dir/build: /home/lihai/drone_test_ws/drone_formation/devel/lib/libusb_cam.so
 
 .PHONY : usb_cam/CMakeFiles/usb_cam.dir/build
 
@@ -136,10 +136,10 @@ usb_cam/CMakeFiles/usb_cam.dir/requires: usb_cam/CMakeFiles/usb_cam.dir/src/usb_
 .PHONY : usb_cam/CMakeFiles/usb_cam.dir/requires
 
 usb_cam/CMakeFiles/usb_cam.dir/clean:
-	cd /home/dqn/drone_formation/build/usb_cam && $(CMAKE_COMMAND) -P CMakeFiles/usb_cam.dir/cmake_clean.cmake
+	cd /home/lihai/drone_test_ws/drone_formation/build/usb_cam && $(CMAKE_COMMAND) -P CMakeFiles/usb_cam.dir/cmake_clean.cmake
 .PHONY : usb_cam/CMakeFiles/usb_cam.dir/clean
 
 usb_cam/CMakeFiles/usb_cam.dir/depend:
-	cd /home/dqn/drone_formation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dqn/drone_formation/src /home/dqn/drone_formation/src/usb_cam /home/dqn/drone_formation/build /home/dqn/drone_formation/build/usb_cam /home/dqn/drone_formation/build/usb_cam/CMakeFiles/usb_cam.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lihai/drone_test_ws/drone_formation/src /home/lihai/drone_test_ws/drone_formation/src/usb_cam /home/lihai/drone_test_ws/drone_formation/build /home/lihai/drone_test_ws/drone_formation/build/usb_cam /home/lihai/drone_test_ws/drone_formation/build/usb_cam/CMakeFiles/usb_cam.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : usb_cam/CMakeFiles/usb_cam.dir/depend
 

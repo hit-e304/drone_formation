@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dqn/drone_formation/src
+CMAKE_SOURCE_DIR = /home/lihai/drone_test_ws/drone_formation/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dqn/drone_formation/build
+CMAKE_BINARY_DIR = /home/lihai/drone_test_ws/drone_formation/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,9 +135,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dqn/drone_formation/build/CMakeFiles /home/dqn/drone_formation/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dqn/drone_formation/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -894,6 +894,19 @@ generate_sim_planning_path/fast:
 .PHONY : generate_sim_planning_path/fast
 
 #=============================================================================
+# Target rules for targets named QuarticPolynomial
+
+# Build rule for target.
+QuarticPolynomial: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 QuarticPolynomial
+.PHONY : QuarticPolynomial
+
+# fast build rule for target.
+QuarticPolynomial/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build
+.PHONY : QuarticPolynomial/fast
+
+#=============================================================================
 # Target rules for targets named tracking_cam_anyyaw_node
 
 # Build rule for target.
@@ -946,19 +959,6 @@ three_drone_take_off_together_node/fast:
 .PHONY : three_drone_take_off_together_node/fast
 
 #=============================================================================
-# Target rules for targets named leader_follower_node
-
-# Build rule for target.
-leader_follower_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 leader_follower_node
-.PHONY : leader_follower_node
-
-# fast build rule for target.
-leader_follower_node/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build
-.PHONY : leader_follower_node/fast
-
-#=============================================================================
 # Target rules for targets named virtual_structure_node
 
 # Build rule for target.
@@ -985,6 +985,45 @@ path_tracking_node/fast:
 .PHONY : path_tracking_node/fast
 
 #=============================================================================
+# Target rules for targets named leader_follower_node
+
+# Build rule for target.
+leader_follower_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 leader_follower_node
+.PHONY : leader_follower_node
+
+# fast build rule for target.
+leader_follower_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build
+.PHONY : leader_follower_node/fast
+
+#=============================================================================
+# Target rules for targets named cam_sim_node
+
+# Build rule for target.
+cam_sim_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cam_sim_node
+.PHONY : cam_sim_node
+
+# fast build rule for target.
+cam_sim_node/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/build
+.PHONY : cam_sim_node/fast
+
+#=============================================================================
+# Target rules for targets named one_drone_mission_planning
+
+# Build rule for target.
+one_drone_mission_planning: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 one_drone_mission_planning
+.PHONY : one_drone_mission_planning
+
+# fast build rule for target.
+one_drone_mission_planning/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/build
+.PHONY : one_drone_mission_planning/fast
+
+#=============================================================================
 # Target rules for targets named RangeImpl
 
 # Build rule for target.
@@ -998,17 +1037,17 @@ RangeImpl/fast:
 .PHONY : RangeImpl/fast
 
 #=============================================================================
-# Target rules for targets named QuarticPolynomial
+# Target rules for targets named UAV1_leader_node
 
 # Build rule for target.
-QuarticPolynomial: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 QuarticPolynomial
-.PHONY : QuarticPolynomial
+UAV1_leader_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 UAV1_leader_node
+.PHONY : UAV1_leader_node
 
 # fast build rule for target.
-QuarticPolynomial/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build
-.PHONY : QuarticPolynomial/fast
+UAV1_leader_node/fast:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build
+.PHONY : UAV1_leader_node/fast
 
 #=============================================================================
 # Target rules for targets named nav_msgs_generate_messages_lisp
@@ -1768,15 +1807,18 @@ help:
 	@echo "... offb_fixed_flight_node"
 	@echo "... offboard_take_off_test_node"
 	@echo "... generate_sim_planning_path"
+	@echo "... QuarticPolynomial"
 	@echo "... tracking_cam_anyyaw_node"
 	@echo "... three_drone_take_off_test_node"
 	@echo "... gazebo_one_drone_planning"
 	@echo "... three_drone_take_off_together_node"
-	@echo "... leader_follower_node"
 	@echo "... virtual_structure_node"
 	@echo "... path_tracking_node"
+	@echo "... leader_follower_node"
+	@echo "... cam_sim_node"
+	@echo "... one_drone_mission_planning"
 	@echo "... RangeImpl"
-	@echo "... QuarticPolynomial"
+	@echo "... UAV1_leader_node"
 	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf_generate_messages_lisp"

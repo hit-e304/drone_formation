@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dqn/drone_formation/src
+CMAKE_SOURCE_DIR = /home/lihai/drone_test_ws/drone_formation/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dqn/drone_formation/build
+CMAKE_BINARY_DIR = /home/lihai/drone_test_ws/drone_formation/build
 
 # Utility rule file for opencvtest_gennodejs.
 
@@ -63,10 +63,10 @@ opencvtest/CMakeFiles/opencvtest_gennodejs.dir/build: opencvtest_gennodejs
 .PHONY : opencvtest/CMakeFiles/opencvtest_gennodejs.dir/build
 
 opencvtest/CMakeFiles/opencvtest_gennodejs.dir/clean:
-	cd /home/dqn/drone_formation/build/opencvtest && $(CMAKE_COMMAND) -P CMakeFiles/opencvtest_gennodejs.dir/cmake_clean.cmake
+	cd /home/lihai/drone_test_ws/drone_formation/build/opencvtest && $(CMAKE_COMMAND) -P CMakeFiles/opencvtest_gennodejs.dir/cmake_clean.cmake
 .PHONY : opencvtest/CMakeFiles/opencvtest_gennodejs.dir/clean
 
 opencvtest/CMakeFiles/opencvtest_gennodejs.dir/depend:
-	cd /home/dqn/drone_formation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dqn/drone_formation/src /home/dqn/drone_formation/src/opencvtest /home/dqn/drone_formation/build /home/dqn/drone_formation/build/opencvtest /home/dqn/drone_formation/build/opencvtest/CMakeFiles/opencvtest_gennodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lihai/drone_test_ws/drone_formation/src /home/lihai/drone_test_ws/drone_formation/src/opencvtest /home/lihai/drone_test_ws/drone_formation/build /home/lihai/drone_test_ws/drone_formation/build/opencvtest /home/lihai/drone_test_ws/drone_formation/build/opencvtest/CMakeFiles/opencvtest_gennodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : opencvtest/CMakeFiles/opencvtest_gennodejs.dir/depend
 

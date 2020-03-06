@@ -1,5 +1,5 @@
 # generated from catkin/cmake/template/order_packages.context.py.in
-source_root_dir = "/home/dqn/drone_formation/src"
+source_root_dir = "/home/lihai/drone_test_ws/drone_formation/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/dqn/drone_formation/devel;/opt/ros/kinetic".split(';') if "/home/dqn/drone_formation/devel;/opt/ros/kinetic" != "" else []
+underlay_workspaces = "/home/lihai/drone_test_ws/drone_formation/devel;/home/lihai/catkin_ws/devel;/opt/ros/kinetic".split(';') if "/home/lihai/drone_test_ws/drone_formation/devel;/home/lihai/catkin_ws/devel;/opt/ros/kinetic" != "" else []

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dqn/drone_formation/src
+CMAKE_SOURCE_DIR = /home/lihai/drone_test_ws/drone_formation/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dqn/drone_formation/build
+CMAKE_BINARY_DIR = /home/lihai/drone_test_ws/drone_formation/build
 
 # Utility rule file for tf_generate_messages_py.
 
@@ -63,10 +63,10 @@ ur_rviz_plugin/CMakeFiles/tf_generate_messages_py.dir/build: tf_generate_message
 .PHONY : ur_rviz_plugin/CMakeFiles/tf_generate_messages_py.dir/build
 
 ur_rviz_plugin/CMakeFiles/tf_generate_messages_py.dir/clean:
-	cd /home/dqn/drone_formation/build/ur_rviz_plugin && $(CMAKE_COMMAND) -P CMakeFiles/tf_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/lihai/drone_test_ws/drone_formation/build/ur_rviz_plugin && $(CMAKE_COMMAND) -P CMakeFiles/tf_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : ur_rviz_plugin/CMakeFiles/tf_generate_messages_py.dir/clean
 
 ur_rviz_plugin/CMakeFiles/tf_generate_messages_py.dir/depend:
-	cd /home/dqn/drone_formation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dqn/drone_formation/src /home/dqn/drone_formation/src/ur_rviz_plugin /home/dqn/drone_formation/build /home/dqn/drone_formation/build/ur_rviz_plugin /home/dqn/drone_formation/build/ur_rviz_plugin/CMakeFiles/tf_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lihai/drone_test_ws/drone_formation/src /home/lihai/drone_test_ws/drone_formation/src/ur_rviz_plugin /home/lihai/drone_test_ws/drone_formation/build /home/lihai/drone_test_ws/drone_formation/build/ur_rviz_plugin /home/lihai/drone_test_ws/drone_formation/build/ur_rviz_plugin/CMakeFiles/tf_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ur_rviz_plugin/CMakeFiles/tf_generate_messages_py.dir/depend
 

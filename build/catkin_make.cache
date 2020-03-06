@@ -1,2 +1,2 @@
-frenet_optimal_trajectory_pkg:opencvtest:ur_rviz_plugin:usb_cam
--DCATKIN_DEVEL_PREFIX=/home/dqn/drone_formation/devel -DCMAKE_INSTALL_PREFIX=/home/dqn/drone_formation/install -G Unix Makefiles
+formation_algorithm_leader_follower:frenet_optimal_trajectory_pkg:opencvtest:ur_rviz_plugin:usb_cam
+-DCATKIN_DEVEL_PREFIX=/home/lihai/drone_test_ws/drone_formation/devel -DCMAKE_INSTALL_PREFIX=/home/lihai/drone_test_ws/drone_formation/install -G Unix Makefiles

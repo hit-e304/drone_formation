@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dqn/drone_formation/src/opencvtest/src/opencv_testcam.cpp
+/home/lihai/drone_test_ws/drone_formation/src/opencvtest/src/opencv_testcam.cpp
 ros/ros.h
 -
 math.h
@@ -28,7 +28,7 @@ opencv2/core/core.hpp
 opencv2/imgproc/imgproc.hpp
 -
 iostream
-/home/dqn/drone_formation/src/opencvtest/src/iostream
+/home/lihai/drone_test_ws/drone_formation/src/opencvtest/src/iostream
 opencvtest/contours.h
 -
 opencvtest/img_pro_info.h

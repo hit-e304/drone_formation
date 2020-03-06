@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dqn/drone_formation/src/frenet_optimal_trajectory_pkg/src/three_drone_take_off_together_node.cpp
+/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/three_drone_take_off_together_node.cpp
 ros/ros.h
 -
 geometry_msgs/PoseStamped.h

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/opencv_testcam.dir/src/opencv_testcam.cpp.o"
-  "/home/dqn/drone_formation/devel/lib/opencvtest/opencv_testcam.pdb"
-  "/home/dqn/drone_formation/devel/lib/opencvtest/opencv_testcam"
+  "/home/lihai/drone_test_ws/drone_formation/devel/lib/opencvtest/opencv_testcam.pdb"
+  "/home/lihai/drone_test_ws/drone_formation/devel/lib/opencvtest/opencv_testcam"
 )
 
 # Per-language clean rules from dependency scanning.

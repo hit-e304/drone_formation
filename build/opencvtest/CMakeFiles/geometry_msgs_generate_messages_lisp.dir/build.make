@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dqn/drone_formation/src
+CMAKE_SOURCE_DIR = /home/lihai/drone_test_ws/drone_formation/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dqn/drone_formation/build
+CMAKE_BINARY_DIR = /home/lihai/drone_test_ws/drone_formation/build
 
 # Utility rule file for geometry_msgs_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ opencvtest/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build: geometry_m
 .PHONY : opencvtest/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 
 opencvtest/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
-	cd /home/dqn/drone_formation/build/opencvtest && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/lihai/drone_test_ws/drone_formation/build/opencvtest && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : opencvtest/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 
 opencvtest/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend:
-	cd /home/dqn/drone_formation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dqn/drone_formation/src /home/dqn/drone_formation/src/opencvtest /home/dqn/drone_formation/build /home/dqn/drone_formation/build/opencvtest /home/dqn/drone_formation/build/opencvtest/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lihai/drone_test_ws/drone_formation/src /home/lihai/drone_test_ws/drone_formation/src/opencvtest /home/lihai/drone_test_ws/drone_formation/build /home/lihai/drone_test_ws/drone_formation/build/opencvtest /home/lihai/drone_test_ws/drone_formation/build/opencvtest/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : opencvtest/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend
 

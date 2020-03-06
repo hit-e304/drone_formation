@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dqn/drone_formation/src
+CMAKE_SOURCE_DIR = /home/lihai/drone_test_ws/drone_formation/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dqn/drone_formation/build
+CMAKE_BINARY_DIR = /home/lihai/drone_test_ws/drone_formation/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -89,6 +89,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -122,27 +133,16 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /home/dqn/drone_formation/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dqn/drone_formation/build/CMakeFiles /home/dqn/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/progress.marks
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dqn/drone_formation/build/CMakeFiles 0
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles /home/lihai/drone_test_ws/drone_formation/build/frenet_optimal_trajectory_pkg/CMakeFiles/progress.marks
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/clean
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/preinstall
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/preinstall
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/dqn/drone_formation/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ tracking_cam_node: frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.di
 
 # fast build rule for target.
 tracking_cam_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build
 .PHONY : tracking_cam_node/fast
 
 # Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/rule
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ ez_sim_planning: frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/ru
 
 # fast build rule for target.
 ez_sim_planning/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build
 .PHONY : ez_sim_planning/fast
 
 # Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ QuinticPolynomial: frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.di
 
 # fast build rule for target.
 QuinticPolynomial/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build
 .PHONY : QuinticPolynomial/fast
 
 # Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/rule
 
 # Convenience name for target.
@@ -222,12 +222,12 @@ CubicSplinePlanner: frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.
 
 # fast build rule for target.
 CubicSplinePlanner/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build
 .PHONY : CubicSplinePlanner/fast
 
 # Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
 
 # Convenience name for target.
@@ -237,12 +237,12 @@ offb_fixed_flight_node: frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flig
 
 # fast build rule for target.
 offb_fixed_flight_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build
 .PHONY : offb_fixed_flight_node/fast
 
 # Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/rule
 
 # Convenience name for target.
@@ -252,12 +252,12 @@ offboard_take_off_test_node: frenet_optimal_trajectory_pkg/CMakeFiles/offboard_t
 
 # fast build rule for target.
 offboard_take_off_test_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build
 .PHONY : offboard_take_off_test_node/fast
 
 # Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule
 
 # Convenience name for target.
@@ -267,132 +267,12 @@ generate_sim_planning_path: frenet_optimal_trajectory_pkg/CMakeFiles/generate_si
 
 # fast build rule for target.
 generate_sim_planning_path/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build
 .PHONY : generate_sim_planning_path/fast
 
 # Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
-
-# Convenience name for target.
-tracking_cam_anyyaw_node: frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
-
-.PHONY : tracking_cam_anyyaw_node
-
-# fast build rule for target.
-tracking_cam_anyyaw_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build
-.PHONY : tracking_cam_anyyaw_node/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule
-
-# Convenience name for target.
-three_drone_take_off_test_node: frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule
-
-.PHONY : three_drone_take_off_test_node
-
-# fast build rule for target.
-three_drone_take_off_test_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build
-.PHONY : three_drone_take_off_test_node/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
-
-# Convenience name for target.
-gazebo_one_drone_planning: frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
-
-.PHONY : gazebo_one_drone_planning
-
-# fast build rule for target.
-gazebo_one_drone_planning/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build
-.PHONY : gazebo_one_drone_planning/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule
-
-# Convenience name for target.
-three_drone_take_off_together_node: frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule
-
-.PHONY : three_drone_take_off_together_node
-
-# fast build rule for target.
-three_drone_take_off_together_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build
-.PHONY : three_drone_take_off_together_node/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule
-
-# Convenience name for target.
-leader_follower_node: frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule
-
-.PHONY : leader_follower_node
-
-# fast build rule for target.
-leader_follower_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build
-.PHONY : leader_follower_node/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule
-
-# Convenience name for target.
-virtual_structure_node: frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule
-
-.PHONY : virtual_structure_node
-
-# fast build rule for target.
-virtual_structure_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build
-.PHONY : virtual_structure_node/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
-
-# Convenience name for target.
-path_tracking_node: frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
-
-.PHONY : path_tracking_node
-
-# fast build rule for target.
-path_tracking_node/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build
-.PHONY : path_tracking_node/fast
-
-# Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
-
-# Convenience name for target.
-RangeImpl: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
-
-.PHONY : RangeImpl
-
-# fast build rule for target.
-RangeImpl/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
-.PHONY : RangeImpl/fast
-
-# Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/rule
 
 # Convenience name for target.
@@ -402,8 +282,158 @@ QuarticPolynomial: frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.di
 
 # fast build rule for target.
 QuarticPolynomial/fast:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build
 .PHONY : QuarticPolynomial/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
+
+# Convenience name for target.
+tracking_cam_anyyaw_node: frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/rule
+
+.PHONY : tracking_cam_anyyaw_node
+
+# fast build rule for target.
+tracking_cam_anyyaw_node/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build
+.PHONY : tracking_cam_anyyaw_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule
+
+# Convenience name for target.
+three_drone_take_off_test_node: frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/rule
+
+.PHONY : three_drone_take_off_test_node
+
+# fast build rule for target.
+three_drone_take_off_test_node/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build
+.PHONY : three_drone_take_off_test_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
+
+# Convenience name for target.
+gazebo_one_drone_planning: frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/rule
+
+.PHONY : gazebo_one_drone_planning
+
+# fast build rule for target.
+gazebo_one_drone_planning/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build
+.PHONY : gazebo_one_drone_planning/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule
+
+# Convenience name for target.
+three_drone_take_off_together_node: frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/rule
+
+.PHONY : three_drone_take_off_together_node
+
+# fast build rule for target.
+three_drone_take_off_together_node/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build
+.PHONY : three_drone_take_off_together_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule
+
+# Convenience name for target.
+virtual_structure_node: frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/rule
+
+.PHONY : virtual_structure_node
+
+# fast build rule for target.
+virtual_structure_node/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build
+.PHONY : virtual_structure_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
+
+# Convenience name for target.
+path_tracking_node: frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/rule
+
+.PHONY : path_tracking_node
+
+# fast build rule for target.
+path_tracking_node/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build
+.PHONY : path_tracking_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule
+
+# Convenience name for target.
+leader_follower_node: frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/rule
+
+.PHONY : leader_follower_node
+
+# fast build rule for target.
+leader_follower_node/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build
+.PHONY : leader_follower_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/rule
+
+# Convenience name for target.
+cam_sim_node: frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/rule
+
+.PHONY : cam_sim_node
+
+# fast build rule for target.
+cam_sim_node/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/build
+.PHONY : cam_sim_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/rule
+
+# Convenience name for target.
+one_drone_mission_planning: frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/rule
+
+.PHONY : one_drone_mission_planning
+
+# fast build rule for target.
+one_drone_mission_planning/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/build
+.PHONY : one_drone_mission_planning/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+
+# Convenience name for target.
+RangeImpl: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+
+.PHONY : RangeImpl
+
+# fast build rule for target.
+RangeImpl/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
+.PHONY : RangeImpl/fast
 
 src/CubicSplinePlanner.o: src/CubicSplinePlanner.cpp.o
 
@@ -411,7 +441,7 @@ src/CubicSplinePlanner.o: src/CubicSplinePlanner.cpp.o
 
 # target to build an object file
 src/CubicSplinePlanner.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/src/CubicSplinePlanner.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/src/CubicSplinePlanner.cpp.o
 .PHONY : src/CubicSplinePlanner.cpp.o
 
 src/CubicSplinePlanner.i: src/CubicSplinePlanner.cpp.i
@@ -420,7 +450,7 @@ src/CubicSplinePlanner.i: src/CubicSplinePlanner.cpp.i
 
 # target to preprocess a source file
 src/CubicSplinePlanner.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/src/CubicSplinePlanner.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/src/CubicSplinePlanner.cpp.i
 .PHONY : src/CubicSplinePlanner.cpp.i
 
 src/CubicSplinePlanner.s: src/CubicSplinePlanner.cpp.s
@@ -429,7 +459,7 @@ src/CubicSplinePlanner.s: src/CubicSplinePlanner.cpp.s
 
 # target to generate assembly for a file
 src/CubicSplinePlanner.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/src/CubicSplinePlanner.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/src/CubicSplinePlanner.cpp.s
 .PHONY : src/CubicSplinePlanner.cpp.s
 
 src/QuarticPolynomial.o: src/QuarticPolynomial.cpp.o
@@ -438,7 +468,7 @@ src/QuarticPolynomial.o: src/QuarticPolynomial.cpp.o
 
 # target to build an object file
 src/QuarticPolynomial.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/src/QuarticPolynomial.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/src/QuarticPolynomial.cpp.o
 .PHONY : src/QuarticPolynomial.cpp.o
 
 src/QuarticPolynomial.i: src/QuarticPolynomial.cpp.i
@@ -447,7 +477,7 @@ src/QuarticPolynomial.i: src/QuarticPolynomial.cpp.i
 
 # target to preprocess a source file
 src/QuarticPolynomial.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/src/QuarticPolynomial.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/src/QuarticPolynomial.cpp.i
 .PHONY : src/QuarticPolynomial.cpp.i
 
 src/QuarticPolynomial.s: src/QuarticPolynomial.cpp.s
@@ -456,7 +486,7 @@ src/QuarticPolynomial.s: src/QuarticPolynomial.cpp.s
 
 # target to generate assembly for a file
 src/QuarticPolynomial.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/src/QuarticPolynomial.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/src/QuarticPolynomial.cpp.s
 .PHONY : src/QuarticPolynomial.cpp.s
 
 src/QuinticPolynomial.o: src/QuinticPolynomial.cpp.o
@@ -465,7 +495,7 @@ src/QuinticPolynomial.o: src/QuinticPolynomial.cpp.o
 
 # target to build an object file
 src/QuinticPolynomial.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/src/QuinticPolynomial.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/src/QuinticPolynomial.cpp.o
 .PHONY : src/QuinticPolynomial.cpp.o
 
 src/QuinticPolynomial.i: src/QuinticPolynomial.cpp.i
@@ -474,7 +504,7 @@ src/QuinticPolynomial.i: src/QuinticPolynomial.cpp.i
 
 # target to preprocess a source file
 src/QuinticPolynomial.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/src/QuinticPolynomial.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/src/QuinticPolynomial.cpp.i
 .PHONY : src/QuinticPolynomial.cpp.i
 
 src/QuinticPolynomial.s: src/QuinticPolynomial.cpp.s
@@ -483,7 +513,7 @@ src/QuinticPolynomial.s: src/QuinticPolynomial.cpp.s
 
 # target to generate assembly for a file
 src/QuinticPolynomial.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/src/QuinticPolynomial.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/src/QuinticPolynomial.cpp.s
 .PHONY : src/QuinticPolynomial.cpp.s
 
 src/RangeImpl.o: src/RangeImpl.cpp.o
@@ -492,7 +522,7 @@ src/RangeImpl.o: src/RangeImpl.cpp.o
 
 # target to build an object file
 src/RangeImpl.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/src/RangeImpl.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/src/RangeImpl.cpp.o
 .PHONY : src/RangeImpl.cpp.o
 
 src/RangeImpl.i: src/RangeImpl.cpp.i
@@ -501,7 +531,7 @@ src/RangeImpl.i: src/RangeImpl.cpp.i
 
 # target to preprocess a source file
 src/RangeImpl.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/src/RangeImpl.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/src/RangeImpl.cpp.i
 .PHONY : src/RangeImpl.cpp.i
 
 src/RangeImpl.s: src/RangeImpl.cpp.s
@@ -510,8 +540,35 @@ src/RangeImpl.s: src/RangeImpl.cpp.s
 
 # target to generate assembly for a file
 src/RangeImpl.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/src/RangeImpl.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/src/RangeImpl.cpp.s
 .PHONY : src/RangeImpl.cpp.s
+
+src/cam_sim_node.o: src/cam_sim_node.cpp.o
+
+.PHONY : src/cam_sim_node.o
+
+# target to build an object file
+src/cam_sim_node.cpp.o:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/src/cam_sim_node.cpp.o
+.PHONY : src/cam_sim_node.cpp.o
+
+src/cam_sim_node.i: src/cam_sim_node.cpp.i
+
+.PHONY : src/cam_sim_node.i
+
+# target to preprocess a source file
+src/cam_sim_node.cpp.i:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/src/cam_sim_node.cpp.i
+.PHONY : src/cam_sim_node.cpp.i
+
+src/cam_sim_node.s: src/cam_sim_node.cpp.s
+
+.PHONY : src/cam_sim_node.s
+
+# target to generate assembly for a file
+src/cam_sim_node.cpp.s:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/src/cam_sim_node.cpp.s
+.PHONY : src/cam_sim_node.cpp.s
 
 src/ez_sim_planning.o: src/ez_sim_planning.cpp.o
 
@@ -519,7 +576,7 @@ src/ez_sim_planning.o: src/ez_sim_planning.cpp.o
 
 # target to build an object file
 src/ez_sim_planning.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/src/ez_sim_planning.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/src/ez_sim_planning.cpp.o
 .PHONY : src/ez_sim_planning.cpp.o
 
 src/ez_sim_planning.i: src/ez_sim_planning.cpp.i
@@ -528,7 +585,7 @@ src/ez_sim_planning.i: src/ez_sim_planning.cpp.i
 
 # target to preprocess a source file
 src/ez_sim_planning.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/src/ez_sim_planning.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/src/ez_sim_planning.cpp.i
 .PHONY : src/ez_sim_planning.cpp.i
 
 src/ez_sim_planning.s: src/ez_sim_planning.cpp.s
@@ -537,7 +594,7 @@ src/ez_sim_planning.s: src/ez_sim_planning.cpp.s
 
 # target to generate assembly for a file
 src/ez_sim_planning.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/src/ez_sim_planning.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/src/ez_sim_planning.cpp.s
 .PHONY : src/ez_sim_planning.cpp.s
 
 src/gazebo_one_drone_planning.o: src/gazebo_one_drone_planning.cpp.o
@@ -546,7 +603,7 @@ src/gazebo_one_drone_planning.o: src/gazebo_one_drone_planning.cpp.o
 
 # target to build an object file
 src/gazebo_one_drone_planning.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/src/gazebo_one_drone_planning.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/src/gazebo_one_drone_planning.cpp.o
 .PHONY : src/gazebo_one_drone_planning.cpp.o
 
 src/gazebo_one_drone_planning.i: src/gazebo_one_drone_planning.cpp.i
@@ -555,7 +612,7 @@ src/gazebo_one_drone_planning.i: src/gazebo_one_drone_planning.cpp.i
 
 # target to preprocess a source file
 src/gazebo_one_drone_planning.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/src/gazebo_one_drone_planning.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/src/gazebo_one_drone_planning.cpp.i
 .PHONY : src/gazebo_one_drone_planning.cpp.i
 
 src/gazebo_one_drone_planning.s: src/gazebo_one_drone_planning.cpp.s
@@ -564,7 +621,7 @@ src/gazebo_one_drone_planning.s: src/gazebo_one_drone_planning.cpp.s
 
 # target to generate assembly for a file
 src/gazebo_one_drone_planning.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/src/gazebo_one_drone_planning.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/src/gazebo_one_drone_planning.cpp.s
 .PHONY : src/gazebo_one_drone_planning.cpp.s
 
 src/generate_sim_planning_path.o: src/generate_sim_planning_path.cpp.o
@@ -573,7 +630,7 @@ src/generate_sim_planning_path.o: src/generate_sim_planning_path.cpp.o
 
 # target to build an object file
 src/generate_sim_planning_path.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/src/generate_sim_planning_path.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/src/generate_sim_planning_path.cpp.o
 .PHONY : src/generate_sim_planning_path.cpp.o
 
 src/generate_sim_planning_path.i: src/generate_sim_planning_path.cpp.i
@@ -582,7 +639,7 @@ src/generate_sim_planning_path.i: src/generate_sim_planning_path.cpp.i
 
 # target to preprocess a source file
 src/generate_sim_planning_path.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/src/generate_sim_planning_path.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/src/generate_sim_planning_path.cpp.i
 .PHONY : src/generate_sim_planning_path.cpp.i
 
 src/generate_sim_planning_path.s: src/generate_sim_planning_path.cpp.s
@@ -591,7 +648,7 @@ src/generate_sim_planning_path.s: src/generate_sim_planning_path.cpp.s
 
 # target to generate assembly for a file
 src/generate_sim_planning_path.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/src/generate_sim_planning_path.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/src/generate_sim_planning_path.cpp.s
 .PHONY : src/generate_sim_planning_path.cpp.s
 
 src/leader_follower_node.o: src/leader_follower_node.cpp.o
@@ -600,7 +657,7 @@ src/leader_follower_node.o: src/leader_follower_node.cpp.o
 
 # target to build an object file
 src/leader_follower_node.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/src/leader_follower_node.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/src/leader_follower_node.cpp.o
 .PHONY : src/leader_follower_node.cpp.o
 
 src/leader_follower_node.i: src/leader_follower_node.cpp.i
@@ -609,7 +666,7 @@ src/leader_follower_node.i: src/leader_follower_node.cpp.i
 
 # target to preprocess a source file
 src/leader_follower_node.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/src/leader_follower_node.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/src/leader_follower_node.cpp.i
 .PHONY : src/leader_follower_node.cpp.i
 
 src/leader_follower_node.s: src/leader_follower_node.cpp.s
@@ -618,7 +675,7 @@ src/leader_follower_node.s: src/leader_follower_node.cpp.s
 
 # target to generate assembly for a file
 src/leader_follower_node.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/src/leader_follower_node.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/src/leader_follower_node.cpp.s
 .PHONY : src/leader_follower_node.cpp.s
 
 src/offb_fixed_flight_node.o: src/offb_fixed_flight_node.cpp.o
@@ -627,7 +684,7 @@ src/offb_fixed_flight_node.o: src/offb_fixed_flight_node.cpp.o
 
 # target to build an object file
 src/offb_fixed_flight_node.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/src/offb_fixed_flight_node.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/src/offb_fixed_flight_node.cpp.o
 .PHONY : src/offb_fixed_flight_node.cpp.o
 
 src/offb_fixed_flight_node.i: src/offb_fixed_flight_node.cpp.i
@@ -636,7 +693,7 @@ src/offb_fixed_flight_node.i: src/offb_fixed_flight_node.cpp.i
 
 # target to preprocess a source file
 src/offb_fixed_flight_node.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/src/offb_fixed_flight_node.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/src/offb_fixed_flight_node.cpp.i
 .PHONY : src/offb_fixed_flight_node.cpp.i
 
 src/offb_fixed_flight_node.s: src/offb_fixed_flight_node.cpp.s
@@ -645,7 +702,7 @@ src/offb_fixed_flight_node.s: src/offb_fixed_flight_node.cpp.s
 
 # target to generate assembly for a file
 src/offb_fixed_flight_node.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/src/offb_fixed_flight_node.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/src/offb_fixed_flight_node.cpp.s
 .PHONY : src/offb_fixed_flight_node.cpp.s
 
 src/offboard_take_off_test_node.o: src/offboard_take_off_test_node.cpp.o
@@ -654,7 +711,7 @@ src/offboard_take_off_test_node.o: src/offboard_take_off_test_node.cpp.o
 
 # target to build an object file
 src/offboard_take_off_test_node.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/src/offboard_take_off_test_node.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/src/offboard_take_off_test_node.cpp.o
 .PHONY : src/offboard_take_off_test_node.cpp.o
 
 src/offboard_take_off_test_node.i: src/offboard_take_off_test_node.cpp.i
@@ -663,7 +720,7 @@ src/offboard_take_off_test_node.i: src/offboard_take_off_test_node.cpp.i
 
 # target to preprocess a source file
 src/offboard_take_off_test_node.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/src/offboard_take_off_test_node.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/src/offboard_take_off_test_node.cpp.i
 .PHONY : src/offboard_take_off_test_node.cpp.i
 
 src/offboard_take_off_test_node.s: src/offboard_take_off_test_node.cpp.s
@@ -672,8 +729,35 @@ src/offboard_take_off_test_node.s: src/offboard_take_off_test_node.cpp.s
 
 # target to generate assembly for a file
 src/offboard_take_off_test_node.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/src/offboard_take_off_test_node.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/src/offboard_take_off_test_node.cpp.s
 .PHONY : src/offboard_take_off_test_node.cpp.s
+
+src/one_drone_mission_planning.o: src/one_drone_mission_planning.cpp.o
+
+.PHONY : src/one_drone_mission_planning.o
+
+# target to build an object file
+src/one_drone_mission_planning.cpp.o:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/src/one_drone_mission_planning.cpp.o
+.PHONY : src/one_drone_mission_planning.cpp.o
+
+src/one_drone_mission_planning.i: src/one_drone_mission_planning.cpp.i
+
+.PHONY : src/one_drone_mission_planning.i
+
+# target to preprocess a source file
+src/one_drone_mission_planning.cpp.i:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/src/one_drone_mission_planning.cpp.i
+.PHONY : src/one_drone_mission_planning.cpp.i
+
+src/one_drone_mission_planning.s: src/one_drone_mission_planning.cpp.s
+
+.PHONY : src/one_drone_mission_planning.s
+
+# target to generate assembly for a file
+src/one_drone_mission_planning.cpp.s:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/src/one_drone_mission_planning.cpp.s
+.PHONY : src/one_drone_mission_planning.cpp.s
 
 src/path_tracking_node.o: src/path_tracking_node.cpp.o
 
@@ -681,7 +765,7 @@ src/path_tracking_node.o: src/path_tracking_node.cpp.o
 
 # target to build an object file
 src/path_tracking_node.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o
 .PHONY : src/path_tracking_node.cpp.o
 
 src/path_tracking_node.i: src/path_tracking_node.cpp.i
@@ -690,7 +774,7 @@ src/path_tracking_node.i: src/path_tracking_node.cpp.i
 
 # target to preprocess a source file
 src/path_tracking_node.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.i
 .PHONY : src/path_tracking_node.cpp.i
 
 src/path_tracking_node.s: src/path_tracking_node.cpp.s
@@ -699,7 +783,7 @@ src/path_tracking_node.s: src/path_tracking_node.cpp.s
 
 # target to generate assembly for a file
 src/path_tracking_node.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.s
 .PHONY : src/path_tracking_node.cpp.s
 
 src/three_drone_take_off_test_node.o: src/three_drone_take_off_test_node.cpp.o
@@ -708,7 +792,7 @@ src/three_drone_take_off_test_node.o: src/three_drone_take_off_test_node.cpp.o
 
 # target to build an object file
 src/three_drone_take_off_test_node.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/src/three_drone_take_off_test_node.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/src/three_drone_take_off_test_node.cpp.o
 .PHONY : src/three_drone_take_off_test_node.cpp.o
 
 src/three_drone_take_off_test_node.i: src/three_drone_take_off_test_node.cpp.i
@@ -717,7 +801,7 @@ src/three_drone_take_off_test_node.i: src/three_drone_take_off_test_node.cpp.i
 
 # target to preprocess a source file
 src/three_drone_take_off_test_node.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/src/three_drone_take_off_test_node.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/src/three_drone_take_off_test_node.cpp.i
 .PHONY : src/three_drone_take_off_test_node.cpp.i
 
 src/three_drone_take_off_test_node.s: src/three_drone_take_off_test_node.cpp.s
@@ -726,7 +810,7 @@ src/three_drone_take_off_test_node.s: src/three_drone_take_off_test_node.cpp.s
 
 # target to generate assembly for a file
 src/three_drone_take_off_test_node.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/src/three_drone_take_off_test_node.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/src/three_drone_take_off_test_node.cpp.s
 .PHONY : src/three_drone_take_off_test_node.cpp.s
 
 src/three_drone_take_off_together_node.o: src/three_drone_take_off_together_node.cpp.o
@@ -735,7 +819,7 @@ src/three_drone_take_off_together_node.o: src/three_drone_take_off_together_node
 
 # target to build an object file
 src/three_drone_take_off_together_node.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/src/three_drone_take_off_together_node.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/src/three_drone_take_off_together_node.cpp.o
 .PHONY : src/three_drone_take_off_together_node.cpp.o
 
 src/three_drone_take_off_together_node.i: src/three_drone_take_off_together_node.cpp.i
@@ -744,7 +828,7 @@ src/three_drone_take_off_together_node.i: src/three_drone_take_off_together_node
 
 # target to preprocess a source file
 src/three_drone_take_off_together_node.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/src/three_drone_take_off_together_node.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/src/three_drone_take_off_together_node.cpp.i
 .PHONY : src/three_drone_take_off_together_node.cpp.i
 
 src/three_drone_take_off_together_node.s: src/three_drone_take_off_together_node.cpp.s
@@ -753,7 +837,7 @@ src/three_drone_take_off_together_node.s: src/three_drone_take_off_together_node
 
 # target to generate assembly for a file
 src/three_drone_take_off_together_node.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/src/three_drone_take_off_together_node.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/src/three_drone_take_off_together_node.cpp.s
 .PHONY : src/three_drone_take_off_together_node.cpp.s
 
 src/tracking_cam_anyyaw_node.o: src/tracking_cam_anyyaw_node.cpp.o
@@ -762,7 +846,7 @@ src/tracking_cam_anyyaw_node.o: src/tracking_cam_anyyaw_node.cpp.o
 
 # target to build an object file
 src/tracking_cam_anyyaw_node.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/src/tracking_cam_anyyaw_node.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/src/tracking_cam_anyyaw_node.cpp.o
 .PHONY : src/tracking_cam_anyyaw_node.cpp.o
 
 src/tracking_cam_anyyaw_node.i: src/tracking_cam_anyyaw_node.cpp.i
@@ -771,7 +855,7 @@ src/tracking_cam_anyyaw_node.i: src/tracking_cam_anyyaw_node.cpp.i
 
 # target to preprocess a source file
 src/tracking_cam_anyyaw_node.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/src/tracking_cam_anyyaw_node.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/src/tracking_cam_anyyaw_node.cpp.i
 .PHONY : src/tracking_cam_anyyaw_node.cpp.i
 
 src/tracking_cam_anyyaw_node.s: src/tracking_cam_anyyaw_node.cpp.s
@@ -780,7 +864,7 @@ src/tracking_cam_anyyaw_node.s: src/tracking_cam_anyyaw_node.cpp.s
 
 # target to generate assembly for a file
 src/tracking_cam_anyyaw_node.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/src/tracking_cam_anyyaw_node.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/src/tracking_cam_anyyaw_node.cpp.s
 .PHONY : src/tracking_cam_anyyaw_node.cpp.s
 
 src/tracking_cam_node.o: src/tracking_cam_node.cpp.o
@@ -789,7 +873,7 @@ src/tracking_cam_node.o: src/tracking_cam_node.cpp.o
 
 # target to build an object file
 src/tracking_cam_node.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/src/tracking_cam_node.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/src/tracking_cam_node.cpp.o
 .PHONY : src/tracking_cam_node.cpp.o
 
 src/tracking_cam_node.i: src/tracking_cam_node.cpp.i
@@ -798,7 +882,7 @@ src/tracking_cam_node.i: src/tracking_cam_node.cpp.i
 
 # target to preprocess a source file
 src/tracking_cam_node.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/src/tracking_cam_node.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/src/tracking_cam_node.cpp.i
 .PHONY : src/tracking_cam_node.cpp.i
 
 src/tracking_cam_node.s: src/tracking_cam_node.cpp.s
@@ -807,7 +891,7 @@ src/tracking_cam_node.s: src/tracking_cam_node.cpp.s
 
 # target to generate assembly for a file
 src/tracking_cam_node.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/src/tracking_cam_node.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/src/tracking_cam_node.cpp.s
 .PHONY : src/tracking_cam_node.cpp.s
 
 src/virtual_structure_node.o: src/virtual_structure_node.cpp.o
@@ -816,7 +900,7 @@ src/virtual_structure_node.o: src/virtual_structure_node.cpp.o
 
 # target to build an object file
 src/virtual_structure_node.cpp.o:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/src/virtual_structure_node.cpp.o
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/src/virtual_structure_node.cpp.o
 .PHONY : src/virtual_structure_node.cpp.o
 
 src/virtual_structure_node.i: src/virtual_structure_node.cpp.i
@@ -825,7 +909,7 @@ src/virtual_structure_node.i: src/virtual_structure_node.cpp.i
 
 # target to preprocess a source file
 src/virtual_structure_node.cpp.i:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/src/virtual_structure_node.cpp.i
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/src/virtual_structure_node.cpp.i
 .PHONY : src/virtual_structure_node.cpp.i
 
 src/virtual_structure_node.s: src/virtual_structure_node.cpp.s
@@ -834,7 +918,7 @@ src/virtual_structure_node.s: src/virtual_structure_node.cpp.s
 
 # target to generate assembly for a file
 src/virtual_structure_node.cpp.s:
-	cd /home/dqn/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/src/virtual_structure_node.cpp.s
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/src/virtual_structure_node.cpp.s
 .PHONY : src/virtual_structure_node.cpp.s
 
 # Help Target
@@ -843,8 +927,8 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... tracking_cam_node"
 	@echo "... install"
+	@echo "... tracking_cam_node"
 	@echo "... ez_sim_planning"
 	@echo "... QuinticPolynomial"
 	@echo "... edit_cache"
@@ -853,19 +937,21 @@ help:
 	@echo "... list_install_components"
 	@echo "... offboard_take_off_test_node"
 	@echo "... generate_sim_planning_path"
+	@echo "... rebuild_cache"
+	@echo "... QuarticPolynomial"
 	@echo "... tracking_cam_anyyaw_node"
 	@echo "... three_drone_take_off_test_node"
 	@echo "... gazebo_one_drone_planning"
 	@echo "... three_drone_take_off_together_node"
-	@echo "... leader_follower_node"
 	@echo "... install/strip"
 	@echo "... virtual_structure_node"
 	@echo "... path_tracking_node"
 	@echo "... install/local"
+	@echo "... leader_follower_node"
+	@echo "... cam_sim_node"
+	@echo "... one_drone_mission_planning"
 	@echo "... RangeImpl"
 	@echo "... test"
-	@echo "... QuarticPolynomial"
-	@echo "... rebuild_cache"
 	@echo "... src/CubicSplinePlanner.o"
 	@echo "... src/CubicSplinePlanner.i"
 	@echo "... src/CubicSplinePlanner.s"
@@ -878,6 +964,9 @@ help:
 	@echo "... src/RangeImpl.o"
 	@echo "... src/RangeImpl.i"
 	@echo "... src/RangeImpl.s"
+	@echo "... src/cam_sim_node.o"
+	@echo "... src/cam_sim_node.i"
+	@echo "... src/cam_sim_node.s"
 	@echo "... src/ez_sim_planning.o"
 	@echo "... src/ez_sim_planning.i"
 	@echo "... src/ez_sim_planning.s"
@@ -896,6 +985,9 @@ help:
 	@echo "... src/offboard_take_off_test_node.o"
 	@echo "... src/offboard_take_off_test_node.i"
 	@echo "... src/offboard_take_off_test_node.s"
+	@echo "... src/one_drone_mission_planning.o"
+	@echo "... src/one_drone_mission_planning.i"
+	@echo "... src/one_drone_mission_planning.s"
 	@echo "... src/path_tracking_node.o"
 	@echo "... src/path_tracking_node.i"
 	@echo "... src/path_tracking_node.s"
@@ -925,6 +1017,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/dqn/drone_formation/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

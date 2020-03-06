@@ -18,12 +18,15 @@
 #include <Eigen/Dense>
 // #include <Eigen/LU>
 #include "opencvtest/contours.h"
+#include "frenet_optimal_trajectory_pkg/CubicSplinePlanner.h"
+#include "frenet_optimal_trajectory_pkg/RangeImpl.h"
 // #include <mavros_msgs/AttitudeTarget.h>
 #define M_DEG_TO_RAD 1/57.295
 #define CONSTANTS_RADIUS_OF_EARTH 6371000
 #define CAM_CENTER_X 0
 #define CAM_CENTER_Z 0
 
+using namespace CubicSplinePlanner;
 //将地理学坐标系(geographic coordinate system)中的点(球)投影到本地方位等距平面(XOY)中
 // geometry_msgs::Point world_to_local(const double ref_lat, const double ref_lon, double lat, double lon) {
 
@@ -83,7 +86,7 @@
 //     }
 // }
 
-double ahead_distance = 10;//实时目标点向前的距离
+double ahead_distance = 50;//实时目标点向前的距离
 double k = 0.1; //速度的增益
 
 enum MissionState
@@ -317,15 +320,15 @@ int main(int argc, char **argv)
             current_pose_new.position.x = temp_pos_new(0);
             current_pose_new.position.y = temp_pos_new(1);
             current_pose_new.position.z = temp_pos_new(2);
-            std::cout << temp_pos_new.adjoint() << std::endl;
+            
             // position_target_new.position.x = 300;
             // position_target_new.position.y = 0;
             position_target_new.velocity.x = 0;
             if (camera_data.find_obs_flag)
             {
                 position_target_new.position.x = current_pose_new.position.x;
-                position_target_new.velocity.x = 0;
-                position_target_new.position.y = current_pose_new.position.y - 0.01 * (camera_data.x_pos - CAM_CENTER_X);
+                position_target_new.velocity.x = 5;
+                position_target_new.position.y = current_pose_new.position.y - 0.02 * (camera_data.x_pos - CAM_CENTER_X);
                 position_target_new.position.z = current_pose_new.position.z + 0.01 * (camera_data.y_pos - CAM_CENTER_Z);
             }
             else
@@ -359,8 +362,8 @@ int main(int argc, char **argv)
             position_target_local.yaw_rate = 0;
             // position_target_local.velocity.z = temp_vel(2);
             
-        }
-        
+        } 
+        std::cout << current_pose.pose.position.x << " " << current_pose.pose.position.y << " " << current_pose.pose.position.z << std::endl;
         local_target_pub.publish(position_target_local);
         // std::cout << fly_log.is_open() << std::endl;
         ros::spinOnce();

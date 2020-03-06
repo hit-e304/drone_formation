@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/dqn/drone_formation/build"
+export PWD="/home/lihai/drone_test_ws/drone_formation/build"

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/dqn/drone_formation/build/ur_rviz_plugin/src/moc_ur_panel.cpp" "/home/dqn/drone_formation/build/ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o"
-  "/home/dqn/drone_formation/src/ur_rviz_plugin/src/ur_panel.cpp" "/home/dqn/drone_formation/build/ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o"
+  "/home/lihai/drone_test_ws/drone_formation/build/ur_rviz_plugin/src/moc_ur_panel.cpp" "/home/lihai/drone_test_ws/drone_formation/build/ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o"
+  "/home/lihai/drone_test_ws/drone_formation/src/ur_rviz_plugin/src/ur_panel.cpp" "/home/lihai/drone_test_ws/drone_formation/build/ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -13,7 +13,6 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "QT_CORE_LIB"
   "QT_GUI_LIB"
-  "QT_NO_DEBUG"
   "QT_NO_KEYWORDS"
   "QT_WIDGETS_LIB"
   "ROSCONSOLE_BACKEND_LOG4CXX"
