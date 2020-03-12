@@ -803,6 +803,84 @@ std_msgs_generate_messages_lisp/fast:
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named UAV1_leader_node
+
+# Build rule for target.
+UAV1_leader_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 UAV1_leader_node
+.PHONY : UAV1_leader_node
+
+# fast build rule for target.
+UAV1_leader_node/fast:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build
+.PHONY : UAV1_leader_node/fast
+
+#=============================================================================
+# Target rules for targets named CubicSplinePlanner_LF
+
+# Build rule for target.
+CubicSplinePlanner_LF: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CubicSplinePlanner_LF
+.PHONY : CubicSplinePlanner_LF
+
+# fast build rule for target.
+CubicSplinePlanner_LF/fast:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/build
+.PHONY : CubicSplinePlanner_LF/fast
+
+#=============================================================================
+# Target rules for targets named UAV2_follower_node
+
+# Build rule for target.
+UAV2_follower_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 UAV2_follower_node
+.PHONY : UAV2_follower_node
+
+# fast build rule for target.
+UAV2_follower_node/fast:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/build
+.PHONY : UAV2_follower_node/fast
+
+#=============================================================================
+# Target rules for targets named RangeImpl_LF
+
+# Build rule for target.
+RangeImpl_LF: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RangeImpl_LF
+.PHONY : RangeImpl_LF
+
+# fast build rule for target.
+RangeImpl_LF/fast:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/build
+.PHONY : RangeImpl_LF/fast
+
+#=============================================================================
+# Target rules for targets named UAV3_follower_node
+
+# Build rule for target.
+UAV3_follower_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 UAV3_follower_node
+.PHONY : UAV3_follower_node
+
+# fast build rule for target.
+UAV3_follower_node/fast:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/build
+.PHONY : UAV3_follower_node/fast
+
+#=============================================================================
+# Target rules for targets named cam_sim_node_LF
+
+# Build rule for target.
+cam_sim_node_LF: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cam_sim_node_LF
+.PHONY : cam_sim_node_LF
+
+# fast build rule for target.
+cam_sim_node_LF/fast:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/build
+.PHONY : cam_sim_node_LF/fast
+
+#=============================================================================
 # Target rules for targets named tracking_cam_node
 
 # Build rule for target.
@@ -1035,19 +1113,6 @@ RangeImpl: cmake_check_build_system
 RangeImpl/fast:
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
 .PHONY : RangeImpl/fast
-
-#=============================================================================
-# Target rules for targets named UAV1_leader_node
-
-# Build rule for target.
-UAV1_leader_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 UAV1_leader_node
-.PHONY : UAV1_leader_node
-
-# fast build rule for target.
-UAV1_leader_node/fast:
-	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build
-.PHONY : UAV1_leader_node/fast
 
 #=============================================================================
 # Target rules for targets named nav_msgs_generate_messages_lisp
@@ -1800,6 +1865,12 @@ help:
 	@echo "... opencvtest_generate_messages_cpp"
 	@echo "... opencv_testcam"
 	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... UAV1_leader_node"
+	@echo "... CubicSplinePlanner_LF"
+	@echo "... UAV2_follower_node"
+	@echo "... RangeImpl_LF"
+	@echo "... UAV3_follower_node"
+	@echo "... cam_sim_node_LF"
 	@echo "... tracking_cam_node"
 	@echo "... ez_sim_planning"
 	@echo "... QuinticPolynomial"
@@ -1818,7 +1889,6 @@ help:
 	@echo "... cam_sim_node"
 	@echo "... one_drone_mission_planning"
 	@echo "... RangeImpl"
-	@echo "... UAV1_leader_node"
 	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf_generate_messages_lisp"

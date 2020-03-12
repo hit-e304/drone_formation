@@ -1,5 +1,6 @@
 1.该环境基于PX4Firmware改进而来，主要修改了Firmware/launch文件夹下mavros_posix_sitl.launch文件下的加载world语句，使其不再加载empty.world文件而是加载我们所新创建的my_frame.world文件，该文件被放置于Firmware/Tools/sitl_gazebo/worlds文件夹下。
 2.新定义的my_frame.world文件主要改进的地方是新增加一个大块地皮模型my_asphalt_plane以及两个框模型my_frame1、my_frame2（这三个模型均放置于Firmware/Tools/sitl_gazebo/models文件夹下）。其中，my_asphalt_plane地皮模型由groud_plane改进而来，my_frame框模型由第三方3D建模软件绘制模型后导出为dae文件存放于该模型文件夹的mesh文件夹下，再通过编辑sdf文件代码将dae模型导入而得到（但是目前版本并未编辑其物理碰撞属性定义，只是一个可视化的框而已）。
+3.单机所用到的world文件为my_frame.world，多机用到的world文件为my_frame_multi.world。这是因为多机中莫名其妙新加的地皮模型文件即my_asphalt_plane会不好使，会导致飞机2和飞机3无法解锁起飞，所以只好不加地皮。并且单机和多机的launch文件里的引入world对应语句也做了改变。
 
 说明：
      1.想要利用这个环境来进行软件在环仿真，则需通过以下这种方式来开启sitl：
@@ -9,7 +10,8 @@
 		source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
 		export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd):$(pwd)/Tools/sitl_gazebo
 		# 运行单机仿真的launch文件
-		roslaunch px4 mavros_posix_sitl.launch
+		roslaunch px4 mavros_posix_sitl.launch（单机）
+		roslaunch px4 multi_uav_mavros_sitl.launch(多机)
 		cd ~/到你的工作空间
 		#catkin_make（如果已编译过就可不再进行编译）
 		source devel/setup.bash

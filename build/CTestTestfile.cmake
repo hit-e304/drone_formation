@@ -6,7 +6,7 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(opencvtest)
-subdirs(frenet_optimal_trajectory_pkg)
 subdirs(formation_algorithm_leader_follower)
+subdirs(frenet_optimal_trajectory_pkg)
 subdirs(ur_rviz_plugin)
 subdirs(usb_cam)

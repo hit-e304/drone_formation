@@ -1,8 +1,0 @@
-prefix=/home/lihai/drone_test_ws/drone_formation/devel
-
-Name: formation_algorithm
-Description: Description of formation_algorithm
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/lihai/drone_test_ws/drone_formation/devel/lib 
-Requires: 

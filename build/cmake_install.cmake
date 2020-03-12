@@ -127,8 +127,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/lihai/drone_test_ws/drone_formation/build/gtest/cmake_install.cmake")
   include("/home/lihai/drone_test_ws/drone_formation/build/opencvtest/cmake_install.cmake")
-  include("/home/lihai/drone_test_ws/drone_formation/build/frenet_optimal_trajectory_pkg/cmake_install.cmake")
   include("/home/lihai/drone_test_ws/drone_formation/build/formation_algorithm_leader_follower/cmake_install.cmake")
+  include("/home/lihai/drone_test_ws/drone_formation/build/frenet_optimal_trajectory_pkg/cmake_install.cmake")
   include("/home/lihai/drone_test_ws/drone_formation/build/ur_rviz_plugin/cmake_install.cmake")
   include("/home/lihai/drone_test_ws/drone_formation/build/usb_cam/cmake_install.cmake")
 

@@ -109,6 +109,27 @@ UAV1_leader_node_EXTERNAL_OBJECTS =
 /home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /home/lihai/drone_test_ws/drone_formation/devel/lib/libRangeImpl_LF.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /home/lihai/drone_test_ws/drone_formation/devel/lib/libCubicSplinePlanner_LF.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /opt/ros/kinetic/lib/libroscpp.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /opt/ros/kinetic/lib/librosconsole.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /opt/ros/kinetic/lib/librostime.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /opt/ros/kinetic/lib/libcpp_common.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
 /home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node: formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/lihai/drone_test_ws/drone_formation/devel/lib/formation_algorithm_leader_follower/UAV1_leader_node"
 	cd /home/lihai/drone_test_ws/drone_formation/build/formation_algorithm_leader_follower && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UAV1_leader_node.dir/link.txt --verbose=$(VERBOSE)

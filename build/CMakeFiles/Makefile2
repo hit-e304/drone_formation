@@ -246,7 +246,7 @@ gtest/preinstall: gtest/gtest/preinstall
 gtest/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=19,20,21 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=29,30,31 "Built target gmock"
 .PHONY : gtest/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -278,7 +278,7 @@ clean: gtest/CMakeFiles/gmock.dir/clean
 gtest/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=22,23,24,25 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=32,33,34,35 "Built target gmock_main"
 .PHONY : gtest/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -329,7 +329,7 @@ gtest/gtest/preinstall:
 gtest/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=26,27 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=36,37 "Built target gtest"
 .PHONY : gtest/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -361,7 +361,7 @@ clean: gtest/gtest/CMakeFiles/gtest.dir/clean
 gtest/gtest/CMakeFiles/gtest_main.dir/all: gtest/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=28,29 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=38,39 "Built target gtest_main"
 .PHONY : gtest/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -549,7 +549,7 @@ opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all: opencvtest/CMak
 opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=45,46 "Built target opencvtest_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=55,56 "Built target opencvtest_generate_messages_lisp"
 .PHONY : opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1040,7 +1040,7 @@ opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all: opencvtest/CMakeF
 opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all: opencvtest/CMakeFiles/_opencvtest_generate_messages_check_deps_contours.dir/all
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=49,50,51 "Built target opencvtest_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=59,60,61 "Built target opencvtest_generate_messages_py"
 .PHONY : opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1490,7 +1490,7 @@ opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all: opencvtest/CMake
 opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all: opencvtest/CMakeFiles/_opencvtest_generate_messages_check_deps_contours.dir/all
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=42,43,44 "Built target opencvtest_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=52,53,54 "Built target opencvtest_generate_messages_eus"
 .PHONY : opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1588,7 +1588,7 @@ opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all: opencvtest/CM
 opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all: opencvtest/CMakeFiles/_opencvtest_generate_messages_check_deps_contours.dir/all
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=47,48 "Built target opencvtest_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=57,58 "Built target opencvtest_generate_messages_nodejs"
 .PHONY : opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1654,7 +1654,7 @@ opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all: opencvtest/CMake
 opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all: opencvtest/CMakeFiles/_opencvtest_generate_messages_check_deps_contours.dir/all
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=40,41 "Built target opencvtest_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=50,51 "Built target opencvtest_generate_messages_cpp"
 .PHONY : opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1686,7 +1686,7 @@ clean: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/clean
 opencvtest/CMakeFiles/opencv_testcam.dir/all:
 	$(MAKE) -f opencvtest/CMakeFiles/opencv_testcam.dir/build.make opencvtest/CMakeFiles/opencv_testcam.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencv_testcam.dir/build.make opencvtest/CMakeFiles/opencv_testcam.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=38,39 "Built target opencv_testcam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=48,49 "Built target opencv_testcam"
 .PHONY : opencvtest/CMakeFiles/opencv_testcam.dir/all
 
 # Include target in all.
@@ -1745,6 +1745,372 @@ opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
 
 # clean rule for target.
 clean: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory formation_algorithm_leader_follower
+
+# Convenience name for "all" pass in the directory.
+formation_algorithm_leader_follower/all: formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all
+formation_algorithm_leader_follower/all: formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all
+formation_algorithm_leader_follower/all: formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all
+formation_algorithm_leader_follower/all: formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all
+formation_algorithm_leader_follower/all: formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all
+formation_algorithm_leader_follower/all: formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all
+
+.PHONY : formation_algorithm_leader_follower/all
+
+# Convenience name for "clean" pass in the directory.
+formation_algorithm_leader_follower/clean: formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/clean
+formation_algorithm_leader_follower/clean: formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/clean
+formation_algorithm_leader_follower/clean: formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/clean
+formation_algorithm_leader_follower/clean: formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/clean
+formation_algorithm_leader_follower/clean: formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/clean
+formation_algorithm_leader_follower/clean: formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/clean
+
+.PHONY : formation_algorithm_leader_follower/clean
+
+# Convenience name for "preinstall" pass in the directory.
+formation_algorithm_leader_follower/preinstall:
+
+.PHONY : formation_algorithm_leader_follower/preinstall
+
+#=============================================================================
+# Target rules for target formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir
+
+# All Build rule for target.
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/depend
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=13,14 "Built target UAV1_leader_node"
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all
+
+# Include target in all.
+all: formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 18
+	$(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/rule
+
+# Convenience name for target.
+UAV1_leader_node: formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/rule
+
+.PHONY : UAV1_leader_node
+
+# clean rule for target.
+formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/clean:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/clean
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/clean
+
+# clean rule for target.
+clean: formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir
+
+# All Build rule for target.
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/depend
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=3,4 "Built target CubicSplinePlanner_LF"
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all
+
+# Include target in all.
+all: formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/rule
+
+# Convenience name for target.
+CubicSplinePlanner_LF: formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/rule
+
+.PHONY : CubicSplinePlanner_LF
+
+# clean rule for target.
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/clean:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/clean
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/clean
+
+# clean rule for target.
+clean: formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir
+
+# All Build rule for target.
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/depend
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=15,16 "Built target UAV2_follower_node"
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all
+
+# Include target in all.
+all: formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/rule
+
+# Convenience name for target.
+UAV2_follower_node: formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/rule
+
+.PHONY : UAV2_follower_node
+
+# clean rule for target.
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/clean:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/clean
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/clean
+
+# clean rule for target.
+clean: formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir
+
+# All Build rule for target.
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/depend
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=11,12 "Built target RangeImpl_LF"
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all
+
+# Include target in all.
+all: formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/rule
+
+# Convenience name for target.
+RangeImpl_LF: formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/rule
+
+.PHONY : RangeImpl_LF
+
+# clean rule for target.
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/clean:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/clean
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/clean
+
+# clean rule for target.
+clean: formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir
+
+# All Build rule for target.
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/depend
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=17,18 "Built target UAV3_follower_node"
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all
+
+# Include target in all.
+all: formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/rule
+
+# Convenience name for target.
+UAV3_follower_node: formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/rule
+
+.PHONY : UAV3_follower_node
+
+# clean rule for target.
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/clean:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/clean
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/clean
+
+# clean rule for target.
+clean: formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir
+
+# All Build rule for target.
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_py.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/depend
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=21,22 "Built target cam_sim_node_LF"
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all
+
+# Include target in all.
+all: formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/rule
+
+# Convenience name for target.
+cam_sim_node_LF: formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/rule
+
+.PHONY : cam_sim_node_LF
+
+# clean rule for target.
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/clean:
+	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/clean
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/clean
+
+# clean rule for target.
+clean: formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/clean
 
 .PHONY : clean
 
@@ -1826,7 +2192,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/all: opencvtest/C
 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=60,61 "Built target tracking_cam_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=70,71 "Built target tracking_cam_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/all
 
 # Include target in all.
@@ -1882,7 +2248,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/all: opencvtest/CMa
 frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=13,14 "Built target ez_sim_planning"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=23,24 "Built target ez_sim_planning"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/all
 
 # Include target in all.
@@ -1938,7 +2304,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/all: opencvtest/C
 frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=5,6 "Built target QuinticPolynomial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=7,8 "Built target QuinticPolynomial"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/all
 
 # Include target in all.
@@ -2050,7 +2416,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/all: opencvt
 frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=32,33 "Built target offb_fixed_flight_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=42,43 "Built target offb_fixed_flight_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/all
 
 # Include target in all.
@@ -2106,7 +2472,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/all: op
 frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=34,35 "Built target offboard_take_off_test_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=44,45 "Built target offboard_take_off_test_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/all
 
 # Include target in all.
@@ -2166,7 +2532,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/all: fre
 frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=17,18 "Built target generate_sim_planning_path"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=27,28 "Built target generate_sim_planning_path"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/all
 
 # Include target in all.
@@ -2222,7 +2588,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/all: opencvtest/C
 frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=3,4 "Built target QuarticPolynomial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=5,6 "Built target QuarticPolynomial"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/all
 
 # Include target in all.
@@ -2278,7 +2644,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/all: openc
 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=58,59 "Built target tracking_cam_anyyaw_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=68,69 "Built target tracking_cam_anyyaw_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/all
 
 # Include target in all.
@@ -2334,7 +2700,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/all:
 frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=54,55 "Built target three_drone_take_off_test_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=64,65 "Built target three_drone_take_off_test_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/all
 
 # Include target in all.
@@ -2394,7 +2760,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/all: fren
 frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=15,16 "Built target gazebo_one_drone_planning"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=25,26 "Built target gazebo_one_drone_planning"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/all
 
 # Include target in all.
@@ -2450,7 +2816,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/
 frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=56,57 "Built target three_drone_take_off_together_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=66,67 "Built target three_drone_take_off_together_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/all
 
 # Include target in all.
@@ -2508,7 +2874,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/all: frenet_
 frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=70,71 "Built target virtual_structure_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=80,81 "Built target virtual_structure_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/all
 
 # Include target in all.
@@ -2566,7 +2932,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/all: frenet_opti
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=52,53 "Built target path_tracking_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=62,63 "Built target path_tracking_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/all
 
 # Include target in all.
@@ -2624,7 +2990,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/all: frenet_op
 frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=30,31 "Built target leader_follower_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=40,41 "Built target leader_follower_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/all
 
 # Include target in all.
@@ -2680,7 +3046,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/all: opencvtest/CMakeF
 frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=11,12 "Built target cam_sim_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=19,20 "Built target cam_sim_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/all
 
 # Include target in all.
@@ -2738,7 +3104,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/all: fre
 frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=36,37 "Built target one_drone_mission_planning"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=46,47 "Built target one_drone_mission_planning"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/all
 
 # Include target in all.
@@ -2794,7 +3160,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFile
 frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=7,8 "Built target RangeImpl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=9,10 "Built target RangeImpl"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
 
 # Include target in all.
@@ -2821,80 +3187,6 @@ frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean:
 
 # clean rule for target.
 clean: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory formation_algorithm_leader_follower
-
-# Convenience name for "all" pass in the directory.
-formation_algorithm_leader_follower/all: formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all
-
-.PHONY : formation_algorithm_leader_follower/all
-
-# Convenience name for "clean" pass in the directory.
-formation_algorithm_leader_follower/clean: formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/clean
-
-.PHONY : formation_algorithm_leader_follower/clean
-
-# Convenience name for "preinstall" pass in the directory.
-formation_algorithm_leader_follower/preinstall:
-
-.PHONY : formation_algorithm_leader_follower/preinstall
-
-#=============================================================================
-# Target rules for target formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir
-
-# All Build rule for target.
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_eus.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_py.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_py.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/depend
-	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=9,10 "Built target UAV1_leader_node"
-.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all
-
-# Include target in all.
-all: formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 14
-	$(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
-.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/rule
-
-# Convenience name for target.
-UAV1_leader_node: formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/rule
-
-.PHONY : UAV1_leader_node
-
-# clean rule for target.
-formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/clean:
-	$(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/clean
-.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/clean
-
-# clean rule for target.
-clean: formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/clean
 
 .PHONY : clean
 
@@ -3896,7 +4188,7 @@ clean: ur_rviz_plugin/CMakeFiles/visualization_msgs_generate_messages_eus.dir/cl
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/all:
 	$(MAKE) -f ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/build.make ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/depend
 	$(MAKE) -f ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/build.make ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=62,63,64,65 "Built target ur_rviz_plugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=72,73,74,75 "Built target ur_rviz_plugin"
 .PHONY : ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/all
 
 # Include target in all.
@@ -4566,7 +4858,7 @@ clean: usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
 usb_cam/CMakeFiles/usb_cam_node.dir/all: usb_cam/CMakeFiles/usb_cam.dir/all
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/depend
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=68,69 "Built target usb_cam_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=78,79 "Built target usb_cam_node"
 .PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/all
 
 # Include target in all.
@@ -4603,7 +4895,7 @@ clean: usb_cam/CMakeFiles/usb_cam_node.dir/clean
 usb_cam/CMakeFiles/usb_cam.dir/all:
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/depend
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=66,67 "Built target usb_cam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=76,77 "Built target usb_cam"
 .PHONY : usb_cam/CMakeFiles/usb_cam.dir/all
 
 # Include target in all.

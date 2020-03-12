@@ -19,7 +19,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower/include"
   "/home/lihai/drone_test_ws/drone_formation/devel/include"
-  "/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/eigen3"
@@ -27,6 +26,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/lihai/drone_test_ws/drone_formation/build/formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/DependInfo.cmake"
+  "/home/lihai/drone_test_ws/drone_formation/build/formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -100,7 +100,7 @@ find_package(Eigen3 REQUIRED)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS include
+  # INCLUDE_DIRS include
 #  LIBRARIES frenet_optimal_trajectory_pkg
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib

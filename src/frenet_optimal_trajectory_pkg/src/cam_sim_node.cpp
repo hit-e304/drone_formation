@@ -94,7 +94,7 @@ int main(int argc, char **argv)
         distance_from_plane_to_box2 = current_pose.pose.position.x - box_2.pose.position.x;
         error_yaw_between_plane_and_box1 = current_pose.pose.orientation.z - box_1.pose.orientation.z;
         error_yaw_between_plane_and_box2 = current_pose.pose.orientation.w - box_2.pose.orientation.w;
-        //飞机距离框1在16~80m之间，且yaw偏角与box1偏差在23度（用姿态四元数换算过来的，不一定准确，box1认为yaw指向为0）
+        //飞机距离框1在8~80m之间，且yaw偏角与box1偏差在23度（用姿态四元数换算过来的，不一定准确，box1认为yaw指向为0）
         if(distance_from_plane_to_box1 < d_max && distance_from_plane_to_box1 > d_min && error_yaw_between_plane_and_box1 < 0.2474 && error_yaw_between_plane_and_box1 > -0.2474)
         {
             sim_cam_info.find_obs_flag = true;
@@ -104,7 +104,7 @@ int main(int argc, char **argv)
             sim_cam_info.x_pos = (int)100*(current_pose.pose.position.y - box_1.pose.position.y);
             sim_cam_info.y_pos = (int)100*(box_1.pose.position.z - current_pose.pose.position.z);
         }
-        //飞机距离框2在16~80m之间，且yaw偏角与box2偏差在23度（用姿态四元数换算过来的，不一定准确，box2认为yaw指向为pi）
+        //飞机距离框2在8~80m之间，且yaw偏角与box2偏差在23度（用姿态四元数换算过来的，不一定准确，box2认为yaw指向为pi）
         if(distance_from_plane_to_box2 < d_max && distance_from_plane_to_box2 > d_min && error_yaw_between_plane_and_box2 < 0.2474 && error_yaw_between_plane_and_box2 > -0.2474)
         {
             sim_cam_info.find_obs_flag = true;

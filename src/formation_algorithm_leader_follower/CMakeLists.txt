@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(formation_algorithm_leader_follower)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   message_generation 
   opencvtest
-  frenet_optimal_trajectory_pkg
+  
 )
 find_package(Eigen3 REQUIRED)
 
@@ -121,6 +121,7 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
   include ${catkin_INCLUDE_DIRS}
+  # include ${catkin_INCLUDE_DIRS}
 # include
   ${EIGEN3_INCLUDE_DIR}
 )
@@ -211,10 +212,56 @@ include_directories(
 # catkin_add_nosetests(test)
 add_definitions(${EIGEN_DEFINITIONS})
 
+
+add_library(RangeImpl_LF
+  src/RangeImpl.cpp
+  include/formation_algorithm_leader_follower/RangeImpl.h
+)
+add_dependencies(RangeImpl_LF ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(RangeImpl_LF
+  ${catkin_LIBRARIES}
+)
+
+add_library(CubicSplinePlanner_LF
+  src/CubicSplinePlanner.cpp
+  include/formation_algorithm_leader_follower/CubicSplinePlanner.h
+)
+add_dependencies(CubicSplinePlanner_LF ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(CubicSplinePlanner_LF
+  ${catkin_LIBRARIES}
+)
+
 add_executable(UAV1_leader_node
   src/UAV1_leader_node.cpp
 )
-add_dependencies(UAV1_leader_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(UAV1_leader_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} RangeImpl_LF CubicSplinePlanner_LF)
 target_link_libraries(UAV1_leader_node
+  ${catkin_LIBRARIES}
+  RangeImpl_LF
+  CubicSplinePlanner_LF
+)
+
+add_executable(UAV2_follower_node
+  src/UAV2_follower_node.cpp
+)
+add_dependencies(UAV2_follower_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(UAV2_follower_node
+  ${catkin_LIBRARIES}
+)
+
+add_executable(UAV3_follower_node
+  src/UAV3_follower_node.cpp
+)
+add_dependencies(UAV3_follower_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(UAV3_follower_node
+  ${catkin_LIBRARIES}
+)
+
+
+add_executable(cam_sim_node_LF
+  src/cam_sim_node.cpp
+)
+add_dependencies(cam_sim_node_LF ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(cam_sim_node_LF
   ${catkin_LIBRARIES}
 )

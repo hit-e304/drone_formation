@@ -188,6 +188,9 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Dependencies for the target
+CubicSplinePlanner_LF_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
+
+//Dependencies for the target
 CubicSplinePlanner_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
 
 //Path to a program.
@@ -269,6 +272,9 @@ QuinticPolynomial_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.so;g
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 
 //Dependencies for the target
+RangeImpl_LF_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
+
+//Dependencies for the target
 RangeImpl_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
 
 //Enable debian style python package layout
@@ -323,25 +329,13 @@ cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
 
 //Value Computed by CMake
-formation_algorithm_BINARY_DIR:STATIC=/home/lihai/drone_test_ws/drone_formation/build/formation_algorithm
-
-//Value Computed by CMake
-formation_algorithm_SOURCE_DIR:STATIC=/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm
-
-//Value Computed by CMake
 formation_algorithm_leader_follower_BINARY_DIR:STATIC=/home/lihai/drone_test_ws/drone_formation/build/formation_algorithm_leader_follower
 
 //Value Computed by CMake
 formation_algorithm_leader_follower_SOURCE_DIR:STATIC=/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower
 
-//The directory containing a CMake configuration file for frenet_optimal_trajectory.
-frenet_optimal_trajectory_DIR:PATH=frenet_optimal_trajectory_DIR-NOTFOUND
-
 //Value Computed by CMake
 frenet_optimal_trajectory_pkg_BINARY_DIR:STATIC=/home/lihai/drone_test_ws/drone_formation/build/frenet_optimal_trajectory_pkg
-
-//The directory containing a CMake configuration file for frenet_optimal_trajectory_pkg.
-frenet_optimal_trajectory_pkg_DIR:PATH=/home/lihai/drone_test_ws/drone_formation/devel/share/frenet_optimal_trajectory_pkg/cmake
 
 //Value Computed by CMake
 frenet_optimal_trajectory_pkg_SOURCE_DIR:STATIC=/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg

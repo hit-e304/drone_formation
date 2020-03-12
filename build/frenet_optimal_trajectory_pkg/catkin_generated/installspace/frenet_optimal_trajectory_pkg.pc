@@ -3,6 +3,6 @@ prefix=/home/lihai/drone_test_ws/drone_formation/install
 Name: frenet_optimal_trajectory_pkg
 Description: Description of frenet_optimal_trajectory_pkg
 Version: 0.0.0
-Cflags: -I/home/lihai/drone_test_ws/drone_formation/install/include
+Cflags: 
 Libs: -L/home/lihai/drone_test_ws/drone_formation/install/lib 
 Requires: 

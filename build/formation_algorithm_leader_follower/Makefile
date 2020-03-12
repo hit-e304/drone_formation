@@ -56,38 +56,6 @@ CMAKE_BINARY_DIR = /home/lihai/drone_test_ws/drone_formation/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -99,6 +67,27 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -132,6 +121,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -180,6 +180,135 @@ UAV1_leader_node/fast:
 	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build
 .PHONY : UAV1_leader_node/fast
 
+# Convenience name for target.
+formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/rule
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/rule
+
+# Convenience name for target.
+CubicSplinePlanner_LF: formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/rule
+
+.PHONY : CubicSplinePlanner_LF
+
+# fast build rule for target.
+CubicSplinePlanner_LF/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/build
+.PHONY : CubicSplinePlanner_LF/fast
+
+# Convenience name for target.
+formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/rule
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/rule
+
+# Convenience name for target.
+UAV2_follower_node: formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/rule
+
+.PHONY : UAV2_follower_node
+
+# fast build rule for target.
+UAV2_follower_node/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/build
+.PHONY : UAV2_follower_node/fast
+
+# Convenience name for target.
+formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/rule
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/rule
+
+# Convenience name for target.
+RangeImpl_LF: formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/rule
+
+.PHONY : RangeImpl_LF
+
+# fast build rule for target.
+RangeImpl_LF/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/build
+.PHONY : RangeImpl_LF/fast
+
+# Convenience name for target.
+formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/rule
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/rule
+
+# Convenience name for target.
+UAV3_follower_node: formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/rule
+
+.PHONY : UAV3_follower_node
+
+# fast build rule for target.
+UAV3_follower_node/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/build
+.PHONY : UAV3_follower_node/fast
+
+# Convenience name for target.
+formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/rule
+.PHONY : formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/rule
+
+# Convenience name for target.
+cam_sim_node_LF: formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/rule
+
+.PHONY : cam_sim_node_LF
+
+# fast build rule for target.
+cam_sim_node_LF/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/build
+.PHONY : cam_sim_node_LF/fast
+
+src/CubicSplinePlanner.o: src/CubicSplinePlanner.cpp.o
+
+.PHONY : src/CubicSplinePlanner.o
+
+# target to build an object file
+src/CubicSplinePlanner.cpp.o:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/src/CubicSplinePlanner.cpp.o
+.PHONY : src/CubicSplinePlanner.cpp.o
+
+src/CubicSplinePlanner.i: src/CubicSplinePlanner.cpp.i
+
+.PHONY : src/CubicSplinePlanner.i
+
+# target to preprocess a source file
+src/CubicSplinePlanner.cpp.i:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/src/CubicSplinePlanner.cpp.i
+.PHONY : src/CubicSplinePlanner.cpp.i
+
+src/CubicSplinePlanner.s: src/CubicSplinePlanner.cpp.s
+
+.PHONY : src/CubicSplinePlanner.s
+
+# target to generate assembly for a file
+src/CubicSplinePlanner.cpp.s:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/CubicSplinePlanner_LF.dir/src/CubicSplinePlanner.cpp.s
+.PHONY : src/CubicSplinePlanner.cpp.s
+
+src/RangeImpl.o: src/RangeImpl.cpp.o
+
+.PHONY : src/RangeImpl.o
+
+# target to build an object file
+src/RangeImpl.cpp.o:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/src/RangeImpl.cpp.o
+.PHONY : src/RangeImpl.cpp.o
+
+src/RangeImpl.i: src/RangeImpl.cpp.i
+
+.PHONY : src/RangeImpl.i
+
+# target to preprocess a source file
+src/RangeImpl.cpp.i:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/src/RangeImpl.cpp.i
+.PHONY : src/RangeImpl.cpp.i
+
+src/RangeImpl.s: src/RangeImpl.cpp.s
+
+.PHONY : src/RangeImpl.s
+
+# target to generate assembly for a file
+src/RangeImpl.cpp.s:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/RangeImpl_LF.dir/src/RangeImpl.cpp.s
+.PHONY : src/RangeImpl.cpp.s
+
 src/UAV1_leader_node.o: src/UAV1_leader_node.cpp.o
 
 .PHONY : src/UAV1_leader_node.o
@@ -207,23 +336,124 @@ src/UAV1_leader_node.cpp.s:
 	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV1_leader_node.dir/src/UAV1_leader_node.cpp.s
 .PHONY : src/UAV1_leader_node.cpp.s
 
+src/UAV2_follower_node.o: src/UAV2_follower_node.cpp.o
+
+.PHONY : src/UAV2_follower_node.o
+
+# target to build an object file
+src/UAV2_follower_node.cpp.o:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/src/UAV2_follower_node.cpp.o
+.PHONY : src/UAV2_follower_node.cpp.o
+
+src/UAV2_follower_node.i: src/UAV2_follower_node.cpp.i
+
+.PHONY : src/UAV2_follower_node.i
+
+# target to preprocess a source file
+src/UAV2_follower_node.cpp.i:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/src/UAV2_follower_node.cpp.i
+.PHONY : src/UAV2_follower_node.cpp.i
+
+src/UAV2_follower_node.s: src/UAV2_follower_node.cpp.s
+
+.PHONY : src/UAV2_follower_node.s
+
+# target to generate assembly for a file
+src/UAV2_follower_node.cpp.s:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV2_follower_node.dir/src/UAV2_follower_node.cpp.s
+.PHONY : src/UAV2_follower_node.cpp.s
+
+src/UAV3_follower_node.o: src/UAV3_follower_node.cpp.o
+
+.PHONY : src/UAV3_follower_node.o
+
+# target to build an object file
+src/UAV3_follower_node.cpp.o:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/src/UAV3_follower_node.cpp.o
+.PHONY : src/UAV3_follower_node.cpp.o
+
+src/UAV3_follower_node.i: src/UAV3_follower_node.cpp.i
+
+.PHONY : src/UAV3_follower_node.i
+
+# target to preprocess a source file
+src/UAV3_follower_node.cpp.i:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/src/UAV3_follower_node.cpp.i
+.PHONY : src/UAV3_follower_node.cpp.i
+
+src/UAV3_follower_node.s: src/UAV3_follower_node.cpp.s
+
+.PHONY : src/UAV3_follower_node.s
+
+# target to generate assembly for a file
+src/UAV3_follower_node.cpp.s:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/build.make formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/src/UAV3_follower_node.cpp.s
+.PHONY : src/UAV3_follower_node.cpp.s
+
+src/cam_sim_node.o: src/cam_sim_node.cpp.o
+
+.PHONY : src/cam_sim_node.o
+
+# target to build an object file
+src/cam_sim_node.cpp.o:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/src/cam_sim_node.cpp.o
+.PHONY : src/cam_sim_node.cpp.o
+
+src/cam_sim_node.i: src/cam_sim_node.cpp.i
+
+.PHONY : src/cam_sim_node.i
+
+# target to preprocess a source file
+src/cam_sim_node.cpp.i:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/src/cam_sim_node.cpp.i
+.PHONY : src/cam_sim_node.cpp.i
+
+src/cam_sim_node.s: src/cam_sim_node.cpp.s
+
+.PHONY : src/cam_sim_node.s
+
+# target to generate assembly for a file
+src/cam_sim_node.cpp.s:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/build.make formation_algorithm_leader_follower/CMakeFiles/cam_sim_node_LF.dir/src/cam_sim_node.cpp.s
+.PHONY : src/cam_sim_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... UAV1_leader_node"
+	@echo "... CubicSplinePlanner_LF"
+	@echo "... UAV2_follower_node"
+	@echo "... RangeImpl_LF"
+	@echo "... rebuild_cache"
+	@echo "... UAV3_follower_node"
+	@echo "... cam_sim_node_LF"
+	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... edit_cache"
+	@echo "... src/CubicSplinePlanner.o"
+	@echo "... src/CubicSplinePlanner.i"
+	@echo "... src/CubicSplinePlanner.s"
+	@echo "... src/RangeImpl.o"
+	@echo "... src/RangeImpl.i"
+	@echo "... src/RangeImpl.s"
 	@echo "... src/UAV1_leader_node.o"
 	@echo "... src/UAV1_leader_node.i"
 	@echo "... src/UAV1_leader_node.s"
+	@echo "... src/UAV2_follower_node.o"
+	@echo "... src/UAV2_follower_node.i"
+	@echo "... src/UAV2_follower_node.s"
+	@echo "... src/UAV3_follower_node.o"
+	@echo "... src/UAV3_follower_node.i"
+	@echo "... src/UAV3_follower_node.s"
+	@echo "... src/cam_sim_node.o"
+	@echo "... src/cam_sim_node.i"
+	@echo "... src/cam_sim_node.s"
 .PHONY : help
 
 

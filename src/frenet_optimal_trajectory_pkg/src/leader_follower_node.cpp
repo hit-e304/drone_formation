@@ -146,27 +146,27 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "three_uav");
     ros::NodeHandle nh;
 
-    ros::Subscriber uav0_state_sub = nh.subscribe<mavros_msgs::State>("/uav0/mavros/state", 10, uav0_state_cb);
-    ros::Publisher uav0_local_target_pub = nh.advertise<mavros_msgs::PositionTarget>("/uav0/mavros/setpoint_raw/local", 10);
-    ros::Subscriber uav0_local_position_sub = nh.subscribe("/uav0/mavros/local_position/pose", 1, uav0_local_pos_cb);
-    ros::Subscriber uav0_body_velocity_sub = nh.subscribe("/uav0/mavros/local_position/velocity_body", 1, uav0_body_vel_cb);
-    ros::Subscriber uav0_local_velocity_sub = nh.subscribe("/uav0/mavros/local_position/velocity_local", 1, uav0_local_vel_cb);
-    ros::ServiceClient uav0_arming_client = nh.serviceClient<mavros_msgs::CommandBool>("/uav0/mavros/cmd/arming");
-    ros::ServiceClient uav0_set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("/uav0/mavros/set_mode");
+    ros::Subscriber uav0_state_sub = nh.subscribe<mavros_msgs::State>("/uav1/mavros/state", 10, uav0_state_cb);
+    ros::Publisher uav0_local_target_pub = nh.advertise<mavros_msgs::PositionTarget>("/uav1/mavros/setpoint_raw/local", 10);
+    ros::Subscriber uav0_local_position_sub = nh.subscribe("/uav1/mavros/local_position/pose", 1, uav0_local_pos_cb);
+    ros::Subscriber uav0_body_velocity_sub = nh.subscribe("/uav1/mavros/local_position/velocity_body", 1, uav0_body_vel_cb);
+    ros::Subscriber uav0_local_velocity_sub = nh.subscribe("/uav1/mavros/local_position/velocity_local", 1, uav0_local_vel_cb);
+    ros::ServiceClient uav0_arming_client = nh.serviceClient<mavros_msgs::CommandBool>("/uav1/mavros/cmd/arming");
+    ros::ServiceClient uav0_set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("/uav1/mavros/set_mode");
 
-    ros::Subscriber uav1_state_sub = nh.subscribe<mavros_msgs::State>("/uav1/mavros/state", 10, uav1_state_cb);
-    ros::Publisher uav1_local_target_pub = nh.advertise<mavros_msgs::PositionTarget>("/uav1/mavros/setpoint_raw/local", 10);
-    ros::Subscriber uav1_local_position_sub = nh.subscribe("/uav1/mavros/local_position/pose", 1, uav1_local_pos_cb);
-    ros::Subscriber uav1_body_velocity_sub = nh.subscribe("/uav1/mavros/local_position/velocity_body", 1, uav1_body_vel_cb);
-    ros::ServiceClient uav1_arming_client = nh.serviceClient<mavros_msgs::CommandBool>("/uav1/mavros/cmd/arming");
-    ros::ServiceClient uav1_set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("/uav1/mavros/set_mode");
+    ros::Subscriber uav1_state_sub = nh.subscribe<mavros_msgs::State>("/uav2/mavros/state", 10, uav1_state_cb);
+    ros::Publisher uav1_local_target_pub = nh.advertise<mavros_msgs::PositionTarget>("/uav2/mavros/setpoint_raw/local", 10);
+    ros::Subscriber uav1_local_position_sub = nh.subscribe("/uav2/mavros/local_position/pose", 1, uav1_local_pos_cb);
+    ros::Subscriber uav1_body_velocity_sub = nh.subscribe("/uav2/mavros/local_position/velocity_body", 1, uav1_body_vel_cb);
+    ros::ServiceClient uav1_arming_client = nh.serviceClient<mavros_msgs::CommandBool>("/uav2/mavros/cmd/arming");
+    ros::ServiceClient uav1_set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("/uav2/mavros/set_mode");
 
-    ros::Subscriber uav2_state_sub = nh.subscribe<mavros_msgs::State>("/uav2/mavros/state", 10, uav2_state_cb);
-    ros::Publisher uav2_local_target_pub = nh.advertise<mavros_msgs::PositionTarget>("/uav2/mavros/setpoint_raw/local", 10);
-    ros::Subscriber uav2_local_position_sub = nh.subscribe("/uav2/mavros/local_position/pose", 1, uav2_local_pos_cb);
-    ros::Subscriber uav2_body_velocity_sub = nh.subscribe("/uav2/mavros/local_position/velocity_body", 1, uav2_body_vel_cb);
-    ros::ServiceClient uav2_arming_client = nh.serviceClient<mavros_msgs::CommandBool>("/uav2/mavros/cmd/arming");
-    ros::ServiceClient uav2_set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("/uav2/mavros/set_mode");
+    ros::Subscriber uav2_state_sub = nh.subscribe<mavros_msgs::State>("/uav3/mavros/state", 10, uav2_state_cb);
+    ros::Publisher uav2_local_target_pub = nh.advertise<mavros_msgs::PositionTarget>("/uav3/mavros/setpoint_raw/local", 10);
+    ros::Subscriber uav2_local_position_sub = nh.subscribe("/uav3/mavros/local_position/pose", 1, uav2_local_pos_cb);
+    ros::Subscriber uav2_body_velocity_sub = nh.subscribe("/uav3/mavros/local_position/velocity_body", 1, uav2_body_vel_cb);
+    ros::ServiceClient uav2_arming_client = nh.serviceClient<mavros_msgs::CommandBool>("/uav3/mavros/cmd/arming");
+    ros::ServiceClient uav2_set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("/uav3/mavros/set_mode");
 
     //the setpoint publishing rate MUST be faster than 2Hz
     ros::Rate rate(20.0);
