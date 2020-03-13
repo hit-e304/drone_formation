@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="formation_algorithm_leader_follower" type="UAV1_leader_node" name="UAV1_leader_node" output="screen" />
+    <node pkg="formation_algorithm_leader_follower" type="UAV2_follower_node" name="UAV2_follower_node" />
+    <node pkg="formation_algorithm_leader_follower" type="UAV3_follower_node" name="UAV3_follower_node" />
+    <!--node pkg="formation_algorithm_leader_follower" type="cam_sim_node_LF" name="cam_sim_node_LF" output="screen" /-->
+
+</launch>
