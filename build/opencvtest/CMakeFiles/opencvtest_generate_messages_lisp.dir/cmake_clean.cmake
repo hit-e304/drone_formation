@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/opencvtest_generate_messages_lisp"
-  "/home/lihai/drone_test_ws/drone_formation/devel/share/common-lisp/ros/opencvtest/msg/contours.lisp"
-  "/home/lihai/drone_test_ws/drone_formation/devel/share/common-lisp/ros/opencvtest/msg/img_pro_info.lisp"
+  "/home/zhan/drone_formation/devel/share/common-lisp/ros/opencvtest/msg/img_pro_info.lisp"
+  "/home/zhan/drone_formation/devel/share/common-lisp/ros/opencvtest/msg/contours.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

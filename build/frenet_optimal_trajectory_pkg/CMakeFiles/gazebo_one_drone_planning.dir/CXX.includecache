@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
+/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
 vector
 -
 Eigen/Dense
@@ -14,35 +14,35 @@ Eigen/Dense
 Eigen/LU
 -
 
-/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/QuarticPolynomial.h
+/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/QuarticPolynomial.h
 Eigen/Dense
 -
 Eigen/LU
 -
 
-/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/QuinticPolynomial.h
+/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/QuinticPolynomial.h
 Eigen/Dense
 -
 Eigen/LU
 -
 
-/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/RangeImpl.h
+/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/RangeImpl.h
 iostream
 -
 
-/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/gazebo_one_drone_planning.cpp
+/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/gazebo_one_drone_planning.cpp
 ros/ros.h
 -
 tf/tf.h
 -
 frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
-/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
+/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
 frenet_optimal_trajectory_pkg/RangeImpl.h
-/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/RangeImpl.h
+/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/RangeImpl.h
 frenet_optimal_trajectory_pkg/QuarticPolynomial.h
-/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/QuarticPolynomial.h
+/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/QuarticPolynomial.h
 frenet_optimal_trajectory_pkg/QuinticPolynomial.h
-/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/QuinticPolynomial.h
+/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/QuinticPolynomial.h
 visualization_msgs/MarkerArray.h
 -
 geometry_msgs/Point.h

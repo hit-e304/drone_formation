@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,5 +6,5 @@
 
 #IncludeRegexTransform: 
 
-/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower/src/RangeImpl.cpp
+/home/zhan/drone_formation/src/formation_algorithm_leader_follower/src/RangeImpl.cpp
 

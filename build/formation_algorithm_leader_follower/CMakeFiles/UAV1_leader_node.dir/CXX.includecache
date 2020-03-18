@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/lihai/drone_test_ws/drone_formation/devel/include/opencvtest/contours.h
+/home/zhan/drone_formation/devel/include/opencvtest/contours.h
 string
 -
 vector
@@ -24,7 +24,7 @@ ros/message_operations.h
 opencvtest/img_pro_info.h
 -
 
-/home/lihai/drone_test_ws/drone_formation/devel/include/opencvtest/img_pro_info.h
+/home/zhan/drone_formation/devel/include/opencvtest/img_pro_info.h
 string
 -
 vector
@@ -40,7 +40,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower/include/formation_algorithm_leader_follower/CubicSplinePlanner.h
+/home/zhan/drone_formation/src/formation_algorithm_leader_follower/include/formation_algorithm_leader_follower/CubicSplinePlanner.h
 vector
 -
 Eigen/Dense
@@ -48,11 +48,11 @@ Eigen/Dense
 Eigen/LU
 -
 
-/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower/include/formation_algorithm_leader_follower/RangeImpl.h
+/home/zhan/drone_formation/src/formation_algorithm_leader_follower/include/formation_algorithm_leader_follower/RangeImpl.h
 iostream
 -
 
-/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower/src/UAV1_leader_node.cpp
+/home/zhan/drone_formation/src/formation_algorithm_leader_follower/src/UAV1_leader_node.cpp
 ros/ros.h
 -
 vector
@@ -78,11 +78,11 @@ sensor_msgs/NavSatFix.h
 Eigen/Dense
 -
 opencvtest/contours.h
-/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower/src/opencvtest/contours.h
+/home/zhan/drone_formation/src/formation_algorithm_leader_follower/src/opencvtest/contours.h
 formation_algorithm_leader_follower/CubicSplinePlanner.h
-/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower/src/formation_algorithm_leader_follower/CubicSplinePlanner.h
+/home/zhan/drone_formation/src/formation_algorithm_leader_follower/src/formation_algorithm_leader_follower/CubicSplinePlanner.h
 formation_algorithm_leader_follower/RangeImpl.h
-/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower/src/formation_algorithm_leader_follower/RangeImpl.h
+/home/zhan/drone_formation/src/formation_algorithm_leader_follower/src/formation_algorithm_leader_follower/RangeImpl.h
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

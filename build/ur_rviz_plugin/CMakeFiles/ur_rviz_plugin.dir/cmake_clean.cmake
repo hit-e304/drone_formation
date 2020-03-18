@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "src/moc_ur_panel.cpp"
   "CMakeFiles/ur_rviz_plugin.dir/src/ur_panel.cpp.o"
   "CMakeFiles/ur_rviz_plugin.dir/src/moc_ur_panel.cpp.o"
-  "/home/lihai/drone_test_ws/drone_formation/devel/lib/libur_rviz_plugin.pdb"
-  "/home/lihai/drone_test_ws/drone_formation/devel/lib/libur_rviz_plugin.so"
+  "/home/zhan/drone_formation/devel/lib/libur_rviz_plugin.pdb"
+  "/home/zhan/drone_formation/devel/lib/libur_rviz_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.

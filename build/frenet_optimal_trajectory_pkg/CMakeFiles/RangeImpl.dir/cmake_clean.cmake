@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RangeImpl.dir/src/RangeImpl.cpp.o"
-  "/home/lihai/drone_test_ws/drone_formation/devel/lib/libRangeImpl.pdb"
-  "/home/lihai/drone_test_ws/drone_formation/devel/lib/libRangeImpl.so"
+  "/home/zhan/drone_formation/devel/lib/libRangeImpl.pdb"
+  "/home/zhan/drone_formation/devel/lib/libRangeImpl.so"
 )
 
 # Per-language clean rules from dependency scanning.

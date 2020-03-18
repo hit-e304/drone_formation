@@ -6,6 +6,12 @@
 #include<mavros_msgs/CommandBool.h>
 #include<tf/tf.h>
 
+
+double rho = 5.0;//距离UAV1的距离
+double beta = 0.0;//与UAV1方向的夹角
+double d_threshold = 2.0;
+double k_v = 1.0;
+
 enum MissionState2
 {
     TakeOff,//起飞
@@ -23,34 +29,20 @@ void local_pos_cb3(const geometry_msgs::PoseStamped::ConstPtr& curr_p)
 {
     current_pose3 = *curr_p;
 }
-mavros_msgs::PositionTarget local_target_position3;
+mavros_msgs::PositionTarget UAV1_local_tar_pose;
 void local_tar_pos_cb3(const mavros_msgs::PositionTarget::ConstPtr& local_tar_pos3)
 {
-    local_target_position3 = *local_tar_pos3;
+    UAV1_local_tar_pose = *local_tar_pos3;
 }
 geometry_msgs::PoseStamped UAV1_local_pose;
 void UAV1_local_pose_cb(const geometry_msgs::PoseStamped::ConstPtr& UAV1_local_po)
 {
     UAV1_local_pose = *UAV1_local_po;
 }
-
-geometry_msgs::Vector3 Quaternion2Euler(const geometry_msgs::Quaternion msg)
+geometry_msgs::PoseStamped UAV2_local_pose;
+void local_pos_cb2(const geometry_msgs::PoseStamped::ConstPtr& curr_p)
 {
-    // the incoming geometry_msgs::Quaternion is transformed to a tf::Quaterion
-    tf::Quaternion quat;
-    tf::quaternionMsgToTF(msg, quat);
- 
-    // the tf::Quaternion has a method to acess roll pitch and yaw
-    double roll_, pitch_, yaw_;
-    tf::Matrix3x3(quat).getRPY(roll_, pitch_, yaw_);
- 
-    // the found angles are written in a geometry_msgs::Vector3
-    geometry_msgs::Vector3 rpy;
-    rpy.x = roll_ ;
-    rpy.y = pitch_ ;
-    rpy.z = yaw_ ;
-
-	return rpy;
+    UAV2_local_pose = *curr_p;
 }
 
 
@@ -60,11 +52,11 @@ int main(int argc, char **argv)
     ros::NodeHandle nh;
 
     ros::Subscriber state_sub3 = nh.subscribe<mavros_msgs::State>("/uav3/mavros/state", 10, state_cb3);
-    ros::Subscriber local_position_sub3 = nh.subscribe("/uav3/mavros/local_position/pose",10,local_pos_cb3);
+    ros::Subscriber UAV3_local_pose_sub = nh.subscribe("/uav3/mavros/local_position/pose",10,local_pos_cb3);
     ros::Subscriber local_target_position_sub3 = nh.subscribe("/uav1/mavros/setpoint_raw/local",10,local_tar_pos_cb3);
     ros::Subscriber UAV1_local_pose_sub = nh.subscribe("/uav1/mavros/local_position/pose",10,UAV1_local_pose_cb);
     ros::Publisher UAV3_target_position_pub = nh.advertise<mavros_msgs::PositionTarget>("/uav3/mavros/setpoint_raw/local", 10);
-
+    ros::Subscriber UAV2_local_pose_sub = nh.subscribe("/uav2/mavros/local_position/pose",10,local_pos_cb2);
 
     ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>("/uav3/mavros/cmd/arming");
     ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("/uav3/mavros/set_mode");
@@ -79,8 +71,18 @@ int main(int argc, char **argv)
     }
     ROS_INFO("connected!");
 
+    // double distance_UAV1_UAV2 = sqrt(pow(UAV1_local_pose.pose.position.x - current_pose2.pose.position.x, 2) + pow(UAV1_local_pose.pose.position.y - current_pose2.pose.position.y, 2) + pow(UAV1_local_pose.pose.position.z - current_pose2.pose.position.z, 2));
+    double distance_UAV1_UAV3 = sqrt(pow(UAV1_local_pose.pose.position.x - current_pose3.pose.position.x, 2) + pow(UAV1_local_pose.pose.position.y - current_pose3.pose.position.y, 2) + pow(UAV1_local_pose.pose.position.z - current_pose3.pose.position.z, 2));
+    double distance_UAV2_UAV3 = sqrt(pow(UAV2_local_pose.pose.position.x - current_pose3.pose.position.x, 2) + pow(UAV2_local_pose.pose.position.y - current_pose3.pose.position.y, 2) + pow(UAV2_local_pose.pose.position.z - current_pose3.pose.position.z, 2));
+    // double v12_x = 0.0;
+    // double v12_y = 0.0;
+    double v23_x = 0.0;
+    double v23_y = 0.0;
+    double v13_x = 0.0;
+    double v13_y = 0.0;
+
     mavros_msgs::PositionTarget position_target_local3;
-    position_target_local3.position.x = -6;
+    position_target_local3.position.x = 0;
     position_target_local3.position.y = 0;
     position_target_local3.position.z = 14.3;
 
@@ -120,26 +122,47 @@ int main(int argc, char **argv)
         }
 
         if(UAV3_current_mission_state == TakeOff){
-            position_target_local3.position.x = -6;
+            position_target_local3.position.x = 0;
             position_target_local3.position.y = 0;
+            // position_target_local3.position.x = UAV1_local_tar_pose.position.x - rho * cos(UAV1_local_tar_pose.yaw + beta);
+            // position_target_local3.position.y = UAV1_local_tar_pose.position.x - rho * sin(UAV1_local_tar_pose.yaw + beta);
             position_target_local3.position.z = 14.3;
 
             if(14.3 - current_pose3.pose.position.z < 0.2){
                 UAV3_current_mission_state = TrackingUAV1;
             }
         }
-        else if(UAV3_current_mission_state == TrackingUAV1){
-            if(Quaternion2Euler(UAV1_local_pose.pose.orientation).z < 1.57 && Quaternion2Euler(UAV1_local_pose.pose.orientation).z > -1.57){
-                position_target_local3.position.x = local_target_position3.position.x - 6;
+        else if(UAV3_current_mission_state == TrackingUAV1)
+        {
+            position_target_local3.yaw = UAV1_local_tar_pose.yaw;
+            position_target_local3.position.x = UAV1_local_tar_pose.position.x - rho * cos(position_target_local3.yaw + beta);
+            position_target_local3.position.y = UAV1_local_tar_pose.position.y - rho * sin(position_target_local3.yaw + beta);
+            // distance_UAV1_UAV2 = sqrt(pow(UAV1_local_pose.pose.position.x - current_pose2.pose.position.x, 2) + pow(UAV1_local_pose.pose.position.y - current_pose2.pose.position.y, 2) + pow(UAV1_local_pose.pose.position.z - current_pose2.pose.position.z, 2));
+            distance_UAV1_UAV3 = sqrt(pow(UAV1_local_pose.pose.position.x - current_pose3.pose.position.x, 2) + pow(UAV1_local_pose.pose.position.y - current_pose3.pose.position.y, 2) + pow(UAV1_local_pose.pose.position.z - current_pose3.pose.position.z, 2));
+            distance_UAV2_UAV3 = sqrt(pow(UAV2_local_pose.pose.position.x - current_pose3.pose.position.x, 2) + pow(UAV2_local_pose.pose.position.y - current_pose3.pose.position.y, 2) + pow(UAV2_local_pose.pose.position.z - current_pose3.pose.position.z, 2));
+    
+            if(distance_UAV1_UAV3 < d_threshold)
+            {
+                v13_x = k_v / (current_pose3.pose.position.x - UAV1_local_pose.pose.position.x);
+                v13_y = k_v / (current_pose3.pose.position.x - UAV1_local_pose.pose.position.x);
             }
-            else{
-                position_target_local3.position.x = local_target_position3.position.x + 6;
+            else
+            {
+                v13_x = 0.0;
+                v13_y = 0.0;
             }
-            position_target_local3.position.y = local_target_position3.position.y;
-            position_target_local3.position.z = local_target_position3.position.z;
-            // position_target_local2.velocity.x = local_target_position2.velocity.x;
-            // position_target_local2.velocity.y = local_target_position2.velocity.y;
-            // position_target_local2.velocity.z = local_target_position2.velocity.z;
+            if(distance_UAV2_UAV3 < d_threshold)
+            {
+                v23_x = k_v / (current_pose3.pose.position.x - UAV2_local_pose.pose.position.x);
+                v23_y = k_v / (current_pose3.pose.position.y - UAV2_local_pose.pose.position.y);
+            }
+            else
+            {
+                v23_x = 0.0;
+                v23_y = 0.0;
+            }
+            position_target_local3.velocity.x = v13_x + v23_x;
+            position_target_local3.velocity.y = v13_y + v23_y;
         }
         UAV3_target_position_pub.publish(position_target_local3);
         ros::spinOnce();

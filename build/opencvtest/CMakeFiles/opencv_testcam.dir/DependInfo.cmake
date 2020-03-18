@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lihai/drone_test_ws/drone_formation/src/opencvtest/src/opencv_testcam.cpp" "/home/lihai/drone_test_ws/drone_formation/build/opencvtest/CMakeFiles/opencv_testcam.dir/src/opencv_testcam.cpp.o"
+  "/home/zhan/drone_formation/src/opencvtest/src/opencv_testcam.cpp" "/home/zhan/drone_formation/build/opencvtest/CMakeFiles/opencv_testcam.dir/src/opencv_testcam.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/lihai/drone_test_ws/drone_formation/devel/include"
+  "/home/zhan/drone_formation/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/include/opencv-3.3.1-dev"
   "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"

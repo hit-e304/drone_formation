@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/offb_fixed_flight_node.cpp
+/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/offb_fixed_flight_node.cpp
 ros/ros.h
 -
 tf/tf.h

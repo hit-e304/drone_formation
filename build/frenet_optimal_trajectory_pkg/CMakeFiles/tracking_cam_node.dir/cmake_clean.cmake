@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tracking_cam_node.dir/src/tracking_cam_node.cpp.o"
-  "/home/lihai/drone_test_ws/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/tracking_cam_node.pdb"
-  "/home/lihai/drone_test_ws/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/tracking_cam_node"
+  "/home/zhan/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/tracking_cam_node.pdb"
+  "/home/zhan/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/tracking_cam_node"
 )
 
 # Per-language clean rules from dependency scanning.

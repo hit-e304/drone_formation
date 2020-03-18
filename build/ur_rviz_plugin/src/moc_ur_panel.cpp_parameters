@@ -7,10 +7,9 @@
 -I/usr/include/OGRE
 -I/usr/include
 -DROS_BUILD_SHARED_LIBS=1
--DROS_BUILD_SHARED_LIBS=1
 -DROS_PACKAGE_NAME="ur_rviz_plugin"
 -DROSCONSOLE_BACKEND_LOG4CXX
 -DQT_NO_KEYWORDS
 -o
-/home/lihai/drone_test_ws/drone_formation/build/ur_rviz_plugin/src/moc_ur_panel.cpp
-/home/lihai/drone_test_ws/drone_formation/src/ur_rviz_plugin/src/ur_panel.h
+/home/zhan/drone_formation/build/ur_rviz_plugin/src/moc_ur_panel.cpp
+/home/zhan/drone_formation/src/ur_rviz_plugin/src/ur_panel.h

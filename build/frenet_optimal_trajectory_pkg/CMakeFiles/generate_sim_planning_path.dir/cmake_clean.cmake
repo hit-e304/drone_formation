@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/generate_sim_planning_path.dir/src/generate_sim_planning_path.cpp.o"
-  "/home/lihai/drone_test_ws/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/generate_sim_planning_path.pdb"
-  "/home/lihai/drone_test_ws/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/generate_sim_planning_path"
+  "/home/zhan/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/generate_sim_planning_path.pdb"
+  "/home/zhan/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/generate_sim_planning_path"
 )
 
 # Per-language clean rules from dependency scanning.

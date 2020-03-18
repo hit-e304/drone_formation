@@ -1,10 +1,10 @@
 
 "use strict";
 
-let contours = require('./contours.js');
 let img_pro_info = require('./img_pro_info.js');
+let contours = require('./contours.js');
 
 module.exports = {
-  contours: contours,
   img_pro_info: img_pro_info,
+  contours: contours,
 };
