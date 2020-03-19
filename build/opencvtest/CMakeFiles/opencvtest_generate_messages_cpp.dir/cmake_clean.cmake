@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/opencvtest_generate_messages_cpp"
-  "/home/zhan/drone_formation/devel/include/opencvtest/img_pro_info.h"
-  "/home/zhan/drone_formation/devel/include/opencvtest/contours.h"
+  "/home/lihai/drone_test_ws/drone_formation/devel/include/opencvtest/contours.h"
+  "/home/lihai/drone_test_ws/drone_formation/devel/include/opencvtest/img_pro_info.h"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/zhan/drone_formation/devel/include/opencvtest/contours.h
+/home/lihai/drone_test_ws/drone_formation/devel/include/opencvtest/contours.h
 string
 -
 vector
@@ -24,7 +24,7 @@ ros/message_operations.h
 opencvtest/img_pro_info.h
 -
 
-/home/zhan/drone_formation/devel/include/opencvtest/img_pro_info.h
+/home/lihai/drone_test_ws/drone_formation/devel/include/opencvtest/img_pro_info.h
 string
 -
 vector
@@ -40,7 +40,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
+/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
 vector
 -
 Eigen/Dense
@@ -48,11 +48,11 @@ Eigen/Dense
 Eigen/LU
 -
 
-/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/RangeImpl.h
+/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/RangeImpl.h
 iostream
 -
 
-/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/one_drone_mission_planning.cpp
+/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/one_drone_mission_planning.cpp
 ros/ros.h
 -
 vector
@@ -78,11 +78,11 @@ sensor_msgs/NavSatFix.h
 Eigen/Dense
 -
 opencvtest/contours.h
-/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/opencvtest/contours.h
+/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/opencvtest/contours.h
 frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
-/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
+/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
 frenet_optimal_trajectory_pkg/RangeImpl.h
-/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/RangeImpl.h
+/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/RangeImpl.h
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

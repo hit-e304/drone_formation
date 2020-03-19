@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zhan/drone_formation/src/formation_algorithm_leader_follower/src/UAV3_follower_node.cpp" "/home/zhan/drone_formation/build/formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/src/UAV3_follower_node.cpp.o"
+  "/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower/src/UAV3_follower_node.cpp" "/home/lihai/drone_test_ws/drone_formation/build/formation_algorithm_leader_follower/CMakeFiles/UAV3_follower_node.dir/src/UAV3_follower_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,8 +17,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/zhan/drone_formation/src/formation_algorithm_leader_follower/include"
-  "/home/zhan/drone_formation/devel/include"
+  "/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower/include"
+  "/home/lihai/drone_test_ws/drone_formation/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/eigen3"

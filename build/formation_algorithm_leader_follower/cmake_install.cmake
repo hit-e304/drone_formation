@@ -1,8 +1,8 @@
-# Install script for directory: /home/zhan/drone_formation/src/formation_algorithm_leader_follower
+# Install script for directory: /home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/zhan/drone_formation/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lihai/drone_test_ws/drone_formation/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,23 +32,18 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lihai/drone_test_ws/drone_formation/build/formation_algorithm_leader_follower/catkin_generated/installspace/formation_algorithm_leader_follower.pc")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/zhan/drone_formation/build/formation_algorithm_leader_follower/catkin_generated/installspace/formation_algorithm_leader_follower.pc")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/formation_algorithm_leader_follower/cmake" TYPE FILE FILES
-    "/home/zhan/drone_formation/build/formation_algorithm_leader_follower/catkin_generated/installspace/formation_algorithm_leader_followerConfig.cmake"
-    "/home/zhan/drone_formation/build/formation_algorithm_leader_follower/catkin_generated/installspace/formation_algorithm_leader_followerConfig-version.cmake"
+    "/home/lihai/drone_test_ws/drone_formation/build/formation_algorithm_leader_follower/catkin_generated/installspace/formation_algorithm_leader_followerConfig.cmake"
+    "/home/lihai/drone_test_ws/drone_formation/build/formation_algorithm_leader_follower/catkin_generated/installspace/formation_algorithm_leader_followerConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/formation_algorithm_leader_follower" TYPE FILE FILES "/home/zhan/drone_formation/src/formation_algorithm_leader_follower/package.xml")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/formation_algorithm_leader_follower" TYPE FILE FILES "/home/lihai/drone_test_ws/drone_formation/src/formation_algorithm_leader_follower/package.xml")
 endif()
 

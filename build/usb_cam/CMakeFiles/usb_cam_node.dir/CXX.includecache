@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/zhan/drone_formation/src/usb_cam/include/usb_cam/usb_cam.h
+/home/lihai/drone_test_ws/drone_formation/src/usb_cam/include/usb_cam/usb_cam.h
 asm/types.h
 -
 linux/videodev2.h
@@ -26,7 +26,7 @@ sstream
 sensor_msgs/Image.h
 -
 
-/home/zhan/drone_formation/src/usb_cam/nodes/usb_cam_node.cpp
+/home/lihai/drone_test_ws/drone_formation/src/usb_cam/nodes/usb_cam_node.cpp
 ros/ros.h
 -
 usb_cam/usb_cam.h

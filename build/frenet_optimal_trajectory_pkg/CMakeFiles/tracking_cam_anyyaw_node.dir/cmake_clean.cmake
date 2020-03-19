@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tracking_cam_anyyaw_node.dir/src/tracking_cam_anyyaw_node.cpp.o"
-  "/home/zhan/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/tracking_cam_anyyaw_node.pdb"
-  "/home/zhan/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/tracking_cam_anyyaw_node"
+  "/home/lihai/drone_test_ws/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/tracking_cam_anyyaw_node.pdb"
+  "/home/lihai/drone_test_ws/drone_formation/devel/lib/frenet_optimal_trajectory_pkg/tracking_cam_anyyaw_node"
 )
 
 # Per-language clean rules from dependency scanning.

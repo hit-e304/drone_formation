@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
+/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/include/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
 vector
 -
 Eigen/Dense
@@ -14,11 +14,11 @@ Eigen/Dense
 Eigen/LU
 -
 
-/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/CubicSplinePlanner.cpp
+/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/CubicSplinePlanner.cpp
 iostream
 -
 frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
-/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
+/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/frenet_optimal_trajectory_pkg/CubicSplinePlanner.h
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

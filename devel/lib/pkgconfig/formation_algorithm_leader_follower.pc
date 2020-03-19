@@ -1,8 +1,8 @@
-prefix=/home/zhan/drone_formation/devel
+prefix=/home/lihai/drone_test_ws/drone_formation/devel
 
 Name: formation_algorithm_leader_follower
 Description: Description of formation_algorithm_leader_follower
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/zhan/drone_formation/devel/lib 
+Libs: -L/home/lihai/drone_test_ws/drone_formation/devel/lib 
 Requires: 

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/opencvtest_generate_messages_eus"
-  "/home/zhan/drone_formation/devel/share/roseus/ros/opencvtest/msg/img_pro_info.l"
-  "/home/zhan/drone_formation/devel/share/roseus/ros/opencvtest/msg/contours.l"
-  "/home/zhan/drone_formation/devel/share/roseus/ros/opencvtest/manifest.l"
+  "/home/lihai/drone_test_ws/drone_formation/devel/share/roseus/ros/opencvtest/msg/contours.l"
+  "/home/lihai/drone_test_ws/drone_formation/devel/share/roseus/ros/opencvtest/msg/img_pro_info.l"
+  "/home/lihai/drone_test_ws/drone_formation/devel/share/roseus/ros/opencvtest/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

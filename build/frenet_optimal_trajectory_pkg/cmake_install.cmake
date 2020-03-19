@@ -1,8 +1,8 @@
-# Install script for directory: /home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg
+# Install script for directory: /home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/zhan/drone_formation/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lihai/drone_test_ws/drone_formation/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,23 +32,18 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lihai/drone_test_ws/drone_formation/build/frenet_optimal_trajectory_pkg/catkin_generated/installspace/frenet_optimal_trajectory_pkg.pc")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/zhan/drone_formation/build/frenet_optimal_trajectory_pkg/catkin_generated/installspace/frenet_optimal_trajectory_pkg.pc")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/frenet_optimal_trajectory_pkg/cmake" TYPE FILE FILES
-    "/home/zhan/drone_formation/build/frenet_optimal_trajectory_pkg/catkin_generated/installspace/frenet_optimal_trajectory_pkgConfig.cmake"
-    "/home/zhan/drone_formation/build/frenet_optimal_trajectory_pkg/catkin_generated/installspace/frenet_optimal_trajectory_pkgConfig-version.cmake"
+    "/home/lihai/drone_test_ws/drone_formation/build/frenet_optimal_trajectory_pkg/catkin_generated/installspace/frenet_optimal_trajectory_pkgConfig.cmake"
+    "/home/lihai/drone_test_ws/drone_formation/build/frenet_optimal_trajectory_pkg/catkin_generated/installspace/frenet_optimal_trajectory_pkgConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/frenet_optimal_trajectory_pkg" TYPE FILE FILES "/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/package.xml")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/frenet_optimal_trajectory_pkg" TYPE FILE FILES "/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/package.xml")
 endif()
 

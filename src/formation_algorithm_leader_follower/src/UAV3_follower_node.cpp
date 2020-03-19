@@ -7,7 +7,7 @@
 #include<tf/tf.h>
 
 
-double rho = 5.0;//距离UAV1的距离
+double rho = 6.0;//距离UAV1的距离
 double beta = 0.0;//与UAV1方向的夹角
 double d_threshold = 2.0;
 double k_v = 1.0;
@@ -122,10 +122,10 @@ int main(int argc, char **argv)
         }
 
         if(UAV3_current_mission_state == TakeOff){
-            position_target_local3.position.x = 0;
-            position_target_local3.position.y = 0;
-            // position_target_local3.position.x = UAV1_local_tar_pose.position.x - rho * cos(UAV1_local_tar_pose.yaw + beta);
-            // position_target_local3.position.y = UAV1_local_tar_pose.position.x - rho * sin(UAV1_local_tar_pose.yaw + beta);
+            // position_target_local3.position.x = 0;
+            // position_target_local3.position.y = 0;
+            position_target_local3.position.x = UAV1_local_pose.pose.position.x - rho * cos(UAV1_local_tar_pose.yaw + beta);
+            position_target_local3.position.y = UAV1_local_pose.pose.position.y - rho * sin(UAV1_local_tar_pose.yaw + beta);
             position_target_local3.position.z = 14.3;
 
             if(14.3 - current_pose3.pose.position.z < 0.2){
@@ -135,8 +135,8 @@ int main(int argc, char **argv)
         else if(UAV3_current_mission_state == TrackingUAV1)
         {
             position_target_local3.yaw = UAV1_local_tar_pose.yaw;
-            position_target_local3.position.x = UAV1_local_tar_pose.position.x - rho * cos(position_target_local3.yaw + beta);
-            position_target_local3.position.y = UAV1_local_tar_pose.position.y - rho * sin(position_target_local3.yaw + beta);
+            position_target_local3.position.x = UAV1_local_pose.pose.position.x - rho * cos(position_target_local3.yaw + beta);
+            position_target_local3.position.y = UAV1_local_pose.pose.position.y - rho * sin(position_target_local3.yaw + beta);
             // distance_UAV1_UAV2 = sqrt(pow(UAV1_local_pose.pose.position.x - current_pose2.pose.position.x, 2) + pow(UAV1_local_pose.pose.position.y - current_pose2.pose.position.y, 2) + pow(UAV1_local_pose.pose.position.z - current_pose2.pose.position.z, 2));
             distance_UAV1_UAV3 = sqrt(pow(UAV1_local_pose.pose.position.x - current_pose3.pose.position.x, 2) + pow(UAV1_local_pose.pose.position.y - current_pose3.pose.position.y, 2) + pow(UAV1_local_pose.pose.position.z - current_pose3.pose.position.z, 2));
             distance_UAV2_UAV3 = sqrt(pow(UAV2_local_pose.pose.position.x - current_pose3.pose.position.x, 2) + pow(UAV2_local_pose.pose.position.y - current_pose3.pose.position.y, 2) + pow(UAV2_local_pose.pose.position.z - current_pose3.pose.position.z, 2));
@@ -144,7 +144,7 @@ int main(int argc, char **argv)
             if(distance_UAV1_UAV3 < d_threshold)
             {
                 v13_x = k_v / (current_pose3.pose.position.x - UAV1_local_pose.pose.position.x);
-                v13_y = k_v / (current_pose3.pose.position.x - UAV1_local_pose.pose.position.x);
+                v13_y = k_v / (current_pose3.pose.position.y - UAV1_local_pose.pose.position.y);
             }
             else
             {

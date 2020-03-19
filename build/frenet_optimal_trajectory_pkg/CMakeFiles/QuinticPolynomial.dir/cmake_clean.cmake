@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/QuinticPolynomial.dir/src/QuinticPolynomial.cpp.o"
-  "/home/zhan/drone_formation/devel/lib/libQuinticPolynomial.pdb"
-  "/home/zhan/drone_formation/devel/lib/libQuinticPolynomial.so"
+  "/home/lihai/drone_test_ws/drone_formation/devel/lib/libQuinticPolynomial.pdb"
+  "/home/lihai/drone_test_ws/drone_formation/devel/lib/libQuinticPolynomial.so"
 )
 
 # Per-language clean rules from dependency scanning.

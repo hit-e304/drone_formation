@@ -1,8 +1,8 @@
-prefix=/home/zhan/drone_formation/install
+prefix=/home/lihai/drone_test_ws/drone_formation/install
 
 Name: usb_cam
 Description: Description of usb_cam
 Version: 0.3.6
-Cflags: -I/home/zhan/drone_formation/install/include
-Libs: -L/home/zhan/drone_formation/install/lib -lusb_cam
+Cflags: -I/home/lihai/drone_test_ws/drone_formation/install/include
+Libs: -L/home/lihai/drone_test_ws/drone_formation/install/lib -lusb_cam
 Requires: 

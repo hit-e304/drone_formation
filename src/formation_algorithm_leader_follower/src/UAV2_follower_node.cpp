@@ -123,8 +123,10 @@ int main(int argc, char **argv)
         }
 
         if(UAV2_current_mission_state == TakeOff){
-            position_target_local2.position.x = 0;
-            position_target_local2.position.y = 0;
+            // position_target_local2.position.x = 0;
+            // position_target_local2.position.y = 0;
+            position_target_local2.position.x = UAV1_local_pose.pose.position.x - rho * cos(UAV1_local_tar_pose.yaw + beta);
+            position_target_local2.position.y = UAV1_local_pose.pose.position.y - rho * sin(UAV1_local_tar_pose.yaw + beta);
             position_target_local2.position.z = 14.3;
 
             if(14.3 - current_pose2.pose.position.z < 0.2){
@@ -134,8 +136,8 @@ int main(int argc, char **argv)
         else if(UAV2_current_mission_state == TrackingUAV1)
         {
             position_target_local2.yaw = UAV1_local_tar_pose.yaw;
-            position_target_local2.position.x = UAV1_local_tar_pose.position.x - rho * cos(position_target_local2.yaw + beta);
-            position_target_local2.position.y = UAV1_local_tar_pose.position.y - rho * sin(position_target_local2.yaw + beta);
+            position_target_local2.position.x = UAV1_local_pose.pose.position.x - rho * cos(position_target_local2.yaw + beta);
+            position_target_local2.position.y = UAV1_local_pose.pose.position.y - rho * sin(position_target_local2.yaw + beta);
             distance_UAV1_UAV2 = sqrt(pow(UAV1_local_pose.pose.position.x - current_pose2.pose.position.x, 2) + pow(UAV1_local_pose.pose.position.y - current_pose2.pose.position.y, 2) + pow(UAV1_local_pose.pose.position.z - current_pose2.pose.position.z, 2));
             // distance_UAV1_UAV3 = sqrt(pow(UAV1_local_pose.pose.position.x - UAV3_local_pose.pose.position.x, 2) + pow(UAV1_local_pose.pose.position.y - UAV3_local_pose.pose.position.y, 2) + pow(UAV1_local_pose.pose.position.z - UAV3_local_pose.pose.position.z, 2));
             distance_UAV2_UAV3 = sqrt(pow(UAV3_local_pose.pose.position.x - current_pose2.pose.position.x, 2) + pow(UAV3_local_pose.pose.position.y - current_pose2.pose.position.y, 2) + pow(UAV3_local_pose.pose.position.z - current_pose2.pose.position.z, 2));
@@ -143,7 +145,7 @@ int main(int argc, char **argv)
             if(distance_UAV1_UAV2 < d_threshold)
             {
                 v12_x = k_v / (current_pose2.pose.position.x - UAV1_local_pose.pose.position.x);
-                v12_y = k_v / (current_pose2.pose.position.x - UAV1_local_pose.pose.position.x);
+                v12_y = k_v / (current_pose2.pose.position.y - UAV1_local_pose.pose.position.y);
             }
             else
             {

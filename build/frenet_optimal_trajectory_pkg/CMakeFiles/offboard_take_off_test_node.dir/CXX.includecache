@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/zhan/drone_formation/src/frenet_optimal_trajectory_pkg/src/offboard_take_off_test_node.cpp
+/home/lihai/drone_test_ws/drone_formation/src/frenet_optimal_trajectory_pkg/src/offboard_take_off_test_node.cpp
 ros/ros.h
 -
 geometry_msgs/PoseStamped.h
