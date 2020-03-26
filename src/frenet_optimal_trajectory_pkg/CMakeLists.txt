@@ -361,3 +361,21 @@ target_link_libraries(one_drone_mission_planning
   RangeImpl
   CubicSplinePlanner
 )
+
+add_executable(one_drone_mission_planning_improved
+  src/one_drone_mission_planning_improved.cpp
+)
+add_dependencies(one_drone_mission_planning_improved ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} RangeImpl CubicSplinePlanner)
+target_link_libraries(one_drone_mission_planning_improved
+  ${catkin_LIBRARIES}
+  RangeImpl
+  CubicSplinePlanner
+)
+
+add_executable(yaw_angle_range_test
+  src/yaw_angle_range_test.cpp
+)
+add_dependencies(yaw_angle_range_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(yaw_angle_range_test
+  ${catkin_LIBRARIES}
+)

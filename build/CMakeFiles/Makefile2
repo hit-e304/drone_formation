@@ -549,7 +549,7 @@ opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all: opencvtest/CMak
 opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=55,56 "Built target opencvtest_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=57,58 "Built target opencvtest_generate_messages_lisp"
 .PHONY : opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1040,7 +1040,7 @@ opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all: opencvtest/CMakeF
 opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all: opencvtest/CMakeFiles/_opencvtest_generate_messages_check_deps_contours.dir/all
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=59,60,61 "Built target opencvtest_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=61,62,63 "Built target opencvtest_generate_messages_py"
 .PHONY : opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1490,7 +1490,7 @@ opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all: opencvtest/CMake
 opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all: opencvtest/CMakeFiles/_opencvtest_generate_messages_check_deps_contours.dir/all
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=52,53,54 "Built target opencvtest_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=54,55,56 "Built target opencvtest_generate_messages_eus"
 .PHONY : opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1588,7 +1588,7 @@ opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all: opencvtest/CM
 opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all: opencvtest/CMakeFiles/_opencvtest_generate_messages_check_deps_contours.dir/all
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=57,58 "Built target opencvtest_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=59,60 "Built target opencvtest_generate_messages_nodejs"
 .PHONY : opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1654,7 +1654,7 @@ opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all: opencvtest/CMake
 opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all: opencvtest/CMakeFiles/_opencvtest_generate_messages_check_deps_contours.dir/all
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/build.make opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=50,51 "Built target opencvtest_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=52,53 "Built target opencvtest_generate_messages_cpp"
 .PHONY : opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1686,7 +1686,7 @@ clean: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/clean
 opencvtest/CMakeFiles/opencv_testcam.dir/all:
 	$(MAKE) -f opencvtest/CMakeFiles/opencv_testcam.dir/build.make opencvtest/CMakeFiles/opencv_testcam.dir/depend
 	$(MAKE) -f opencvtest/CMakeFiles/opencv_testcam.dir/build.make opencvtest/CMakeFiles/opencv_testcam.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=48,49 "Built target opencv_testcam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=50,51 "Built target opencv_testcam"
 .PHONY : opencvtest/CMakeFiles/opencv_testcam.dir/all
 
 # Include target in all.
@@ -2122,8 +2122,10 @@ frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/trac
 frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/all
 frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/all
 frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/all
+frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all
 frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/all
 frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/all
+frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
 frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/all
 frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/all
 frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/all
@@ -2135,7 +2137,7 @@ frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/path
 frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/all
 frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/all
 frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/all
-frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
+frenet_optimal_trajectory_pkg/all: frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all
 
 .PHONY : frenet_optimal_trajectory_pkg/all
 
@@ -2144,8 +2146,10 @@ frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/tr
 frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/ez_sim_planning.dir/clean
 frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/clean
 frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/clean
+frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/clean
 frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/clean
 frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/clean
+frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean
 frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/clean
 frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/clean
 frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/clean
@@ -2157,7 +2161,7 @@ frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/pa
 frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/leader_follower_node.dir/clean
 frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/cam_sim_node.dir/clean
 frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/clean
-frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean
+frenet_optimal_trajectory_pkg/clean: frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/clean
 
 .PHONY : frenet_optimal_trajectory_pkg/clean
 
@@ -2192,7 +2196,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/all: opencvtest/C
 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=70,71 "Built target tracking_cam_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=72,73 "Built target tracking_cam_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_node.dir/all
 
 # Include target in all.
@@ -2391,6 +2395,62 @@ clean: frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir
+
+# All Build rule for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/depend
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=84,85 "Built target yaw_angle_range_test"
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all
+
+# Include target in all.
+all: frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/rule
+
+# Convenience name for target.
+yaw_angle_range_test: frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/rule
+
+.PHONY : yaw_angle_range_test
+
+# clean rule for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/clean:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/clean
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/clean
+
+# clean rule for target.
+clean: frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir
 
 # All Build rule for target.
@@ -2503,6 +2563,62 @@ clean: frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir
+
+# All Build rule for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/depend
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=9,10 "Built target RangeImpl"
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
+
+# Include target in all.
+all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+
+# Convenience name for target.
+RangeImpl: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+
+.PHONY : RangeImpl
+
+# clean rule for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean
+
+# clean rule for target.
+clean: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir
 
 # All Build rule for target.
@@ -2528,8 +2644,8 @@ frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/all: ope
 frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/all
 frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/all
 frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=27,28 "Built target generate_sim_planning_path"
@@ -2644,7 +2760,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/all: openc
 frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=68,69 "Built target tracking_cam_anyyaw_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=70,71 "Built target tracking_cam_anyyaw_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/tracking_cam_anyyaw_node.dir/all
 
 # Include target in all.
@@ -2700,7 +2816,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/all:
 frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=64,65 "Built target three_drone_take_off_test_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=66,67 "Built target three_drone_take_off_test_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_test_node.dir/all
 
 # Include target in all.
@@ -2756,8 +2872,8 @@ frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/all: open
 frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/QuinticPolynomial.dir/all
 frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/all
 frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/QuarticPolynomial.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/gazebo_one_drone_planning.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=25,26 "Built target gazebo_one_drone_planning"
@@ -2816,7 +2932,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/
 frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=66,67 "Built target three_drone_take_off_together_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=68,69 "Built target three_drone_take_off_together_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/three_drone_take_off_together_node.dir/all
 
 # Include target in all.
@@ -2874,7 +2990,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/all: frenet_
 frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=80,81 "Built target virtual_structure_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=82,83 "Built target virtual_structure_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/all
 
 # Include target in all.
@@ -2932,7 +3048,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/all: frenet_opti
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/depend
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=62,63 "Built target path_tracking_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=64,65 "Built target path_tracking_node"
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/all
 
 # Include target in all.
@@ -3135,58 +3251,60 @@ clean: frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/c
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir
+# Target rules for target frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir
 
 # All Build rule for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_eus.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_py.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_py.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/depend
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=9,10 "Built target RangeImpl"
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_lisp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_py.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_eus.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_nodejs.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/opencvtest_generate_messages_cpp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: opencvtest/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/CubicSplinePlanner.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/depend
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=48,49 "Built target one_drone_mission_planning_improved"
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all
 
 # Include target in all.
-all: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
+all: frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 14
-	$(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/all
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 18
+	$(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lihai/drone_test_ws/drone_formation/build/CMakeFiles 0
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/rule
 
 # Convenience name for target.
-RangeImpl: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+one_drone_mission_planning_improved: frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/rule
 
-.PHONY : RangeImpl
-
-# clean rule for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean
+.PHONY : one_drone_mission_planning_improved
 
 # clean rule for target.
-clean: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/clean
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/clean:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/clean
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/clean
+
+# clean rule for target.
+clean: frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/clean
 
 .PHONY : clean
 
@@ -4188,7 +4306,7 @@ clean: ur_rviz_plugin/CMakeFiles/visualization_msgs_generate_messages_eus.dir/cl
 ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/all:
 	$(MAKE) -f ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/build.make ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/depend
 	$(MAKE) -f ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/build.make ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=72,73,74,75 "Built target ur_rviz_plugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=74,75,76,77 "Built target ur_rviz_plugin"
 .PHONY : ur_rviz_plugin/CMakeFiles/ur_rviz_plugin.dir/all
 
 # Include target in all.
@@ -4858,7 +4976,7 @@ clean: usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
 usb_cam/CMakeFiles/usb_cam_node.dir/all: usb_cam/CMakeFiles/usb_cam.dir/all
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/depend
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=78,79 "Built target usb_cam_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=80,81 "Built target usb_cam_node"
 .PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/all
 
 # Include target in all.
@@ -4895,7 +5013,7 @@ clean: usb_cam/CMakeFiles/usb_cam_node.dir/clean
 usb_cam/CMakeFiles/usb_cam.dir/all:
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/depend
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=76,77 "Built target usb_cam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lihai/drone_test_ws/drone_formation/build/CMakeFiles --progress-num=78,79 "Built target usb_cam"
 .PHONY : usb_cam/CMakeFiles/usb_cam.dir/all
 
 # Include target in all.

@@ -933,6 +933,19 @@ CubicSplinePlanner/fast:
 .PHONY : CubicSplinePlanner/fast
 
 #=============================================================================
+# Target rules for targets named yaw_angle_range_test
+
+# Build rule for target.
+yaw_angle_range_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 yaw_angle_range_test
+.PHONY : yaw_angle_range_test
+
+# fast build rule for target.
+yaw_angle_range_test/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/build
+.PHONY : yaw_angle_range_test/fast
+
+#=============================================================================
 # Target rules for targets named offb_fixed_flight_node
 
 # Build rule for target.
@@ -957,6 +970,19 @@ offboard_take_off_test_node: cmake_check_build_system
 offboard_take_off_test_node/fast:
 	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build
 .PHONY : offboard_take_off_test_node/fast
+
+#=============================================================================
+# Target rules for targets named RangeImpl
+
+# Build rule for target.
+RangeImpl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RangeImpl
+.PHONY : RangeImpl
+
+# fast build rule for target.
+RangeImpl/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
+.PHONY : RangeImpl/fast
 
 #=============================================================================
 # Target rules for targets named generate_sim_planning_path
@@ -1102,17 +1128,17 @@ one_drone_mission_planning/fast:
 .PHONY : one_drone_mission_planning/fast
 
 #=============================================================================
-# Target rules for targets named RangeImpl
+# Target rules for targets named one_drone_mission_planning_improved
 
 # Build rule for target.
-RangeImpl: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RangeImpl
-.PHONY : RangeImpl
+one_drone_mission_planning_improved: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 one_drone_mission_planning_improved
+.PHONY : one_drone_mission_planning_improved
 
 # fast build rule for target.
-RangeImpl/fast:
-	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
-.PHONY : RangeImpl/fast
+one_drone_mission_planning_improved/fast:
+	$(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/build
+.PHONY : one_drone_mission_planning_improved/fast
 
 #=============================================================================
 # Target rules for targets named nav_msgs_generate_messages_lisp
@@ -1875,8 +1901,10 @@ help:
 	@echo "... ez_sim_planning"
 	@echo "... QuinticPolynomial"
 	@echo "... CubicSplinePlanner"
+	@echo "... yaw_angle_range_test"
 	@echo "... offb_fixed_flight_node"
 	@echo "... offboard_take_off_test_node"
+	@echo "... RangeImpl"
 	@echo "... generate_sim_planning_path"
 	@echo "... QuarticPolynomial"
 	@echo "... tracking_cam_anyyaw_node"
@@ -1888,7 +1916,7 @@ help:
 	@echo "... leader_follower_node"
 	@echo "... cam_sim_node"
 	@echo "... one_drone_mission_planning"
-	@echo "... RangeImpl"
+	@echo "... one_drone_mission_planning_improved"
 	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf_generate_messages_lisp"

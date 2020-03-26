@@ -68,17 +68,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -88,6 +77,17 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -122,16 +122,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : test/fast
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -226,6 +226,21 @@ CubicSplinePlanner/fast:
 .PHONY : CubicSplinePlanner/fast
 
 # Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/rule
+
+# Convenience name for target.
+yaw_angle_range_test: frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/rule
+
+.PHONY : yaw_angle_range_test
+
+# fast build rule for target.
+yaw_angle_range_test/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/build
+.PHONY : yaw_angle_range_test/fast
+
+# Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule:
 	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
 .PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/offb_fixed_flight_node.dir/rule
@@ -254,6 +269,21 @@ offboard_take_off_test_node: frenet_optimal_trajectory_pkg/CMakeFiles/offboard_t
 offboard_take_off_test_node/fast:
 	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/offboard_take_off_test_node.dir/build
 .PHONY : offboard_take_off_test_node/fast
+
+# Convenience name for target.
+frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+
+# Convenience name for target.
+RangeImpl: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+
+.PHONY : RangeImpl
+
+# fast build rule for target.
+RangeImpl/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
+.PHONY : RangeImpl/fast
 
 # Convenience name for target.
 frenet_optimal_trajectory_pkg/CMakeFiles/generate_sim_planning_path.dir/rule:
@@ -421,19 +451,19 @@ one_drone_mission_planning/fast:
 .PHONY : one_drone_mission_planning/fast
 
 # Convenience name for target.
-frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule:
-	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
-.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/rule:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f CMakeFiles/Makefile2 frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/rule
+.PHONY : frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/rule
 
 # Convenience name for target.
-RangeImpl: frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/rule
+one_drone_mission_planning_improved: frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/rule
 
-.PHONY : RangeImpl
+.PHONY : one_drone_mission_planning_improved
 
 # fast build rule for target.
-RangeImpl/fast:
-	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/RangeImpl.dir/build
-.PHONY : RangeImpl/fast
+one_drone_mission_planning_improved/fast:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/build
+.PHONY : one_drone_mission_planning_improved/fast
 
 src/CubicSplinePlanner.o: src/CubicSplinePlanner.cpp.o
 
@@ -759,6 +789,33 @@ src/one_drone_mission_planning.cpp.s:
 	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning.dir/src/one_drone_mission_planning.cpp.s
 .PHONY : src/one_drone_mission_planning.cpp.s
 
+src/one_drone_mission_planning_improved.o: src/one_drone_mission_planning_improved.cpp.o
+
+.PHONY : src/one_drone_mission_planning_improved.o
+
+# target to build an object file
+src/one_drone_mission_planning_improved.cpp.o:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/src/one_drone_mission_planning_improved.cpp.o
+.PHONY : src/one_drone_mission_planning_improved.cpp.o
+
+src/one_drone_mission_planning_improved.i: src/one_drone_mission_planning_improved.cpp.i
+
+.PHONY : src/one_drone_mission_planning_improved.i
+
+# target to preprocess a source file
+src/one_drone_mission_planning_improved.cpp.i:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/src/one_drone_mission_planning_improved.cpp.i
+.PHONY : src/one_drone_mission_planning_improved.cpp.i
+
+src/one_drone_mission_planning_improved.s: src/one_drone_mission_planning_improved.cpp.s
+
+.PHONY : src/one_drone_mission_planning_improved.s
+
+# target to generate assembly for a file
+src/one_drone_mission_planning_improved.cpp.s:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/one_drone_mission_planning_improved.dir/src/one_drone_mission_planning_improved.cpp.s
+.PHONY : src/one_drone_mission_planning_improved.cpp.s
+
 src/path_tracking_node.o: src/path_tracking_node.cpp.o
 
 .PHONY : src/path_tracking_node.o
@@ -921,6 +978,33 @@ src/virtual_structure_node.cpp.s:
 	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/virtual_structure_node.dir/src/virtual_structure_node.cpp.s
 .PHONY : src/virtual_structure_node.cpp.s
 
+src/yaw_angle_range_test.o: src/yaw_angle_range_test.cpp.o
+
+.PHONY : src/yaw_angle_range_test.o
+
+# target to build an object file
+src/yaw_angle_range_test.cpp.o:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/src/yaw_angle_range_test.cpp.o
+.PHONY : src/yaw_angle_range_test.cpp.o
+
+src/yaw_angle_range_test.i: src/yaw_angle_range_test.cpp.i
+
+.PHONY : src/yaw_angle_range_test.i
+
+# target to preprocess a source file
+src/yaw_angle_range_test.cpp.i:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/src/yaw_angle_range_test.cpp.i
+.PHONY : src/yaw_angle_range_test.cpp.i
+
+src/yaw_angle_range_test.s: src/yaw_angle_range_test.cpp.s
+
+.PHONY : src/yaw_angle_range_test.s
+
+# target to generate assembly for a file
+src/yaw_angle_range_test.cpp.s:
+	cd /home/lihai/drone_test_ws/drone_formation/build && $(MAKE) -f frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/build.make frenet_optimal_trajectory_pkg/CMakeFiles/yaw_angle_range_test.dir/src/yaw_angle_range_test.cpp.s
+.PHONY : src/yaw_angle_range_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -931,11 +1015,13 @@ help:
 	@echo "... tracking_cam_node"
 	@echo "... ez_sim_planning"
 	@echo "... QuinticPolynomial"
-	@echo "... edit_cache"
 	@echo "... CubicSplinePlanner"
+	@echo "... yaw_angle_range_test"
 	@echo "... offb_fixed_flight_node"
 	@echo "... list_install_components"
 	@echo "... offboard_take_off_test_node"
+	@echo "... test"
+	@echo "... RangeImpl"
 	@echo "... generate_sim_planning_path"
 	@echo "... rebuild_cache"
 	@echo "... QuarticPolynomial"
@@ -950,8 +1036,8 @@ help:
 	@echo "... leader_follower_node"
 	@echo "... cam_sim_node"
 	@echo "... one_drone_mission_planning"
-	@echo "... RangeImpl"
-	@echo "... test"
+	@echo "... edit_cache"
+	@echo "... one_drone_mission_planning_improved"
 	@echo "... src/CubicSplinePlanner.o"
 	@echo "... src/CubicSplinePlanner.i"
 	@echo "... src/CubicSplinePlanner.s"
@@ -988,6 +1074,9 @@ help:
 	@echo "... src/one_drone_mission_planning.o"
 	@echo "... src/one_drone_mission_planning.i"
 	@echo "... src/one_drone_mission_planning.s"
+	@echo "... src/one_drone_mission_planning_improved.o"
+	@echo "... src/one_drone_mission_planning_improved.i"
+	@echo "... src/one_drone_mission_planning_improved.s"
 	@echo "... src/path_tracking_node.o"
 	@echo "... src/path_tracking_node.i"
 	@echo "... src/path_tracking_node.s"
@@ -1006,6 +1095,9 @@ help:
 	@echo "... src/virtual_structure_node.o"
 	@echo "... src/virtual_structure_node.i"
 	@echo "... src/virtual_structure_node.s"
+	@echo "... src/yaw_angle_range_test.o"
+	@echo "... src/yaw_angle_range_test.i"
+	@echo "... src/yaw_angle_range_test.s"
 .PHONY : help
 
 

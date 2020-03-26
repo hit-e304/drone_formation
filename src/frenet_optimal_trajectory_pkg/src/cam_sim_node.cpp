@@ -49,7 +49,7 @@ int main(int argc, char **argv)
     ros::NodeHandle nh;
     //获取飞机的位置
     ros::Subscriber local_position_sub = nh.subscribe("/mavros/local_position/pose", 1, local_pos_cb);
-    ros::Publisher contours_pub_ = nh.advertise<opencvtest::img_pro_info>("/contours_topic", 50);
+    ros::Publisher contours_pub_ = nh.advertise<opencvtest::img_pro_info>("/contours_topic", 5);
 
     ros::Rate rate(20.0);
     box_1.pose.position.x = 500;
@@ -121,6 +121,13 @@ int main(int argc, char **argv)
         ros::spinOnce();
         rate.sleep();
     }
-
+    sim_cam_info.find_obs_flag = false;
+    sim_cam_info.dis = -1;
+    sim_cam_info.pos_left = -1;
+    sim_cam_info.pos_right = -1;
+    sim_cam_info.x_pos = -1;
+    sim_cam_info.y_pos = -1;
+    contours_pub_.publish(sim_cam_info);
+    
     return 0;
 }
