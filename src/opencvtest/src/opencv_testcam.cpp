@@ -98,10 +98,31 @@ void red_Filters(Mat img_hsv,Mat &img_red)
         {
             //CvScalar hsv_point = cvGet2D(img_hsv, i, j);//获取像素点为（j, i）点的HSV的值 
             Vec3i hsv_point = img_hsv.at<Vec3b>(i,j);
+    /*
+            例如 8U 类型的 RGB 彩色图像可以使用 <Vec3b>,3 通道 float 类型的矩阵可以使用 <Vec3f>。
+
+            对于 Vec 对象，可以使用 [ ] 符号如操作数组般读写其元素，
+
+            Vec3b color;        //用 color 变量描述一种 RGB 颜色
+            color[0] = 255;     //0通道的B 分量
+            color[1] = 0;       //1通道的G 分量
+            color[2] = 0;       //2通道的R 分量 
+
+            假设提前已知一幅图像img的数据类型为 unsigned char型灰度图（单通道），要对座标为(14,25)的像素重新赋值为25
+
+            srcImage.at<uchar>(14,25) = 25;
+            如果要操作的图片img是一幅数据类型同样为unsigned char的彩色图片，再次要求将座标（14,25）的像素赋值为25。
+
+            Opencv中图像三原色在内存中的排列顺序为B-G-R
+
+            img.at<Vec3b>(14, 25) [0] = 25;  //B  
+            img.at<Vec3b>(14, 25) [1] = 25;  //G  
+            img.at<Vec3b>(14, 25）[2] = 25;  //R 
+    */
             if ((hsv_point.val[0]>red_hsv - red_offset)&&(hsv_point.val[0]<red_hsv + red_offset) && (hsv_point.val[1] > s_hsv))
             {
                 //cvSet2D(img_red, i ,j, white_point);
-                img_red.at<uchar>(i,j) = 255;
+                img_red.at<uchar>(i,j) = 255;//8U 类型的 RGB 彩色图像每个通道都是uchar类型的
             }
         }           
     }
@@ -117,6 +138,12 @@ void similar_Decision()
 void center_Compute(vector<vector<Point> > contours_ploy_filter,int index,Moments &mu,Point2f &mc)
 {
     mu = moments( contours_ploy_filter[index], true ); 
+    /*
+        moments()来计算图像中的特征矩(最高到三阶) 参考 https://www.cnblogs.com/mikewolf2002/p/3427564.html
+        array:输入数组，可以是光栅图像(单通道，8-bit或浮点型二维数组),或者是一个二维数组(1 X N或N X 1),二维数组类型为Point或Point2f
+
+        binaryImage:默认值是false，如果为true，则所有非零的像素都会按值1对待，也就是说相当于对图像进行了二值化处理，阈值为1，此参数仅对图像有效。
+    */
     mc = Point2d( mu.m10/mu.m00 , mu.m01/mu.m00 );
     //cout<<mc.x<<"     "<<mc.y<<endl;
 }
@@ -185,6 +212,14 @@ void approxPolyDP_Compute(vector<vector<Point> > contours,vector<vector<Point> >
     {
         //将轮廓做多边形逼近
         approxPolyDP(contours[i], contours_ploy[i], 3, true);//第三个变量表征逼近的程度
+    /*
+        对应的函数为：
+        void approxPolyDP(InputArray curve, OutputArray approxCurve, double epsilon, bool closed)；
+        第一个参数 InputArray curve：输入的点集
+        第二个参数OutputArray approxCurve：输出的点集，当前点集是能最小包容指定点集的。画出来即是一个多边形。
+        第三个参数double epsilon：指定的精度，也即是原始曲线与近似曲线之间的最大距离。
+        第四个参数bool closed：若为true，则说明近似曲线是闭合的；反之，若为false，则断开。
+    */
         //printf("%s\n",typeid(contours[0]).name());//类型
         //cout<<"类型为"<<typeid(contours[0]).name()<<endl;
 
@@ -207,7 +242,7 @@ int contours_Filters(vector<vector<Point> > contours_ploy)
     int length = contours_ploy.size();
     if(length < 1)
     {
-        return -1;
+        return -1;//说明什么都没识别到
     }
     int contours_size = 0;
     int height[length];
@@ -219,20 +254,20 @@ int contours_Filters(vector<vector<Point> > contours_ploy)
         Max.push_back(0);
         Min.push_back(480);
     }
-    for(size_t i = 0;i < length; i++)
+    for(size_t i = 0;i < length; i++)//size_t就理解成int就行，是一种匹配操作系统的自动类型。这个类型足以用来表示对象的大小
     {
         //重新初始化
-
+        //i是第i个独立的多边形轮廓，j是每个轮廓上的第j个点。每个点一个point类型结构体，分xyz三个成员。
         contours_size = contours_ploy[i].size();
         for(int j = 0; j < contours_size; j++)
         {
             if((contours_ploy[i][j].y < Min[i]) && (!isnan(contours_ploy[i][j].y)) && (!isnan(-contours_ploy[i][j].y)))
-            {
+            {//判断非空是因为打印出contours_ploy的时候发现其中有nan，虽然不知道原因，猜测可能是像素的问题，所以就直接加了非空的判断。
                 Min[i] = contours_ploy[i][j].y;
             }
             else
             {
-                ;;
+                ;
             }
             if((contours_ploy[i][j].y > Max[i]) && (!isnan(contours_ploy[i][j].y)) && (!isnan(-contours_ploy[i][j].y)))
             {
@@ -240,7 +275,7 @@ int contours_Filters(vector<vector<Point> > contours_ploy)
             }
             else
             {
-                ;;
+                ;
             }
         }
         height[i] = Max[i] - Min[i];
@@ -253,12 +288,13 @@ int contours_Filters(vector<vector<Point> > contours_ploy)
     {
         if(height[i] > 200 && width[i] <150 && contourArea(contours_ploy[i]) > 500)
         {
-            index.push_back(i);
+            index.push_back(i);//提取出来满足一定要求的轮廓，具体是什么要求应该是看要识别的是框还是柱子还是什么其他东西。
         }
     }
+    //返回宽度最宽的边框，如果看到了多个框的话这样就只返回最近的
     if(index.size())
     {
-        for(int i = 0; i < index.size() - 1;i++)
+        for(int i = 0; i < index.size() - 1;i++)//相当于做了个排序,如果只是需要返回最宽的，判断大小就行，干嘛做排序啊
         {
             for(int j = i + 1; j < index.size();j++)
             {
@@ -298,27 +334,51 @@ class ImageConverter
     
 public:
     ImageConverter()
-    : it_(nh_)
+    : it_(nh_)//构造函数
     {
         // Subscrive to input video feed and publish output video feed
-        image_sub_ = it_.subscribe("/usb_cam/image_raw", 1,&ImageConverter::imageCb, this);
+        image_sub_ = it_.subscribe("/usb_cam/image_raw", 1,&ImageConverter::imageCb, this);//接受原始图像话题
         image_pub_ = it_.advertise("/image_converter/output_video", 1);
         //contours_pub_ = it_.advertise("/contours_topic", 1);
-        contours_pub_ = nh_.advertise<opencvtest::img_pro_info>("/contours_topic", 50);
+        contours_pub_ = nh_.advertise<opencvtest::img_pro_info>("/contours_topic", 50);    //发布结果话题
         //cv::namedWindow(OPENCV_WINDOW);
     }
  
-    ~ImageConverter()
+    ~ImageConverter()//析构函数
     {
         //cv::destroyWindow(OPENCV_WINDOW);
     }
     
-    void imageCb(const sensor_msgs::ImageConstPtr& msg)
+    void imageCb(const sensor_msgs::ImageConstPtr& msg)   //接收到了图像就进这个函数
     {
         cv_bridge::CvImagePtr cv_ptr;
         try
         {
             cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+
+            //当要把一个ROS 的sensor_msgs /image 信息转化为一cvimage，cvbridge有两个不同的使用情况：
+            //这里是第一种，如果要修改某一位的数据。我们必须复制ROS信息数据的作为副本。
+    /*
+            输入是图像消息指针，以及可选的编码参数。编码是指cvimage的类型。
+
+            tocvcopy复制从ROS消息的图像数据，可以自由修改返回的cvimage。即使当源和目的编码匹配。
+
+            介绍集中cvbridge 中常见的数据编码的形式，cv_bridge可以有选择的对颜色和深度信息进行转化。为了使用指定的特征编码，就有下面集中的编码形式：
+
+            mono8:  CV_8UC1， 灰度图像
+
+            mono16: CV_16UC1,16位灰度图像
+
+            bgr8: CV_8UC3,带有颜色信息并且颜色的顺序是BGR顺序
+
+            rgb8: CV_8UC3,带有颜色信息并且颜色的顺序是RGB顺序
+
+            bgra8: CV_8UC4, BGR的彩色图像，并且带alpha通道
+
+            rgba8: CV_8UC4,CV，RGB彩色图像，并且带alpha通道
+
+            注：这其中mono8和bgr8两种图像编码格式是大多数OpenCV的编码格式。
+    */
         }
         catch (cv_bridge::Exception& e)
         {
@@ -339,18 +399,43 @@ public:
         //载入图片
         //cv::Mat img = imread("momo3.jpeg",1);
         //变量定义
-        cv::Mat img_gauss,img_gray,img_hsv,img_binary,img_red,img_red_gauss,img_red_median;
+        cv::Mat img_gauss,img_hsv,img_red,img_red_gauss,img_red_median;//,img_gray,img_binary;
         //白色的点，用于赋值
         // CvScalar white_point;
         // white_point.val[0] = 255;
         // white_point.val[1] = 255;
         // white_point.val[2] = 255;
-        cv::Mat img = cv_ptr->image;
-        img_red = Mat::zeros(img.size(),CV_8UC1);
-	    cv::GaussianBlur(img,img_gauss,cv::Size(3,3),0);
-        cvtColor(img_gauss,img_hsv,CV_RGB2HSV);
-        cvtColor(img_hsv,img_gray,CV_RGB2GRAY);
-        red_Filters(img_hsv,img_red);
+        cv::Mat img = cv_ptr->image;     //数据拷贝成Mat格式，opencv的图像多使用这个格式
+        img_red = Mat::zeros(img.size(),CV_8UC1); //创建一个值为全0的 单通道图像矩阵， 大小和img相同
+    /*      
+        mono8:  CV_8UC1， 灰度图像
+        mono16: CV_16UC1,16位灰度图像
+        bgr8: CV_8UC3,带有颜色信息并且颜色的顺序是BGR顺序
+        rgb8: CV_8UC3,带有颜色信息并且颜色的顺序是RGB顺序
+        bgra8: CV_8UC4, BGR的彩色图像，并且带alpha通道
+        rgba8: CV_8UC4,CV，RGB彩色图像，并且带alpha通道
+    */
+	    cv::GaussianBlur(img,img_gauss,cv::Size(3,3),0);    //高斯滤波，去除高斯噪声，高斯核的大小3*3
+    /*输入含义：
+        img:高斯滤波前的图像
+        img_gauss:高斯滤波后的图像
+        cv::Size(3,3) 高斯核大小
+        0  高斯函数均值
+    */
+        cvtColor(img_gauss,img_hsv,CV_RGB2HSV);       //色域转换，rgb转hsv，我那个笔记里写了转换公式
+    /*
+            cvtColor函数是OpenCV里用于图像颜色空间转换，可以实现RGB颜色、HSV颜色、HSI颜色、lab颜色、YUV颜色等转换，也可以彩色和灰度图互转。
+        输入含义：
+            img_gauss   变换前图像
+            img_hsv     变换后图像
+            CV_RGB2HSV  变换方式
+        注：变换方式有几十种
+
+        还有其他等效写法：       
+        gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY) //个人猜cvt是convert的意思
+    */        
+        // cvtColor(img_hsv,img_gray,CV_RGB2GRAY);       //rgb转灰度
+        red_Filters(img_hsv,img_red);                 //将图像中的红色部分过滤出来，红色部分赋值到img_red中显示,相当于二值化？
         //求取灰度均值
         // cv:Scalar gray_Val = cv::mean(img_gray);
         // float gray_Mean_0 = gray_Val.val[0];
@@ -376,35 +461,77 @@ public:
         //imshow("CannyImg", canny_img);
         /////////////////////////////////////////////////////////////////////////////////
         //存储轮廓
-        vector<vector<Point> > contours;
-	    vector<Vec4i> hierarchy;
+        vector<vector<Point> > contours;                     //存储轮廓信息
+	    vector<Vec4i> hierarchy;                             //求取轮廓时会生成的一个变量，具体是干什么用的我没有用到
         //中值滤波
-        cv::medianBlur(img_red,img_red_median,11);
+        cv::medianBlur(img_red,img_red_median,11);           //中值滤波，二值图像过滤椒盐噪声使用，可以将那些意外被识别为红色的干扰点去除
         //高斯滤波
         //cv::GaussianBlur(img_red_gauss,img_red_median,cv::Size(3,3),0);
         //查找轮廓
-        findContours(img_red_median,contours,hierarchy,RETR_LIST,CHAIN_APPROX_NONE,Point());
+        findContours(img_red_median,contours,hierarchy,RETR_LIST,CHAIN_APPROX_NONE,Point());//提取轮廓
+    /*
+        参考网址 https://www.cnblogs.com/GaloisY/p/11062065.html
+        参数1：单通道图像矩阵，可以是灰度图，但更常用的是二值图像，一般是经过Canny、拉普拉斯等边缘检测算子处理过的二值图像；
+
+        参数2：contours定义为“vector<vector<Point>> contours”，是一个双重向量
+        （向量内每个元素保存了一组由连续的Point构成的点的集合的向量），每一组点集就是一个轮廓，有多少轮廓，contours就有多少元素；
+
+        参数3：hierarchy定义为“vector<Vec4i> hierarchy”，Vec4i的定义：typedef Vec<int, 4> Vec4i;
+        （向量内每个元素都包含了4个int型变量），所以从定义上看，hierarchy是一个向量，向量内每个元素都是一个包含4个int型的数组。
+        向量hierarchy内的元素和轮廓向量contours内的元素是一一对应的，向量的容量相同。
+        hierarchy内每个元素的4个int型变量是hierarchy[i][0] ~ hierarchy[i][3]，
+        分别表示当前轮廓 i 的后一个轮廓、前一个轮廓、父轮廓和内嵌轮廓的编号索引。
+        如果当前轮廓没有对应的后一个轮廓、前一个轮廓、父轮廓和内嵌轮廓，则相应的hierarchy[i][*]被置为-1。
+
+        参数4：定义轮廓的检索模式，取值如下：
+
+                    CV_RETR_EXTERNAL：只检测最外围轮廓，包含在外围轮廓内的内围轮廓被忽略；
+
+                    CV_RETR_LIST：检测所有的轮廓，包括内围、外围轮廓，但是检测到的轮廓不建立等级关系，
+                    彼此之间独立，没有等级关系，这就意味着这个检索模式下不存在父轮廓或内嵌轮廓，
+                    所以hierarchy向量内所有元素的第3、第4个分量都会被置为-1，具体下文会讲到；
+
+                    CV_RETR_CCOMP: 检测所有的轮廓，但所有轮廓只建立两个等级关系，外围为顶层，
+                    若外围内的内围轮廓还包含了其他的轮廓信息，则内围内的所有轮廓均归属于顶层；
+
+                    CV_RETR_TREE: 检测所有轮廓，所有轮廓建立一个等级树结构。外层轮廓包含内层轮廓，内层轮廓还可以继续包含内嵌轮廓。
+
+        参数5：定义轮廓的近似方法，取值如下：
+
+                    CV_CHAIN_APPROX_NONE：保存物体边界上所有连续的轮廓点到contours向量内；
+
+                    CV_CHAIN_APPROX_SIMPLE：仅保存轮廓的拐点信息，把所有轮廓拐点处的点保存入contours向量内，
+                    拐点与拐点之间直线段上的信息点不予保留；
+
+                    CV_CHAIN_APPROX_TC89_L1：使用teh-Chinl chain 近似算法;
+
+                    CV_CHAIN_APPROX_TC89_KCOS：使用teh-Chinl chain 近似算法。
+
+        参数6：Point偏移量，所有的轮廓信息相对于原始图像对应点的偏移量，相当于在每一个检测出的轮廓点上加上该偏移量，
+        并且Point还可以是负值！
+    */
         //findContours(img_red_median,contours,hierarchy,RETR_LIST,CHAIN_APPROX_TC89_L1,Point());
-	    Mat imageContours = Mat::zeros(img.size(),CV_8UC1);
-        Mat poly_image = Mat::zeros(img.size(),CV_8UC1); //凸包图像
-	    Mat Contours = Mat::zeros(img.size(),CV_8UC1);  //绘制
+	    // Mat imageContours = Mat::zeros(img.size(),CV_8UC1);
+        // Mat poly_image = Mat::zeros(img.size(),CV_8UC1); //凸包图像，通俗来讲就是将轮廓拟合成多边形
+	    // Mat Contours = Mat::zeros(img.size(),CV_8UC1);  //绘制
         //轮廓排序
-        std::sort(contours.begin(),contours.end(),ContoursSortFun); 
+        std::sort(contours.begin(),contours.end(),ContoursSortFun); //对轮廓进行排序，排序的规则按照面积从大到小排序，也可以使用周长进行排序
+                                                //ContoursSortFun 上面有内联函数 里面写了比较面积大小的功能。因为识别框的话只有俩轮廓
         //cout<<"第一种相似判断，结果两个轮廓之间的相似度为：  "<<matchShapes(contours[0],contours[1],CV_CONTOURS_MATCH_I1, 0)<<endl;
         // 定义逼近后的存储容器
         vector<vector<Point> > contours_ploy(contours.size());
         //vector<Rect> rects_ploy(contours.size());
         //vector<RotatedRect> RotatedRect_ploy;//注意：由于下面赋值的过程中有个点数大于5的条件，所以这里没有直接初始化，才有下面pushback的方法添加值。
         //vector<RotatedRect> minRect( contours_ploy.size() );
-        approxPolyDP_Compute(contours,contours_ploy);
+        approxPolyDP_Compute(contours,contours_ploy);     //对轮廓进行多边形逼近,也是上面的函数
         ///////////////////////////////////////////////////////////////////////
         //返回滤波之后的轮廓即结果
-        int height_max_index = contours_Filters(contours_ploy);
+        int height_max_index = contours_Filters(contours_ploy);//上面自己定义的函数,用来挑选轮廓,返回值是最大最高的轮廓的索引
         //cout<<"height_max_index = "<<height_max_index<<endl;
         //////////////////////////////////////////////////////////////////////
         //publish信息
         opencvtest::img_pro_info info_pub;
-        if(height_max_index < 0)
+        if(height_max_index < 0)  //说明没有符合要求的轮廓，没有目标
         {
             //publish信息
             opencvtest::img_pro_info info_pub;
@@ -422,15 +549,15 @@ public:
             //cout<<info_pub_last.dis<<"  "<<info_pub_last.pos_left<<"  "<<info_pub_last.pos_right<<"  "<<info_pub_last.x_pos<<"  "<<info_pub_last.y_pos<<endl;  
             //零阶原点距和一阶原点距
             Moments mu;
-            Point2f mc;
-            center_Compute(contours_ploy,height_max_index,mu,mc);
+            Point2f mc;//中心坐标
+            center_Compute(contours_ploy,height_max_index,mu,mc);  //计算轮廓中心点
             //中心点保存
             Point2d Center;
             Center = Point(floor(mc.x),floor(Min[height_max_index]+ 0.5*(Max[height_max_index] - Min[height_max_index])));
             float width = contourArea(contours_ploy[height_max_index])*1.0/(Max[height_max_index] - Min[height_max_index]);
             cout<<"width = "<<width<<endl;
             info_pub.find_obs_flag = 1;
-            info_pub.dis = 117/width;
+            info_pub.dis = 117/width;    //计算距离，距离柱子一米的时候，在图像上是117个像素点，根据成像原理，像素点个数与距离成反比。
             cout<<"dis = "<<info_pub.dis<<endl;
             info_pub.pos_left = Center.x - floor(width/2);
             info_pub.pos_right = Center.x + floor(width/2);
@@ -445,12 +572,13 @@ public:
             //在图像上显示
             drawContours(img,contours,height_max_index,Scalar(0,255,0),3,8,hierarchy);
             cv::circle(img, Center, 7, Scalar(255,255,255),2);
-            if(info_pub_last.dis == 0 || info_pub_last.dis == -1)
+            if(info_pub_last.dis == 0 || info_pub_last.dis == -1)//上一帧没有框在视野内
             {
                 contours_pub_.publish(info_pub);
             }
             else
             {
+                //当位置变化太大的时候，就把上一次的中心位置发出去
                 if(abs(info_pub.pos_left - info_pub_last.pos_left) < 20 && abs(info_pub.pos_right - info_pub_last.pos_right) < 20)
                 {
                     info_pub_last = info_pub;
@@ -588,21 +716,22 @@ void on_trackbar_sub( int, void* )
 void on_trackbar_line( int, void* )
 {
     red_offset_line = alpha_slider_line;
-}    
+}
+
 int main(int argc, char** argv)
 {
-ros::init(argc, argv, "image_converter");
-ImageConverter ic;
-int alpha_slider_line_max = 100;
-int alpha_slider_max = 50;
+    ros::init(argc, argv, "image_converter");
+    ImageConverter ic;
+    int alpha_slider_line_max = 100;
+    int alpha_slider_max = 50;
 
-// namedWindow("Linear Offset_add", 1);
-// namedWindow("Linear Offset_sub", 1);
-//namedWindow("Linear Offset_line", 1);
-// createTrackbar( "Trackbar", "Linear Offset_add", &alpha_slider_add, alpha_slider_max, on_trackbar_add );
-// createTrackbar( "Trackbar", "Linear Offset_sub", &alpha_slider_sub, alpha_slider_max, on_trackbar_sub );
-//createTrackbar( "Trackbar", "Linear Offset_line", &alpha_slider_line, alpha_slider_line_max, on_trackbar_line );
-ros::spin();
-return 0;
+    // namedWindow("Linear Offset_add", 1);
+    // namedWindow("Linear Offset_sub", 1);
+    //namedWindow("Linear Offset_line", 1);
+    // createTrackbar( "Trackbar", "Linear Offset_add", &alpha_slider_add, alpha_slider_max, on_trackbar_add );
+    // createTrackbar( "Trackbar", "Linear Offset_sub", &alpha_slider_sub, alpha_slider_max, on_trackbar_sub );
+    //createTrackbar( "Trackbar", "Linear Offset_line", &alpha_slider_line, alpha_slider_line_max, on_trackbar_line );
+    ros::spin();
+    return 0;
 }
 
