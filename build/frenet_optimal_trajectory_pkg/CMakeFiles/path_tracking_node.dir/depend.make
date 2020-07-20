@@ -82,6 +82,7 @@ frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_trackin
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatFix.h
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
+frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/std_msgs/ColorRGBA.h
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Matrix3x3.h
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/MinMax.h
@@ -107,6 +108,8 @@ frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_trackin
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/tf2_msgs/FrameGraphResponse.h
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/tf2_ros/buffer.h
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/tf2_ros/buffer_interface.h
+frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/visualization_msgs/Marker.h
+frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/visualization_msgs/MarkerArray.h
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 frenet_optimal_trajectory_pkg/CMakeFiles/path_tracking_node.dir/src/path_tracking_node.cpp.o: /usr/include/eigen3/Eigen/Cholesky

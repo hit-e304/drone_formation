@@ -16,6 +16,7 @@
 #include <mavros_msgs/State.h>
 #include <mavros_msgs/PositionTarget.h>
 #include <sensor_msgs/NavSatFix.h>
+#include <visualization_msgs/MarkerArray.h>
 #include <Eigen/Dense>
 #include "frenet_optimal_trajectory_pkg/CubicSplinePlanner.h"
 #include "frenet_optimal_trajectory_pkg/RangeImpl.h"
@@ -126,6 +127,8 @@ int main(int argc, char **argv)
     
     ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>("mavros/cmd/arming");
     ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("mavros/set_mode");
+    ros::Publisher sim_global_path_vis_pub = nh.advertise<visualization_msgs::Marker>("global_way_point", 1);
+    ros::Publisher sim_waypoint_position_vis_pub = nh.advertise<visualization_msgs::Marker>("way_point_position", 1);
 
     // the setpoint publishing rate MUST be faster than 2Hz
     ros::Rate rate(20.0);
@@ -166,6 +169,52 @@ int main(int argc, char **argv)
         }
     }
     plan_log.close();
+
+    visualization_msgs::Marker sim_global_path_marker;
+    sim_global_path_marker.id = 10;
+    sim_global_path_marker.header.frame_id = "map";
+    sim_global_path_marker.header.stamp = ros::Time();
+    sim_global_path_marker.ns = "global_path";
+    sim_global_path_marker.type = visualization_msgs::Marker::LINE_STRIP;
+    sim_global_path_marker.action = visualization_msgs::Marker::ADD;
+    sim_global_path_marker.scale.x = 0.1;
+    sim_global_path_marker.scale.y = 0.1;
+    sim_global_path_marker.color.a = 0.9;
+    sim_global_path_marker.color.r = 1.0;
+    sim_global_path_marker.color.g = 1.0;
+    sim_global_path_marker.color.b = 0.0;
+    
+    geometry_msgs::Point gwp;//中间变量
+    for (int i = 0; i < tx.size(); i++)
+    {
+        gwp.x = tx[i];
+        gwp.y = ty[i];
+        gwp.z = HIGHT / 2;
+        // cout << "x = " << xy[0] << ", y = " << xy[1] << endl;
+        sim_global_path_marker.points.push_back(gwp);
+    }
+
+    visualization_msgs::Marker waypoint_position_marker;
+    waypoint_position_marker.id = 12;
+    waypoint_position_marker.header.frame_id = "map";
+    waypoint_position_marker.header.stamp = ros::Time();
+    waypoint_position_marker.ns = "waypoint_position";
+    waypoint_position_marker.type = visualization_msgs::Marker::POINTS;
+    waypoint_position_marker.action = visualization_msgs::Marker::ADD;
+    waypoint_position_marker.scale.x = 0.2;
+    waypoint_position_marker.scale.y = 0.2;
+    waypoint_position_marker.color.a = 1.0;
+    waypoint_position_marker.color.r = 0.0;
+    waypoint_position_marker.color.g = 1.0;
+    waypoint_position_marker.color.b = 0.0;
+    geometry_msgs::Point wp;
+    for(int i = 0; i < x.size(); i++)
+    {
+        wp.x = x[i];
+        wp.y = y[i];
+        wp.z = HIGHT / 2;
+        waypoint_position_marker.points.push_back(wp);
+    }
 
     //send a few setpoints before starting
     // for(int i = 100; ros::ok() && i > 0; --i){
@@ -248,6 +297,8 @@ int main(int argc, char **argv)
                     
         }
         // std::cout << fly_log.is_open() << std::endl;
+        sim_global_path_vis_pub.publish(sim_global_path_marker);
+        sim_waypoint_position_vis_pub.publish(waypoint_position_marker);
         ros::spinOnce();
         rate.sleep();
     }
